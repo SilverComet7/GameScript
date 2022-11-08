@@ -1,4 +1,5 @@
 const dm = require("dm.dll");
-console.log(dm.dll);
+console.log(dm.dll.ver());
+debugger;
 console.log(dm.getScreenSize());
-// console.log(dm.getColor(594, 205));
+dm.findPic("");
