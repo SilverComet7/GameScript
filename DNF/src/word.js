@@ -1,18 +1,9 @@
 const dm = require("dm.dll");
-console.log(dm.dll.getBasePath());
-dm.setPath(dm.dll.getBasePath());
-const wzst = dm.setDict(0, "jt7000.txt");
-// const testList = dm.findStr(0, 0, 1920, 1080, "长安", "000000", 1.0);
-// console.log(testList, 111);
-// 长安
-// const test2 = dm.ocr(0, 0, 1920, 1080, "", 1.0);
-// console.log(test2, 222);
-// const base_path = dm.GetBasePath();
-// dm.SetPath(base_path);
-// dm.SetDict(0, "jt7000.txt");
+dm.setPath("D:/GameScript/DNF")
 
-const intX = 0,
-  intY = 0;
+const zt = dm.setDict(0, "宋体9号数字.txt");
 
-dm_ret = dm.dll.FindStr(0, 0, 1920, 1080, "问", "", 1.0, intX, intY);
-console.log(dm_ret);
+const word = dm.findStr(0, 0, 1920, 1080, "3", "000000", 1.0);
+console.log(word);
+const ocrWord = dm.ocr(522, 250, 565, 270, "000000", 1.0)
+console.log(ocrWord);
