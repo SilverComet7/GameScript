@@ -2,7 +2,7 @@
 
 安装步骤
 
-1. npm install --global --production windows-build-tools --add-python-to-path
-1. nvm 切换安装 10.8.0 32 位
+1. 管理员权限powershell npm install --global --production windows-build-tools --add-python-to-path
+1. nvm install 10.8.0 32      网络问题可以切换环境,准确下载npm包
 1. npm install dm.dll
 1. npm install wow-state-machine

@@ -1,2 +1,2 @@
 const dm = require("dm.dll");
-dm.findPic("");
+console.log(dm);
