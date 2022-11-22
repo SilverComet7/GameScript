@@ -18,5 +18,3 @@ const imageOrigin = dm.dll.findPic(
   imageOriginXY.x,
   imageOriginXY.y
 );
-console.log(image);
-console.log(imageOrigin, imageOriginXY);
