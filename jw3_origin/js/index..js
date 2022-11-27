@@ -2,40 +2,96 @@ const axios = require('axios')
 const craftList = require("./craft.json")
 const belongList = require("./belongTypeList.json")
 const fs = require('fs')
+const mongoose = require('mongoose');
+const Cook = mongoose.model('Cook', { time: String, info: Object });
 
 // 查看单精力可获得最高利润   查看3日销量   查看最近30天价格趋势
 
 const craftNameMap = {
-  founding: '铸造',
-  cooking: '烹饪',
-  medicine: "制药",
-  tailoring: "缝纫"
+  founding: {
+    name: '铸造',
+    minCost: 15,
+    minRequireLevel: 15,
+    BelongID: [110, 120],
+    excludeStr: ["掉落", "购买"],
+  },
+  cooking:
+  {
+    name: '烹饪', // 4
+    minCost: 15,
+    minRequireLevel: 15,
+    BelongID: [50, 60],
+    excludeStr: ["掉落", "购买"],
+  },
+  medicine: {
+    name: '制药',
+    minCost: 15,
+    minRequireLevel: 15,
+    BelongID: [80],
+    excludeStr: ["掉落", "购买"],
+  },
+  tailoring:
+  {
+    name: "缝纫",
+    minRequireLevel: 15,
+    BelongID: [80],
+    excludeStr: ["掉落", "购买"],
+  }
+
 }
 
 const priceCache = {
 
 }
 const itemNameCache = {
+  '1829': '竹叶青',
+  '1832': '富水',
+  '2204': '石冻春',
+  '2269': '肉丸',
+  '3154': '杂碎',
+  '3168': '肥肉',
+  '3169': '肠',
+  '3170': '腱子肉',
+  '3171': '腰子',
+  '3176': '瘦肉',
+  '3177': '筋',
+  '3178': '五花肉',
+  '3179': '血',
+  '3180': '里脊肉',
+  '3181': '排骨',
+  '3184': '肉馅',
+  '55617': '卤料',
+  '55623': '人参',
+}
+const craftArr = []
 
+
+async function insertMongodb() {
+  await mongoose.connect('mongodb://127.0.0.1:27017/jw3');
+  const cookInstance = new Cook({ time: Date(), info: craftArr })
+  cookInstance.save().then(() => console.log("success"))
 }
 
 
-const craftArr = []
+
 // https://node.jx3box.com/manufacture/cooking/55617?client=origin
 async function getItemInfo(type, itemId) {
   const res = await axios.get(`https://node.jx3box.com/manufacture/${type}/${itemId}?client=origin`)
   const resJson = res.data
+  if (craftNameMap[type].excludeStr.includes(resJson['szTip'])) return;
   const genItemInfo = {
-    查询id:itemId,
+    查询id: itemId,
     名称: resJson['Name'],
-    物品类别:belongList.find(item=> item.BelongID == resJson['Belong'])?.BelongName,
-    技艺类别: craftNameMap[resJson['__TabType']],
+    物品类别: belongList.find(item => item.BelongID == resJson['Belong'] && item.ProfessionID == resJson["ProfessionID"])?.BelongName,
+    技艺类别: craftNameMap[resJson['__TabType']]?.name,
     所需技艺等级: resJson['RequireLevel'],
     单次所需精力: resJson["CostStamina"],
     提示: resJson["szTip"],
     拍卖行单价: undefined,
     单精力最小利润: undefined,
     单精力最大利润: undefined,
+    // 单次制造耗时:resJson["PrepareFrame"],
+    整管精力耗时: 2600 / resJson["CostStamina"] * resJson["PrepareFrame"],
     最小出货量: resJson[`CreateItemMin1`],
     最大出货量: resJson[`CreateItemMax1`],
     配方: [],
@@ -110,11 +166,14 @@ async function getItemName(itemId) {
 
 async function getItemList(type = "founding") {
   const res = await axios.get(`https://node.jx3box.com/manufactures?client=origin&type=${type}&mode=simple`)
-  const thisTypeItemMap = res.data.map(async element => {
+  const filterQueryItem = res.data.filter(e => craftNameMap[type].BelongID.includes(e.Belong))
+  const thisTypeItemMap = filterQueryItem.map(async element => {
     return await getItemInfo(type, element.ID)
   });
-  Promise.all(thisTypeItemMap).then(res => {
+  Promise.all(thisTypeItemMap).then(async res => {
     sortAndWrite(type)
+    console.log(itemNameCache);
+    await insertMongodb()
   })
 }
 
@@ -124,7 +183,7 @@ async function getAllCraft() {
   const arr = []
   for (const key in craftNameMap) {
     if (Object.hasOwnProperty.call(object, key)) {
-      arr.push( await getItemList(key))
+      arr.push(await getItemList(key))
     }
   }
   Promise.all(arr).then(res => {
@@ -132,15 +191,15 @@ async function getAllCraft() {
   })
 }
 
-function sortAndWrite() {
+function sortAndWrite(type) {
   craftArr.sort((a, b) => b["单精力最小利润"] - a["单精力最小利润"])
-  fs.writeFileSync('test.json', JSON.stringify(craftArr), { flag: "w" })
+  fs.writeFileSync(`${type}.json`, JSON.stringify(craftArr), { flag: "w" })
 }
 
 
-getItemInfo("cooking", 120)
+// getItemInfo("cooking", 139)
 
-// getItemList("cooking")
+getItemList("cooking")
 
 // getAllCraft()
 

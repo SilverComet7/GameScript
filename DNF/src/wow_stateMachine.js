@@ -1,17 +1,17 @@
 const { default: StateMachine } = require('../node_modules/wow-state-machine/dist/state-machine')
 const dm = require("dm.dll");
 console.log(dm);
-dm.setPath("D:/GameScript/DNF/assert")
+// dm.setPath("D:/GameScript/DNF/assert")
 // dm.setDict(0, "宋体9号数字.txt")
 // const img = dm.findPic(1388, 177, 1920, 1080, "11drsn.bmp", "151515", 0.6, 0)
 const wGame = dm.findWindow("TWINCONTROL", "WeGame")
 const bindR = dm.bindWindow(wGame, 'normal', "normal", 'normal', 2)
-console.log(bindR);
 
-setInterval(() => {
-  dm.moveTo(450, 25)
-  dm.leftClick()
-}, 3000);
+
+// setInterval(() => {
+//   dm.moveTo(450, 25)
+//   dm.leftClick()
+// }, 3000);
 
 // 这是一个用于测试的始终返回 state1 的状态机
 const otherStateMachine = new StateMachine(() => "state1").on("state1", () =>
