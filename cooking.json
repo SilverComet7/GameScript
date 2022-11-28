@@ -1,1 +1,1487 @@
-[{"查询id":44,"名称":"任侠小炒","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":32,"单次所需精力":19,"提示":"<text>text=\"世界场景：人形敌人掉落\"font=18</text>","拍卖行单价":1399.99,"单精力最小利润":73.46578947368421,"单精力最大利润":73.46578947368421,"整管精力耗时":10947.368421052632,"最小出货量":1,"最大出货量":1,"配方":[{"id":2204,"name":"石冻春","craftUnitPrice":0.69,"RequireItemCount":2,"from":"商店"},{"id":2206,"name":"土窟春","craftUnitPrice":0.69,"RequireItemCount":2,"from":"商店"},{"id":2208,"name":"若下","craftUnitPrice":0.69,"RequireItemCount":2,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":0.3,"RequireItemCount":null,"from":"拍卖行"}]},{"查询id":66,"名称":"百味宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":50,"单次所需精力":28,"提示":"<text>text=\"洛阳声望亲密\"font=18</text>","拍卖行单价":999.99,"单精力最小利润":35.68155,"单精力最大利润":35.68155,"整管精力耗时":7428.571428571429,"最小出货量":1,"最大出货量":1,"配方":[{"id":2205,"name":"干和","craftUnitPrice":0.015,"RequireItemCount":1,"from":"商店"},{"id":2206,"name":"土窟春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":1.8676,"RequireItemCount":null,"from":"拍卖行"},{"id":3170,"name":"腱子肉","craftUnitPrice":0.18,"RequireItemCount":1,"from":"拍卖行"},{"id":3178,"name":"五花肉","craftUnitPrice":0.0108,"RequireItemCount":2,"from":"拍卖行"}]},{"查询id":82,"名称":"洗尘宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":64,"单次所需精力":61,"提示":"<text>text=\"浩气盟/恶人谷/瞿塘峡地图购买\"font=18</text>","拍卖行单价":998,"单精力最小利润":15.704209836065575,"单精力最大利润":15.704209836065575,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":1832,"name":"富水","craftUnitPrice":20,"RequireItemCount":2,"from":"商店"},{"id":3178,"name":"五花肉","craftUnitPrice":0.0108,"RequireItemCount":4,"from":"拍卖行"},{"id":null,"name":"默认","craftUnitPrice":0.02,"RequireItemCount":null,"from":"拍卖行"}]},{"查询id":67,"名称":"三头宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":50,"单次所需精力":28,"提示":"<text>text=\"扬州声望亲密\"font=18</text>","拍卖行单价":398.5,"单精力最小利润":14.139789285714286,"单精力最大利润":14.139789285714286,"整管精力耗时":7428.571428571429,"最小出货量":1,"最大出货量":1,"配方":[{"id":2207,"name":"新丰酒","craftUnitPrice":0.0075,"RequireItemCount":1,"from":"商店"},{"id":2208,"name":"若下","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":0.5,"RequireItemCount":null,"from":"拍卖行"},{"id":3177,"name":"筋","craftUnitPrice":0.01,"RequireItemCount":1,"from":"拍卖行"},{"id":3176,"name":"瘦肉","craftUnitPrice":1.8676,"RequireItemCount":1,"from":"拍卖行"},{"id":3178,"name":"五花肉","craftUnitPrice":0.0108,"RequireItemCount":1,"from":"拍卖行"}]},{"查询id":97,"名称":"贵妃宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":70,"单次所需精力":61,"提示":"<text>text=\"城市购买\"font=18</text>","拍卖行单价":390,"单精力最小利润":6.051639344262295,"单精力最大利润":6.051639344262295,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":2204,"name":"石冻春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":0.05,"RequireItemCount":null,"from":"拍卖行"},{"id":3181,"name":"排骨","craftUnitPrice":0.02,"RequireItemCount":8,"from":"拍卖行"},{"id":1830,"name":"郎官清","craftUnitPrice":20,"RequireItemCount":1,"from":"商店"}]},{"查询id":121,"名称":"馅料","物品类别":"烹饪材料","技艺类别":"烹饪","所需技艺等级":20,"单次所需精力":15,"提示":"<text>text=\"高级训练师学习\"font=18</text>","拍卖行单价":21.35,"单精力最小利润":2.7278000000000002,"单精力最大利润":4.151133333333334,"整管精力耗时":13866.666666666668,"最小出货量":2,"最大出货量":3,"配方":[{"id":null,"name":"默认","craftUnitPrice":16.29,"RequireItemCount":null,"from":"拍卖行"},{"id":3178,"name":"五花肉","craftUnitPrice":0.0108,"RequireItemCount":10,"from":"拍卖行"},{"id":3160,"name":"桂花","craftUnitPrice":0.16,"RequireItemCount":10,"from":"商店"},{"id":2207,"name":"新丰酒","craftUnitPrice":0.0075,"RequireItemCount":10,"from":"商店"}]},{"查询id":71,"名称":"酱","物品类别":"烹饪材料","技艺类别":"烹饪","所需技艺等级":52,"单次所需精力":3,"提示":"<text>text=\"高级训练师学习\"font=18</text>","拍卖行单价":6.95,"单精力最小利润":2.2113333333333336,"单精力最大利润":4.528,"整管精力耗时":69333.33333333333,"最小出货量":1,"最大出货量":2,"配方":[{"id":3165,"name":"油盐酱醋","craftUnitPrice":0.002,"RequireItemCount":2,"from":"商店"},{"id":3175,"name":"蒜","craftUnitPrice":0.0015,"RequireItemCount":2,"from":"商店"},{"id":3158,"name":"葱","craftUnitPrice":0.0015,"RequireItemCount":2,"from":"商店"},{"id":3163,"name":"料酒","craftUnitPrice":0.003,"RequireItemCount":2,"from":"商店"},{"id":3179,"name":"血","craftUnitPrice":0.03,"RequireItemCount":10,"from":"拍卖行"},{"id":null,"name":"五莲泉","craftUnitPrice":0.02,"RequireItemCount":null,"from":"拍卖行"}]},{"查询id":143,"名称":"巴蜀·二十四桥明月夜","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":80,"单次所需精力":80,"提示":"<text>text=\"轩辕社声望敬重\"font=18</text>","拍卖行单价":910.46,"单精力最小利润":1.6527500000000004,"单精力最大利润":1.6527500000000004,"整管精力耗时":2600,"最小出货量":1,"最大出货量":1,"配方":[{"id":3168,"name":"肥肉","craftUnitPrice":385.54,"RequireItemCount":1,"from":"拍卖行"},{"id":55617,"name":"卤料","craftUnitPrice":93,"RequireItemCount":4,"from":"拍卖行"},{"id":null,"name":"默认","craftUnitPrice":0.05,"RequireItemCount":null,"from":"拍卖行"},{"id":2208,"name":"若下","craftUnitPrice":0.69,"RequireItemCount":30,"from":"商店"}]},{"查询id":9,"名称":"结缘宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":14,"单次所需精力":10,"提示":"<text>text=\"初级训练师学习\"font=18</text>","拍卖行单价":15,"单精力最小利润":1.2704,"单精力最大利润":1.2704,"整管精力耗时":20800,"最小出货量":1,"最大出货量":1,"配方":[{"id":3184,"name":"肉馅","craftUnitPrice":0.57,"RequireItemCount":4,"from":"拍卖行"},{"id":2209,"name":"娆春","craftUnitPrice":0.004,"RequireItemCount":4,"from":"商店"}]},{"查询id":111,"名称":"欢庆宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":70,"单次所需精力":61,"提示":"<text>text=\"英雄天子峰、英雄风雨稻香村、英雄日轮山城、英雄荻花宫前山：非首领敌人掉落\"font=18</text>","拍卖行单价":35,"单精力最小利润":0.23327868852459016,"单精力最大利润":0.23327868852459016,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":2206,"name":"土窟春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":1829,"name":"竹叶青","craftUnitPrice":20,"RequireItemCount":1,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":0.05,"RequireItemCount":null,"from":"拍卖行"},{"id":3181,"name":"排骨","craftUnitPrice":0.02,"RequireItemCount":4,"from":"拍卖行"}]},{"查询id":15,"名称":"肉丸","物品类别":"烹饪材料","技艺类别":"烹饪","所需技艺等级":16,"单次所需精力":3,"提示":"<text>text=\"初级训练师学习\"font=18</text>","拍卖行单价":1.7,"单精力最小利润":0.18600000000000003,"单精力最大利润":0.18600000000000003,"整管精力耗时":69333.33333333333,"最小出货量":1,"最大出货量":1,"配方":[{"id":3184,"name":"肉馅","craftUnitPrice":0.57,"RequireItemCount":2,"from":"拍卖行"},{"id":3162,"name":"面粉","craftUnitPrice":0.002,"RequireItemCount":1,"from":"商店"}]},{"查询id":4,"名称":"饺子皮","物品类别":"烹饪材料","技艺类别":"烹饪","所需技艺等级":10,"单次所需精力":1,"提示":"<text>text=\"节日活动获取\"font=18</text>","拍卖行单价":null,"单精力最小利润":null,"单精力最大利润":null,"整管精力耗时":208000,"最小出货量":1,"最大出货量":1,"配方":[{"id":3162,"name":"面粉","craftUnitPrice":0.002,"RequireItemCount":1,"from":"商店"},{"id":3166,"name":"生粉","craftUnitPrice":0.0025,"RequireItemCount":1,"from":"商店"}]},{"查询id":60,"名称":"兄弟宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":50,"单次所需精力":22,"提示":"<text>text=\"中级训练师学习\"font=18</text>","拍卖行单价":999.99,"单精力最小利润":45.182036363636364,"单精力最大利润":45.182036363636364,"整管精力耗时":9454.545454545456,"最小出货量":1,"最大出货量":1,"配方":[{"id":2204,"name":"石冻春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":2206,"name":"土窟春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":2208,"name":"若下","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":0.5,"RequireItemCount":null,"from":"拍卖行"},{"id":3170,"name":"腱子肉","craftUnitPrice":0.18,"RequireItemCount":1,"from":"拍卖行"},{"id":3176,"name":"瘦肉","craftUnitPrice":1.8676,"RequireItemCount":2,"from":"拍卖行"}]},{"查询id":8,"名称":"节源宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":12,"单次所需精力":10,"提示":"<text>text=\"长安天都镇、扬州再来镇、洛阳风雨镇购买\"font=18</text>","拍卖行单价":12,"单精力最小利润":1.198,"单精力最大利润":1.198,"整管精力耗时":20800,"最小出货量":1,"最大出货量":1,"配方":[{"id":3162,"name":"面粉","craftUnitPrice":0.002,"RequireItemCount":2,"from":"商店"},{"id":null,"name":"碎肉","craftUnitPrice":0.57,"RequireItemCount":null,"from":"拍卖行"},{"id":2209,"name":"娆春","craftUnitPrice":0.004,"RequireItemCount":4,"from":"商店"}]},{"查询id":28,"名称":"清食小点","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":20,"单次所需精力":13,"提示":"<text>text=\"初级训练师学习\"font=18</text>","拍卖行单价":15,"单精力最小利润":1.1423076923076922,"单精力最大利润":1.1423076923076922,"整管精力耗时":16000,"最小出货量":1,"最大出货量":1,"配方":[{"id":2207,"name":"新丰酒","craftUnitPrice":0.0075,"RequireItemCount":4,"from":"商店"},{"id":3176,"name":"瘦肉","craftUnitPrice":0.06,"RequireItemCount":2,"from":"拍卖行"},{"id":null,"name":"碎肉","craftUnitPrice":0.28,"RequireItemCount":null,"from":"拍卖行"}]},{"查询id":114,"名称":"迎宾宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":70,"单次所需精力":61,"提示":"<text>text=\"战宝迦兰：非首领敌人掉落\"font=18</text>","拍卖行单价":99,"单精力最小利润":0.9075409836065573,"单精力最大利润":0.9075409836065573,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":2204,"name":"石冻春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":1830,"name":"郎官清","craftUnitPrice":20,"RequireItemCount":2,"from":"商店"},{"id":3184,"name":"肉馅","craftUnitPrice":0.57,"RequireItemCount":5,"from":"拍卖行"},{"id":null,"name":"碎肉","craftUnitPrice":1.7,"RequireItemCount":null,"from":"拍卖行"},{"id":3181,"name":"排骨","craftUnitPrice":0.02,"RequireItemCount":5,"from":"拍卖行"}]},{"查询id":85,"名称":"家乡小炒","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":64,"单次所需精力":61,"提示":"<text>text=\"南屏地图购买\"font=18</text>","拍卖行单价":50,"单精力最小利润":0.16163934426229506,"单精力最大利润":0.16163934426229506,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":1832,"name":"富水","craftUnitPrice":20,"RequireItemCount":2,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":0.05,"RequireItemCount":null,"from":"拍卖行"},{"id":3181,"name":"排骨","craftUnitPrice":0.02,"RequireItemCount":6,"from":"拍卖行"},{"id":3177,"name":"筋","craftUnitPrice":0.01,"RequireItemCount":2,"from":"拍卖行"}]},{"查询id":115,"名称":"文会宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":70,"单次所需精力":61,"提示":"<text>text=\"战宝迦兰：非首领敌人掉落\"font=18</text>","拍卖行单价":1,"单精力最小利润":-0.6834426229508196,"单精力最大利润":-0.6834426229508196,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":2206,"name":"土窟春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":1829,"name":"竹叶青","craftUnitPrice":20,"RequireItemCount":2,"from":"商店"},{"id":5010,"name":"豆腐","craftUnitPrice":0.16,"RequireItemCount":10,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":0.05,"RequireItemCount":null,"from":"拍卖行"},{"id":3179,"name":"血","craftUnitPrice":0.07,"RequireItemCount":5,"from":"拍卖行"},{"id":3177,"name":"筋","craftUnitPrice":0.01,"RequireItemCount":5,"from":"拍卖行"}]},{"查询id":3,"名称":"肉馅","物品类别":"烹饪材料","技艺类别":"烹饪","所需技艺等级":10,"单次所需精力":3,"提示":"<text>text=\"初级训练师学习\"font=18</text>","拍卖行单价":0.57,"单精力最小利润":-0.7438333333333335,"单精力最大利润":-0.5538333333333335,"整管精力耗时":69333.33333333333,"最小出货量":1,"最大出货量":2,"配方":[{"id":3180,"name":"里脊肉","craftUnitPrice":0.28,"RequireItemCount":10,"from":"拍卖行"},{"id":3158,"name":"葱","craftUnitPrice":0.0015,"RequireItemCount":1,"from":"商店"}]},{"查询id":48,"名称":"贵人早点","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":38,"单次所需精力":19,"提示":"<text>text=\"中级训练师学习\"font=18</text>","拍卖行单价":null,"单精力最小利润":null,"单精力最大利润":null,"整管精力耗时":10947.368421052632,"最小出货量":1,"最大出货量":1,"配方":[{"id":3180,"name":"里脊肉","craftUnitPrice":0.18,"RequireItemCount":4,"from":"拍卖行"},{"id":2269,"name":"肉丸","craftUnitPrice":1.7,"RequireItemCount":1,"from":"拍卖行"},{"id":3169,"name":"肠","craftUnitPrice":0.3,"RequireItemCount":1,"from":"拍卖行"},{"id":2203,"name":"西凤酒","craftUnitPrice":0.015,"RequireItemCount":4,"from":"商店"}]},{"查询id":65,"名称":"鸿门宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":50,"单次所需精力":28,"提示":"<text>text=\"长安声望亲密\"font=18</text>","拍卖行单价":999.99,"单精力最小利润":35.68693571428572,"单精力最大利润":35.68693571428572,"整管精力耗时":7428.571428571429,"最小出货量":1,"最大出货量":1,"配方":[{"id":2204,"name":"石冻春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":3171,"name":"腰子","craftUnitPrice":0.01,"RequireItemCount":4,"from":"拍卖行"},{"id":3178,"name":"五花肉","craftUnitPrice":0.0108,"RequireItemCount":1,"from":"拍卖行"},{"id":2203,"name":"西凤酒","craftUnitPrice":0.015,"RequireItemCount":1,"from":"商店"}]},{"查询id":47,"名称":"蒜泥","物品类别":"烹饪材料","技艺类别":"烹饪","所需技艺等级":36,"单次所需精力":3,"提示":"<text>text=\"中级训练师学习\"font=18</text>","拍卖行单价":0.79,"单精力最小利润":0.26133333333333336,"单精力最大利润":0.5246666666666667,"整管精力耗时":69333.33333333333,"最小出货量":1,"最大出货量":2,"配方":[{"id":3175,"name":"蒜","craftUnitPrice":0.0015,"RequireItemCount":2,"from":"商店"},{"id":3163,"name":"料酒","craftUnitPrice":0.003,"RequireItemCount":1,"from":"商店"},{"id":null,"name":"碎肉","craftUnitPrice":0.02,"RequireItemCount":null,"from":"拍卖行"}]},{"查询id":110,"名称":"团圆宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":70,"单次所需精力":61,"提示":"<text>text=\"英雄天子峰、英雄风雨稻香村、英雄日轮山城、英雄荻花宫前山：非首领敌人掉落\"font=18</text>","拍卖行单价":25,"单精力最小利润":0.05950819672131146,"单精力最大利润":0.05950819672131146,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":2204,"name":"石冻春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":1830,"name":"郎官清","craftUnitPrice":20,"RequireItemCount":1,"from":"商店"},{"id":null,"name":"碎肉","craftUnitPrice":0.0108,"RequireItemCount":null,"from":"拍卖行"},{"id":3181,"name":"排骨","craftUnitPrice":0.02,"RequireItemCount":4,"from":"拍卖行"},{"id":3169,"name":"肠","craftUnitPrice":0.3,"RequireItemCount":2,"from":"拍卖行"}]},{"查询id":142,"名称":"巴蜀·玉笛谁家听落梅","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":80,"单次所需精力":80,"提示":"<text>text=\"轩辕社声望敬重\"font=18</text>","拍卖行单价":820.06,"单精力最小利润":-0.8478500000000025,"单精力最大利润":-0.8478500000000025,"整管精力耗时":2600,"最小出货量":1,"最大出货量":1,"配方":[{"id":3180,"name":"里脊肉","craftUnitPrice":109.79,"RequireItemCount":4,"from":"拍卖行"},{"id":55617,"name":"卤料","craftUnitPrice":93,"RequireItemCount":4,"from":"拍卖行"},{"id":3176,"name":"瘦肉","craftUnitPrice":1.8676,"RequireItemCount":30,"from":"拍卖行"},{"id":2206,"name":"土窟春","craftUnitPrice":0.69,"RequireItemCount":30,"from":"商店"}]},{"查询id":120,"名称":"酱料","物品类别":"烹饪材料","技艺类别":"烹饪","所需技艺等级":20,"单次所需精力":15,"提示":"<text>text=\"高级训练师学习\"font=18</text>","拍卖行单价":18,"单精力最小利润":-0.9746666666666665,"单精力最大利润":0.2253333333333335,"整管精力耗时":13866.666666666668,"最小出货量":2,"最大出货量":3,"配方":[{"id":3177,"name":"筋","craftUnitPrice":16.29,"RequireItemCount":3,"from":"拍卖行"},{"id":null,"name":"默认","craftUnitPrice":0.07,"RequireItemCount":null,"from":"拍卖行"},{"id":5010,"name":"豆腐","craftUnitPrice":0.16,"RequireItemCount":10,"from":"商店"},{"id":2205,"name":"干和","craftUnitPrice":0.015,"RequireItemCount":10,"from":"商店"}]},{"查询id":5,"名称":"饺子馅","物品类别":"烹饪材料","技艺类别":"烹饪","所需技艺等级":10,"单次所需精力":1,"提示":"<text>text=\"节日活动获取\"font=18</text>","拍卖行单价":0.49,"单精力最小利润":-1.3811,"单精力最大利润":-0.8911,"整管精力耗时":208000,"最小出货量":1,"最大出货量":2,"配方":[{"id":3168,"name":"肥肉","craftUnitPrice":1.8676,"RequireItemCount":1,"from":"拍卖行"},{"id":null,"name":"默认","craftUnitPrice":0.5,"RequireItemCount":null,"from":"拍卖行"},{"id":3158,"name":"葱","craftUnitPrice":0.0015,"RequireItemCount":1,"from":"商店"},{"id":3165,"name":"油盐酱醋","craftUnitPrice":0.002,"RequireItemCount":1,"from":"商店"}]},{"查询id":144,"名称":"巴蜀·鸳鸯烩珍宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":80,"单次所需精力":80,"提示":"<text>text=\"轩辕社声望敬重\"font=18</text>","拍卖行单价":930,"单精力最小利润":-34.455,"单精力最大利润":-34.455,"整管精力耗时":2600,"最小出货量":1,"最大出货量":1,"配方":[{"id":3180,"name":"里脊肉","craftUnitPrice":109.79,"RequireItemCount":30,"from":"拍卖行"},{"id":55617,"name":"卤料","craftUnitPrice":93,"RequireItemCount":4,"from":"拍卖行"},{"id":null,"name":"默认","craftUnitPrice":0.02,"RequireItemCount":null,"from":"拍卖行"},{"id":2204,"name":"石冻春","craftUnitPrice":0.69,"RequireItemCount":30,"from":"商店"}]},{"查询id":119,"名称":"卤料","物品类别":"烹饪材料","技艺类别":"烹饪","所需技艺等级":20,"单次所需精力":15,"提示":"<text>text=\"高级训练师学习\"font=18</text>","拍卖行单价":93,"单精力最小利润":-41.03666666666667,"单精力最大利润":-34.83666666666667,"整管精力耗时":13866.666666666668,"最小出货量":2,"最大出货量":3,"配方":[{"id":3171,"name":"腰子","craftUnitPrice":99.9,"RequireItemCount":8,"from":"拍卖行"},{"id":3154,"name":"杂碎","craftUnitPrice":0.06,"RequireItemCount":10,"from":"拍卖行"},{"id":5009,"name":"白菜","craftUnitPrice":0.16,"RequireItemCount":10,"from":"商店"},{"id":2203,"name":"西凤酒","craftUnitPrice":0.015,"RequireItemCount":10,"from":"商店"}]},{"查询id":98,"名称":"万寿宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":70,"单次所需精力":61,"提示":"<text>text=\"城市购买\"font=18</text>","拍卖行单价":null,"单精力最小利润":null,"单精力最大利润":null,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":2206,"name":"土窟春","craftUnitPrice":0.69,"RequireItemCount":1,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":0.05,"RequireItemCount":null,"from":"拍卖行"},{"id":3181,"name":"排骨","craftUnitPrice":0.02,"RequireItemCount":8,"from":"拍卖行"},{"id":1829,"name":"竹叶青","craftUnitPrice":20,"RequireItemCount":1,"from":"商店"}]},{"查询id":83,"名称":"迎客宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":64,"单次所需精力":61,"提示":"<text>text=\"浩气盟/恶人谷/瞿塘峡地图购买\"font=18</text>","拍卖行单价":null,"单精力最小利润":null,"单精力最大利润":null,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":1831,"name":"西市腔","craftUnitPrice":20,"RequireItemCount":2,"from":"商店"},{"id":3178,"name":"五花肉","craftUnitPrice":0.0108,"RequireItemCount":8,"from":"拍卖行"},{"id":null,"name":"默认","craftUnitPrice":0.02,"RequireItemCount":null,"from":"拍卖行"}]},{"查询id":84,"名称":"昆仑禁食","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":64,"单次所需精力":61,"提示":"<text>text=\"昆仑地图购买\"font=18</text>","拍卖行单价":null,"单精力最小利润":null,"单精力最大利润":null,"整管精力耗时":3409.8360655737706,"最小出货量":1,"最大出货量":1,"配方":[{"id":1831,"name":"西市腔","craftUnitPrice":20,"RequireItemCount":2,"from":"商店"},{"id":3178,"name":"五花肉","craftUnitPrice":0.0108,"RequireItemCount":8,"from":"拍卖行"},{"id":null,"name":"默认","craftUnitPrice":0.01,"RequireItemCount":null,"from":"拍卖行"},{"id":3181,"name":"排骨","craftUnitPrice":0.02,"RequireItemCount":2,"from":"拍卖行"},{"id":3171,"name":"腰子","craftUnitPrice":0.3,"RequireItemCount":4,"from":"拍卖行"}]},{"查询id":73,"名称":"蜀味“红”宴","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":54,"单次所需精力":28,"提示":"<text>text=\"巴陵县/龙门地图购买\"font=18</text>","拍卖行单价":null,"单精力最小利润":null,"单精力最大利润":null,"整管精力耗时":7428.571428571429,"最小出货量":1,"最大出货量":1,"配方":[{"id":1829,"name":"竹叶青","craftUnitPrice":20,"RequireItemCount":1,"from":"商店"},{"id":3178,"name":"五花肉","craftUnitPrice":0.0108,"RequireItemCount":2,"from":"拍卖行"},{"id":null,"name":"默认","craftUnitPrice":0.07,"RequireItemCount":null,"from":"拍卖行"},{"id":1830,"name":"郎官清","craftUnitPrice":20,"RequireItemCount":1,"from":"商店"},{"id":null,"name":"默认","craftUnitPrice":0.3,"RequireItemCount":null,"from":"拍卖行"}]},{"查询id":40,"名称":"贵人晚膳","物品类别":"宴席","技艺类别":"烹饪","所需技艺等级":30,"单次所需精力":19,"提示":"<text>text=\"世界场景：人形敌人掉落\"font=18</text>","拍卖行单价":null,"单精力最小利润":null,"单精力最大利润":null,"整管精力耗时":10947.368421052632,"最小出货量":1,"最大出货量":1,"配方":[{"id":null,"name":"五莲泉","craftUnitPrice":0.3,"RequireItemCount":null,"from":"拍卖行"},{"id":3184,"name":"肉馅","craftUnitPrice":0.57,"RequireItemCount":1,"from":"拍卖行"},{"id":2269,"name":"肉丸","craftUnitPrice":1.7,"RequireItemCount":1,"from":"拍卖行"},{"id":2205,"name":"干和","craftUnitPrice":0.015,"RequireItemCount":4,"from":"商店"}]}]
+[
+    {
+        "查询id": 44,
+        "名称": "任侠小炒",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 32,
+        "单次所需精力": 19,
+        "提示": "<text>text=\"世界场景：人形敌人掉落\"font=18</text>",
+        "拍卖行单价": 1399.99,
+        "单精力最小利润": 73.46578947368421,
+        "单精力最大利润": 73.46578947368421,
+        "整管精力耗时": 10947.368421052632,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2204,
+                "name": "石冻春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 2206,
+                "name": "土窟春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 2208,
+                "name": "若下",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.3,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 66,
+        "名称": "百味宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 50,
+        "单次所需精力": 28,
+        "提示": "<text>text=\"洛阳声望亲密\"font=18</text>",
+        "拍卖行单价": 999.99,
+        "单精力最小利润": 35.68155,
+        "单精力最大利润": 35.68155,
+        "整管精力耗时": 7428.571428571429,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2205,
+                "name": "干和",
+                "craftUnitPrice": 0.015,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 2206,
+                "name": "土窟春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 1.8676,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3170,
+                "name": "腱子肉",
+                "craftUnitPrice": 0.18,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3178,
+                "name": "五花肉",
+                "craftUnitPrice": 0.0108,
+                "RequireItemCount": 2,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 82,
+        "名称": "洗尘宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 64,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"浩气盟/恶人谷/瞿塘峡地图购买\"font=18</text>",
+        "拍卖行单价": 998,
+        "单精力最小利润": 15.704209836065575,
+        "单精力最大利润": 15.704209836065575,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 1832,
+                "name": "富水",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 3178,
+                "name": "五花肉",
+                "craftUnitPrice": 0.0108,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 67,
+        "名称": "三头宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 50,
+        "单次所需精力": 28,
+        "提示": "<text>text=\"扬州声望亲密\"font=18</text>",
+        "拍卖行单价": 398.5,
+        "单精力最小利润": 14.139789285714286,
+        "单精力最大利润": 14.139789285714286,
+        "整管精力耗时": 7428.571428571429,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2207,
+                "name": "新丰酒",
+                "craftUnitPrice": 0.0075,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 2208,
+                "name": "若下",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.5,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3177,
+                "name": "筋",
+                "craftUnitPrice": 0.01,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3176,
+                "name": "瘦肉",
+                "craftUnitPrice": 1.8676,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3178,
+                "name": "五花肉",
+                "craftUnitPrice": 0.0108,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 97,
+        "名称": "贵妃宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 70,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"城市购买\"font=18</text>",
+        "拍卖行单价": 390,
+        "单精力最小利润": 6.051639344262295,
+        "单精力最大利润": 6.051639344262295,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2204,
+                "name": "石冻春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.05,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3181,
+                "name": "排骨",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": 8,
+                "from": "拍卖行"
+            },
+            {
+                "id": 1830,
+                "name": "郎官清",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 1,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 121,
+        "名称": "馅料",
+        "物品类别": "烹饪材料",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 20,
+        "单次所需精力": 15,
+        "提示": "<text>text=\"高级训练师学习\"font=18</text>",
+        "拍卖行单价": 21.35,
+        "单精力最小利润": 2.7278000000000002,
+        "单精力最大利润": 4.151133333333334,
+        "整管精力耗时": 13866.666666666668,
+        "最小出货量": 2,
+        "最大出货量": 3,
+        "配方": [
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 16.29,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3178,
+                "name": "五花肉",
+                "craftUnitPrice": 0.0108,
+                "RequireItemCount": 10,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3160,
+                "name": "桂花",
+                "craftUnitPrice": 0.16,
+                "RequireItemCount": 10,
+                "from": "商店"
+            },
+            {
+                "id": 2207,
+                "name": "新丰酒",
+                "craftUnitPrice": 0.0075,
+                "RequireItemCount": 10,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 71,
+        "名称": "酱",
+        "物品类别": "烹饪材料",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 52,
+        "单次所需精力": 3,
+        "提示": "<text>text=\"高级训练师学习\"font=18</text>",
+        "拍卖行单价": 6.95,
+        "单精力最小利润": 2.2113333333333336,
+        "单精力最大利润": 4.528,
+        "整管精力耗时": 69333.33333333333,
+        "最小出货量": 1,
+        "最大出货量": 2,
+        "配方": [
+            {
+                "id": 3165,
+                "name": "油盐酱醋",
+                "craftUnitPrice": 0.002,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 3175,
+                "name": "蒜",
+                "craftUnitPrice": 0.0015,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 3158,
+                "name": "葱",
+                "craftUnitPrice": 0.0015,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 3163,
+                "name": "料酒",
+                "craftUnitPrice": 0.003,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 3179,
+                "name": "血",
+                "craftUnitPrice": 0.03,
+                "RequireItemCount": 10,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "五莲泉",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 143,
+        "名称": "巴蜀·二十四桥明月夜",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 80,
+        "单次所需精力": 80,
+        "提示": "<text>text=\"轩辕社声望敬重\"font=18</text>",
+        "拍卖行单价": 910.46,
+        "单精力最小利润": 1.6527500000000004,
+        "单精力最大利润": 1.6527500000000004,
+        "整管精力耗时": 2600,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 3168,
+                "name": "肥肉",
+                "craftUnitPrice": 385.54,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 55617,
+                "name": "卤料",
+                "craftUnitPrice": 93,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.05,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2208,
+                "name": "若下",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 30,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 9,
+        "名称": "结缘宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 14,
+        "单次所需精力": 10,
+        "提示": "<text>text=\"初级训练师学习\"font=18</text>",
+        "拍卖行单价": 15,
+        "单精力最小利润": 1.2704,
+        "单精力最大利润": 1.2704,
+        "整管精力耗时": 20800,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 3184,
+                "name": "肉馅",
+                "craftUnitPrice": 0.57,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2209,
+                "name": "娆春",
+                "craftUnitPrice": 0.004,
+                "RequireItemCount": 4,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 111,
+        "名称": "欢庆宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 70,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"英雄天子峰、英雄风雨稻香村、英雄日轮山城、英雄荻花宫前山：非首领敌人掉落\"font=18</text>",
+        "拍卖行单价": 35,
+        "单精力最小利润": 0.23327868852459016,
+        "单精力最大利润": 0.23327868852459016,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2206,
+                "name": "土窟春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 1829,
+                "name": "竹叶青",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.05,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3181,
+                "name": "排骨",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 15,
+        "名称": "肉丸",
+        "物品类别": "烹饪材料",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 16,
+        "单次所需精力": 3,
+        "提示": "<text>text=\"初级训练师学习\"font=18</text>",
+        "拍卖行单价": 1.7,
+        "单精力最小利润": 0.18600000000000003,
+        "单精力最大利润": 0.18600000000000003,
+        "整管精力耗时": 69333.33333333333,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 3184,
+                "name": "肉馅",
+                "craftUnitPrice": 0.57,
+                "RequireItemCount": 2,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3162,
+                "name": "面粉",
+                "craftUnitPrice": 0.002,
+                "RequireItemCount": 1,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 4,
+        "名称": "饺子皮",
+        "物品类别": "烹饪材料",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 10,
+        "单次所需精力": 1,
+        "提示": "<text>text=\"节日活动获取\"font=18</text>",
+        "拍卖行单价": null,
+        "单精力最小利润": null,
+        "单精力最大利润": null,
+        "整管精力耗时": 208000,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 3162,
+                "name": "面粉",
+                "craftUnitPrice": 0.002,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 3166,
+                "name": "生粉",
+                "craftUnitPrice": 0.0025,
+                "RequireItemCount": 1,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 60,
+        "名称": "兄弟宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 50,
+        "单次所需精力": 22,
+        "提示": "<text>text=\"中级训练师学习\"font=18</text>",
+        "拍卖行单价": 999.99,
+        "单精力最小利润": 45.182036363636364,
+        "单精力最大利润": 45.182036363636364,
+        "整管精力耗时": 9454.545454545456,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2204,
+                "name": "石冻春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 2206,
+                "name": "土窟春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 2208,
+                "name": "若下",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.5,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3170,
+                "name": "腱子肉",
+                "craftUnitPrice": 0.18,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3176,
+                "name": "瘦肉",
+                "craftUnitPrice": 1.8676,
+                "RequireItemCount": 2,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 8,
+        "名称": "节源宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 12,
+        "单次所需精力": 10,
+        "提示": "<text>text=\"长安天都镇、扬州再来镇、洛阳风雨镇购买\"font=18</text>",
+        "拍卖行单价": 12,
+        "单精力最小利润": 1.198,
+        "单精力最大利润": 1.198,
+        "整管精力耗时": 20800,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 3162,
+                "name": "面粉",
+                "craftUnitPrice": 0.002,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "碎肉",
+                "craftUnitPrice": 0.57,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2209,
+                "name": "娆春",
+                "craftUnitPrice": 0.004,
+                "RequireItemCount": 4,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 28,
+        "名称": "清食小点",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 20,
+        "单次所需精力": 13,
+        "提示": "<text>text=\"初级训练师学习\"font=18</text>",
+        "拍卖行单价": 15,
+        "单精力最小利润": 1.1423076923076922,
+        "单精力最大利润": 1.1423076923076922,
+        "整管精力耗时": 16000,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2207,
+                "name": "新丰酒",
+                "craftUnitPrice": 0.0075,
+                "RequireItemCount": 4,
+                "from": "商店"
+            },
+            {
+                "id": 3176,
+                "name": "瘦肉",
+                "craftUnitPrice": 0.06,
+                "RequireItemCount": 2,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "碎肉",
+                "craftUnitPrice": 0.28,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 114,
+        "名称": "迎宾宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 70,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"战宝迦兰：非首领敌人掉落\"font=18</text>",
+        "拍卖行单价": 99,
+        "单精力最小利润": 0.9075409836065573,
+        "单精力最大利润": 0.9075409836065573,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2204,
+                "name": "石冻春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 1830,
+                "name": "郎官清",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 3184,
+                "name": "肉馅",
+                "craftUnitPrice": 0.57,
+                "RequireItemCount": 5,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "碎肉",
+                "craftUnitPrice": 1.7,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3181,
+                "name": "排骨",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": 5,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 85,
+        "名称": "家乡小炒",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 64,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"南屏地图购买\"font=18</text>",
+        "拍卖行单价": 50,
+        "单精力最小利润": 0.16163934426229506,
+        "单精力最大利润": 0.16163934426229506,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 1832,
+                "name": "富水",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.05,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3181,
+                "name": "排骨",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": 6,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3177,
+                "name": "筋",
+                "craftUnitPrice": 0.01,
+                "RequireItemCount": 2,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 115,
+        "名称": "文会宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 70,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"战宝迦兰：非首领敌人掉落\"font=18</text>",
+        "拍卖行单价": 1,
+        "单精力最小利润": -0.6834426229508196,
+        "单精力最大利润": -0.6834426229508196,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2206,
+                "name": "土窟春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 1829,
+                "name": "竹叶青",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 5010,
+                "name": "豆腐",
+                "craftUnitPrice": 0.16,
+                "RequireItemCount": 10,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.05,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3179,
+                "name": "血",
+                "craftUnitPrice": 0.07,
+                "RequireItemCount": 5,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3177,
+                "name": "筋",
+                "craftUnitPrice": 0.01,
+                "RequireItemCount": 5,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 3,
+        "名称": "肉馅",
+        "物品类别": "烹饪材料",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 10,
+        "单次所需精力": 3,
+        "提示": "<text>text=\"初级训练师学习\"font=18</text>",
+        "拍卖行单价": 0.57,
+        "单精力最小利润": -0.7438333333333335,
+        "单精力最大利润": -0.5538333333333335,
+        "整管精力耗时": 69333.33333333333,
+        "最小出货量": 1,
+        "最大出货量": 2,
+        "配方": [
+            {
+                "id": 3180,
+                "name": "里脊肉",
+                "craftUnitPrice": 0.28,
+                "RequireItemCount": 10,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3158,
+                "name": "葱",
+                "craftUnitPrice": 0.0015,
+                "RequireItemCount": 1,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 48,
+        "名称": "贵人早点",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 38,
+        "单次所需精力": 19,
+        "提示": "<text>text=\"中级训练师学习\"font=18</text>",
+        "拍卖行单价": null,
+        "单精力最小利润": null,
+        "单精力最大利润": null,
+        "整管精力耗时": 10947.368421052632,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 3180,
+                "name": "里脊肉",
+                "craftUnitPrice": 0.18,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2269,
+                "name": "肉丸",
+                "craftUnitPrice": 1.7,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3169,
+                "name": "肠",
+                "craftUnitPrice": 0.3,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2203,
+                "name": "西凤酒",
+                "craftUnitPrice": 0.015,
+                "RequireItemCount": 4,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 65,
+        "名称": "鸿门宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 50,
+        "单次所需精力": 28,
+        "提示": "<text>text=\"长安声望亲密\"font=18</text>",
+        "拍卖行单价": 999.99,
+        "单精力最小利润": 35.68693571428572,
+        "单精力最大利润": 35.68693571428572,
+        "整管精力耗时": 7428.571428571429,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2204,
+                "name": "石冻春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 3171,
+                "name": "腰子",
+                "craftUnitPrice": 0.01,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3178,
+                "name": "五花肉",
+                "craftUnitPrice": 0.0108,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2203,
+                "name": "西凤酒",
+                "craftUnitPrice": 0.015,
+                "RequireItemCount": 1,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 47,
+        "名称": "蒜泥",
+        "物品类别": "烹饪材料",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 36,
+        "单次所需精力": 3,
+        "提示": "<text>text=\"中级训练师学习\"font=18</text>",
+        "拍卖行单价": 0.79,
+        "单精力最小利润": 0.26133333333333336,
+        "单精力最大利润": 0.5246666666666667,
+        "整管精力耗时": 69333.33333333333,
+        "最小出货量": 1,
+        "最大出货量": 2,
+        "配方": [
+            {
+                "id": 3175,
+                "name": "蒜",
+                "craftUnitPrice": 0.0015,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 3163,
+                "name": "料酒",
+                "craftUnitPrice": 0.003,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "碎肉",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 110,
+        "名称": "团圆宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 70,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"英雄天子峰、英雄风雨稻香村、英雄日轮山城、英雄荻花宫前山：非首领敌人掉落\"font=18</text>",
+        "拍卖行单价": 25,
+        "单精力最小利润": 0.05950819672131146,
+        "单精力最大利润": 0.05950819672131146,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2204,
+                "name": "石冻春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 1830,
+                "name": "郎官清",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "碎肉",
+                "craftUnitPrice": 0.0108,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3181,
+                "name": "排骨",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3169,
+                "name": "肠",
+                "craftUnitPrice": 0.3,
+                "RequireItemCount": 2,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 142,
+        "名称": "巴蜀·玉笛谁家听落梅",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 80,
+        "单次所需精力": 80,
+        "提示": "<text>text=\"轩辕社声望敬重\"font=18</text>",
+        "拍卖行单价": 820.06,
+        "单精力最小利润": -0.8478500000000025,
+        "单精力最大利润": -0.8478500000000025,
+        "整管精力耗时": 2600,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 3180,
+                "name": "里脊肉",
+                "craftUnitPrice": 109.79,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            },
+            {
+                "id": 55617,
+                "name": "卤料",
+                "craftUnitPrice": 93,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3176,
+                "name": "瘦肉",
+                "craftUnitPrice": 1.8676,
+                "RequireItemCount": 30,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2206,
+                "name": "土窟春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 30,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 120,
+        "名称": "酱料",
+        "物品类别": "烹饪材料",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 20,
+        "单次所需精力": 15,
+        "提示": "<text>text=\"高级训练师学习\"font=18</text>",
+        "拍卖行单价": 18,
+        "单精力最小利润": -0.9746666666666665,
+        "单精力最大利润": 0.2253333333333335,
+        "整管精力耗时": 13866.666666666668,
+        "最小出货量": 2,
+        "最大出货量": 3,
+        "配方": [
+            {
+                "id": 3177,
+                "name": "筋",
+                "craftUnitPrice": 16.29,
+                "RequireItemCount": 3,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.07,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 5010,
+                "name": "豆腐",
+                "craftUnitPrice": 0.16,
+                "RequireItemCount": 10,
+                "from": "商店"
+            },
+            {
+                "id": 2205,
+                "name": "干和",
+                "craftUnitPrice": 0.015,
+                "RequireItemCount": 10,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 5,
+        "名称": "饺子馅",
+        "物品类别": "烹饪材料",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 10,
+        "单次所需精力": 1,
+        "提示": "<text>text=\"节日活动获取\"font=18</text>",
+        "拍卖行单价": 0.49,
+        "单精力最小利润": -1.3811,
+        "单精力最大利润": -0.8911,
+        "整管精力耗时": 208000,
+        "最小出货量": 1,
+        "最大出货量": 2,
+        "配方": [
+            {
+                "id": 3168,
+                "name": "肥肉",
+                "craftUnitPrice": 1.8676,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.5,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3158,
+                "name": "葱",
+                "craftUnitPrice": 0.0015,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 3165,
+                "name": "油盐酱醋",
+                "craftUnitPrice": 0.002,
+                "RequireItemCount": 1,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 144,
+        "名称": "巴蜀·鸳鸯烩珍宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 80,
+        "单次所需精力": 80,
+        "提示": "<text>text=\"轩辕社声望敬重\"font=18</text>",
+        "拍卖行单价": 930,
+        "单精力最小利润": -34.455,
+        "单精力最大利润": -34.455,
+        "整管精力耗时": 2600,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 3180,
+                "name": "里脊肉",
+                "craftUnitPrice": 109.79,
+                "RequireItemCount": 30,
+                "from": "拍卖行"
+            },
+            {
+                "id": 55617,
+                "name": "卤料",
+                "craftUnitPrice": 93,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2204,
+                "name": "石冻春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 30,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 119,
+        "名称": "卤料",
+        "物品类别": "烹饪材料",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 20,
+        "单次所需精力": 15,
+        "提示": "<text>text=\"高级训练师学习\"font=18</text>",
+        "拍卖行单价": 93,
+        "单精力最小利润": -41.03666666666667,
+        "单精力最大利润": -34.83666666666667,
+        "整管精力耗时": 13866.666666666668,
+        "最小出货量": 2,
+        "最大出货量": 3,
+        "配方": [
+            {
+                "id": 3171,
+                "name": "腰子",
+                "craftUnitPrice": 99.9,
+                "RequireItemCount": 8,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3154,
+                "name": "杂碎",
+                "craftUnitPrice": 0.06,
+                "RequireItemCount": 10,
+                "from": "拍卖行"
+            },
+            {
+                "id": 5009,
+                "name": "白菜",
+                "craftUnitPrice": 0.16,
+                "RequireItemCount": 10,
+                "from": "商店"
+            },
+            {
+                "id": 2203,
+                "name": "西凤酒",
+                "craftUnitPrice": 0.015,
+                "RequireItemCount": 10,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 98,
+        "名称": "万寿宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 70,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"城市购买\"font=18</text>",
+        "拍卖行单价": null,
+        "单精力最小利润": null,
+        "单精力最大利润": null,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 2206,
+                "name": "土窟春",
+                "craftUnitPrice": 0.69,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.05,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3181,
+                "name": "排骨",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": 8,
+                "from": "拍卖行"
+            },
+            {
+                "id": 1829,
+                "name": "竹叶青",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 1,
+                "from": "商店"
+            }
+        ]
+    },
+    {
+        "查询id": 83,
+        "名称": "迎客宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 64,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"浩气盟/恶人谷/瞿塘峡地图购买\"font=18</text>",
+        "拍卖行单价": null,
+        "单精力最小利润": null,
+        "单精力最大利润": null,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 1831,
+                "name": "西市腔",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 3178,
+                "name": "五花肉",
+                "craftUnitPrice": 0.0108,
+                "RequireItemCount": 8,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 84,
+        "名称": "昆仑禁食",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 64,
+        "单次所需精力": 61,
+        "提示": "<text>text=\"昆仑地图购买\"font=18</text>",
+        "拍卖行单价": null,
+        "单精力最小利润": null,
+        "单精力最大利润": null,
+        "整管精力耗时": 3409.8360655737706,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 1831,
+                "name": "西市腔",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 2,
+                "from": "商店"
+            },
+            {
+                "id": 3178,
+                "name": "五花肉",
+                "craftUnitPrice": 0.0108,
+                "RequireItemCount": 8,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.01,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3181,
+                "name": "排骨",
+                "craftUnitPrice": 0.02,
+                "RequireItemCount": 2,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3171,
+                "name": "腰子",
+                "craftUnitPrice": 0.3,
+                "RequireItemCount": 4,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 73,
+        "名称": "蜀味“红”宴",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 54,
+        "单次所需精力": 28,
+        "提示": "<text>text=\"巴陵县/龙门地图购买\"font=18</text>",
+        "拍卖行单价": null,
+        "单精力最小利润": null,
+        "单精力最大利润": null,
+        "整管精力耗时": 7428.571428571429,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": 1829,
+                "name": "竹叶青",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": 3178,
+                "name": "五花肉",
+                "craftUnitPrice": 0.0108,
+                "RequireItemCount": 2,
+                "from": "拍卖行"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.07,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 1830,
+                "name": "郎官清",
+                "craftUnitPrice": 20,
+                "RequireItemCount": 1,
+                "from": "商店"
+            },
+            {
+                "id": null,
+                "name": "默认",
+                "craftUnitPrice": 0.3,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            }
+        ]
+    },
+    {
+        "查询id": 40,
+        "名称": "贵人晚膳",
+        "物品类别": "宴席",
+        "技艺类别": "烹饪",
+        "所需技艺等级": 30,
+        "单次所需精力": 19,
+        "提示": "<text>text=\"世界场景：人形敌人掉落\"font=18</text>",
+        "拍卖行单价": null,
+        "单精力最小利润": null,
+        "单精力最大利润": null,
+        "整管精力耗时": 10947.368421052632,
+        "最小出货量": 1,
+        "最大出货量": 1,
+        "配方": [
+            {
+                "id": null,
+                "name": "五莲泉",
+                "craftUnitPrice": 0.3,
+                "RequireItemCount": null,
+                "from": "拍卖行"
+            },
+            {
+                "id": 3184,
+                "name": "肉馅",
+                "craftUnitPrice": 0.57,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2269,
+                "name": "肉丸",
+                "craftUnitPrice": 1.7,
+                "RequireItemCount": 1,
+                "from": "拍卖行"
+            },
+            {
+                "id": 2205,
+                "name": "干和",
+                "craftUnitPrice": 0.015,
+                "RequireItemCount": 4,
+                "from": "商店"
+            }
+        ]
+    }
+]

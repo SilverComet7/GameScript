@@ -78,7 +78,7 @@ async function insertMongodb() {
 async function getItemInfo(type, itemId) {
   const res = await axios.get(`https://node.jx3box.com/manufacture/${type}/${itemId}?client=origin`)
   const resJson = res.data
-  if (craftNameMap[type].excludeStr.includes(resJson['szTip'])) return;
+  if (craftNameMap[type].excludeStr.some(e => resJson['szTip'].includes(e))) return;
   const genItemInfo = {
     查询id: itemId,
     名称: resJson['Name'],
@@ -90,7 +90,6 @@ async function getItemInfo(type, itemId) {
     拍卖行单价: undefined,
     单精力最小利润: undefined,
     单精力最大利润: undefined,
-    // 单次制造耗时:resJson["PrepareFrame"],
     整管精力耗时: 2600 / resJson["CostStamina"] * resJson["PrepareFrame"],
     最小出货量: resJson[`CreateItemMin1`],
     最大出货量: resJson[`CreateItemMax1`],
@@ -113,11 +112,6 @@ async function getItemInfo(type, itemId) {
       genItemInfo["拍卖行单价"] = unitPrice
       getPriceAll = CreateItemMin * unitPrice   // 最小出货量
       getMaxPriceAll = CreateItemMax * unitPrice   // 最小出货量
-      // if (CreateItemMin === CreateItemMax) {
-      //   getPriceAll = CreateItemMin * unitPrice
-      // } else {
-      //   getPriceAll = [unitPrice * CreateItemMin, unitPrice * CreateItemMax]
-      // }
     }
     // 材料成本计算  区分哪些是商店哪些是拍卖行
     RequireItemType = resJson[`RequireItemType${index}`];
