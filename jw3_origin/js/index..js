@@ -17,7 +17,7 @@ const craftSchema = new mongoose.Schema(
   }
 );
 
-const craft = mongoose.model('craft', craftSchema, 'medicine');
+const craft = mongoose.model('craft', craftSchema, 'craft');
 
 // 查看单精力可获得最高利润   查看最近30天价格趋势  最近上架速度
 
@@ -262,7 +262,7 @@ async function getItemLog(obj, itemId) {
     obj['平均成交量'] += element.SampleSize
     obj['平均价格'] += element.AvgPrice / 10000
     obj['最低价'] = element.LowestPrice < obj['最低价'] ? element.LowestPrice : obj['最低价']
-    obj['最高价'] = element.HighestPrice < obj['最高价'] ? element.HighestPrice : obj['最高价']
+    obj['最高价'] = element.HighestPrice > obj['最高价'] ? element.HighestPrice : obj['最高价']
   });
   obj['平均成交量'] = obj['平均成交量'] / 5
   obj['平均价格'] = obj['平均价格'] / 5
@@ -297,10 +297,9 @@ async function getItemList(type = "founding") {
   const thisTypeItemMap = filterQueryItem.map(async element => {
     return await getItemInfo(type, element.ID)
   });
-  const thisTypeItemMapInFilter = thisTypeItemMap.filter(Boolean)
-  Promise.all(thisTypeItemMapInFilter).then(async res => {
-    console.log(res);
-    await insertMongodb(res)
+  Promise.all(thisTypeItemMap).then(async res => {
+    console.log(res.filter(Boolean));
+    await insertMongodb(res.filter(Boolean))
   })
   return thisTypeItemMap
 }
@@ -324,6 +323,6 @@ function sortAndWrite(type) {
 
 // getItemInfo("medicine", 94)
 
-getItemList("medicine")
+// getItemList("medicine")
 
-// getAllCraft()
+getAllCraft()
