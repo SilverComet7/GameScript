@@ -1,0 +1,232 @@
+[
+    {
+        "ProfessionID": "4",
+        "BelongID": "10",
+        "BelongName": "回复类食品"
+    },
+    {
+        "ProfessionID": "4",
+        "BelongID": "20",
+        "BelongName": "辅助类食品"
+    },
+    {
+        "ProfessionID": "4",
+        "BelongID": "30",
+        "BelongName": "增强类食品"
+    },
+    {
+        "ProfessionID": "4",
+        "BelongID": "40",
+        "BelongName": "特殊食品"
+    },
+    {
+        "ProfessionID": "4",
+        "BelongID": "50",
+        "BelongName": "烹饪材料"
+    },
+    {
+        "ProfessionID": "4",
+        "BelongID": "60",
+        "BelongName": "宴席"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "10",
+        "BelongName": "帽子"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "20",
+        "BelongName": "上衣"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "30",
+        "BelongName": "裤子"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "40",
+        "BelongName": "鞋"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "50",
+        "BelongName": "腰带"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "60",
+        "BelongName": "护手"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "70",
+        "BelongName": "背包"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "80",
+        "BelongName": "制品"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "90",
+        "BelongName": "礼品"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "100",
+        "BelongName": "其他"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "110",
+        "BelongName": "印染"
+    },
+    {
+        "ProfessionID": "5",
+        "BelongID": "120",
+        "BelongName": "刺绣"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "10",
+        "BelongName": "笔"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "20",
+        "BelongName": "棍"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "30",
+        "BelongName": "剑"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "40",
+        "BelongName": "枪"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "50",
+        "BelongName": "双兵"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "60",
+        "BelongName": "帽子"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "70",
+        "BelongName": "上衣"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "80",
+        "BelongName": "腰带"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "90",
+        "BelongName": "护手"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "100",
+        "BelongName": "挂件"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "110",
+        "BelongName": "消耗品"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "120",
+        "BelongName": "制品"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "130",
+        "BelongName": "礼品"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "140",
+        "BelongName": "马具"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "150",
+        "BelongName": "裤子"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "160",
+        "BelongName": "笛子"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "170",
+        "BelongName": "鞋子"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "180",
+        "BelongName": "千机匣"
+    },
+    {
+        "ProfessionID": "6",
+        "BelongID": "190",
+        "BelongName": "弯刀"
+    },
+    {
+        "ProfessionID": "7",
+        "BelongID": "10",
+        "BelongName": "回复类药品"
+    },
+    {
+        "ProfessionID": "7",
+        "BelongID": "20",
+        "BelongName": "辅助类药品"
+    },
+    {
+        "ProfessionID": "7",
+        "BelongID": "30",
+        "BelongName": "增强类药品"
+    },
+    {
+        "ProfessionID": "7",
+        "BelongID": "40",
+        "BelongName": "特殊药品"
+    },
+    {
+        "ProfessionID": "7",
+        "BelongID": "50",
+        "BelongName": "医术材料"
+    },
+    {
+        "ProfessionID": "14",
+        "BelongID": "10",
+        "BelongName": "特殊物品"
+    },
+    {
+        "ProfessionID": "14",
+        "BelongID": "20",
+        "BelongName": "五行炼化"
+    },
+    {
+        "ProfessionID": "14",
+        "BelongID": "30",
+        "BelongName": "装备炼化"
+    },
+    {
+        "ProfessionID": "14",
+        "BelongID": "40",
+        "BelongName": "装备祭炼"
+    }
+]
