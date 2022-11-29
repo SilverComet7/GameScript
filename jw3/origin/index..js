@@ -55,9 +55,10 @@ async function getItemRecentlyPrice(itemId) {
     `https://next2.jx3box.com/api/item-price/${itemId}/detail?server=%E7%BC%98%E8%B5%B7%E7%A8%BB%E9%A6%99&limit=15`
   );
   const unitPrice = itemPrice.data.data.prices?.[0]?.unit_price / 10000;
+  const n_count = itemPrice.data.data.prices?.[0]?.n_count;
   priceCache[itemId] = unitPrice;
   // console.log(`from拍卖行${itemId}:${unitPrice}`);
-  return unitPrice;
+  return { unitPrice, n_count };
 }
 
 // 获取物品名称
@@ -94,6 +95,7 @@ async function getItemInfo(type, itemId) {
       单次所需精力: resJson["CostStamina"],
       提示: resJson["szTip"],
       拍卖行单价: undefined,
+      拍卖行上架的数量: undefined,
       单精力最小利润: undefined,
       单精力最大利润: undefined,
       单次制作所需成本: undefined,
@@ -124,8 +126,9 @@ async function getItemInfo(type, itemId) {
       const CreateItemMax = resJson[`CreateItemMax${index}`];
       if (CreateItemIndex) {
         const CreatedItemId = `${CreateItemType}_${CreateItemIndex}`;
-        const unitPrice = await getItemRecentlyPrice(CreatedItemId);
+        const { unitPrice, n_count } = await getItemRecentlyPrice(CreatedItemId);
         genItemInfo["拍卖行单价"] = unitPrice;
+        genItemInfo["拍卖行上架的数量"] = n_count;
         getMinPriceAll = CreateItemMin * unitPrice * 0.95; // 最小价格  拍卖行5%手续费  + 保管费用
         getMaxPriceAll = CreateItemMax * unitPrice * 0.95; // 最大价格  拍卖行5%手续费  + 保管费用
         await getItemLog(genItemInfo["最近5天"], CreatedItemId);
@@ -144,9 +147,11 @@ async function getItemInfo(type, itemId) {
         let craftUnitPrice = craftFromNPC?.Price / 10000; //  商店中能买到的
         let craftItemName = craftFromNPC?.Name;
         if (!craftFromNPC?.Price) {
-          // 找材料的拍卖行价格   物品名字
           const RequireItemId = `${RequireItemType}_${RequireItemIndex}`;
-          craftUnitPrice = await getItemRecentlyPrice(RequireItemId);
+          // 找材料的拍卖行价格  
+          const { unitPrice } = await getItemRecentlyPrice(RequireItemId);
+          craftUnitPrice = unitPrice
+          // 找材料的名字
           craftItemName = await getItemName(RequireItemIndex);
         }
         genItemInfo["配方"].push({
@@ -169,7 +174,7 @@ async function getItemInfo(type, itemId) {
     genItemInfo["整管精力RMB"] = (oneCostMinPrice * 2600) / 190; // 1:190  最小利润计算
     genItemInfo["单次制作所需成本"] = buyPriceAll;
     genItemInfo["整管精力需要成本"] = buyPriceAll * costNumber;
-    // console.log(genItemInfo);
+    console.log(genItemInfo);
     return genItemInfo;
   } catch (error) {
     console.log(error);
@@ -197,8 +202,8 @@ function getAllCraft() {
   Object.keys(craftNameMap).map(async (item) => await getItemList(item));
 }
 
-// getItemInfo("medicine", 94)
+getItemInfo("medicine", 94)
 
 // getItemList("medicine")
 
-getAllCraft();
+// getAllCraft();

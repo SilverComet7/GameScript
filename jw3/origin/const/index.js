@@ -1,4 +1,4 @@
-export const craftNameMap = {
+ const craftNameMap = {
   founding: {
     name: "铸造",
     minCost: 15,
@@ -27,7 +27,7 @@ export const craftNameMap = {
     excludeStr: ["节日", "掉落", "购买"],
   },
 };
-export const itemNameCache = {
+ const itemNameCache = {
   973: "谷帘泉",
   974: "趵突泉",
   975: "古井泉",
@@ -127,4 +127,9 @@ export const itemNameCache = {
   55627: "沉香木",
   55933: "寒凝砂",
   null: "默认",
+};
+
+module.exports = {
+  craftNameMap,
+  itemNameCache,
 };
