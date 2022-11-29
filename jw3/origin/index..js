@@ -2,6 +2,7 @@ const axios = require("axios");
 const craftList = require("./json/craft.json");
 const belongList = require("./json/belongTypeList.json");
 const mongoose = require("mongoose");
+const { itemNameCache, craftNameMap } = require("./const");
 
 const craftSchema = new mongoose.Schema(
   {},
@@ -11,145 +12,15 @@ const craftSchema = new mongoose.Schema(
     strict: false,
   }
 );
-const craft = mongoose.model("craft", craftSchema, "craft");
+
+const craft = mongoose.model("craft", craftSchema, "craft-origin-2022-11-19");
+
 async function insertMongodb(resArr) {
   await mongoose.connect("mongodb://127.0.0.1:27017/jw3");
   craft.insertMany(resArr).then(() => console.log("success"));
 }
 
-const craftNameMap = {
-  founding: {
-    name: "铸造",
-    minCost: 15,
-    minRequireLevel: 15,
-    BelongID: [110, 120],
-    excludeStr: ["节日", "掉落", "购买"],
-  },
-  cooking: {
-    name: "烹饪", // 4
-    minCost: 15,
-    minRequireLevel: 15,
-    BelongID: [50, 60],
-    excludeStr: ["节日", "掉落", "购买"],
-  },
-  medicine: {
-    name: "制药",
-    minCost: 15,
-    minRequireLevel: 15,
-    BelongID: [40, 50],
-    excludeStr: ["节日", "掉落", "购买"],
-  },
-  tailoring: {
-    name: "缝纫",
-    minRequireLevel: 15,
-    BelongID: [80],
-    excludeStr: ["节日", "掉落", "购买"],
-  },
-};
 const priceCache = {};
-const itemNameCache = {
-  973: "谷帘泉",
-  974: "趵突泉",
-  975: "古井泉",
-  976: "天山雪水",
-  979: "五莲泉",
-  985: "虎皮",
-  986: "狼皮",
-  987: "猪皮",
-  988: "熊皮",
-  1828: "隐月线",
-  1829: "竹叶青",
-  1832: "富水",
-  2204: "石冻春",
-  2269: "肉丸",
-  2468: "百花布",
-  2625: "精铁锭",
-  2651: "龙台磨石",
-  2652: "玄铁锭",
-  2667: "玉钢锭",
-  3010: "露水",
-  3012: "芍药",
-  3016: "相思子",
-  3018: "车前草",
-  3020: "天名精",
-  3024: "五味子",
-  3025: "金银花",
-  3029: "枸杞",
-  3031: "远志",
-  3032: "仙茅",
-  3154: "杂碎",
-  3168: "肥肉",
-  3169: "肠",
-  3170: "腱子肉",
-  3171: "腰子",
-  3176: "瘦肉",
-  3177: "筋",
-  3178: "五花肉",
-  3179: "血",
-  3180: "里脊肉",
-  3181: "排骨",
-  3184: "肉馅",
-  3252: "粗布",
-  3254: "细布",
-  3257: "棉布",
-  3259: "方纹绫",
-  3263: "丝绸",
-  3264: "鱼口绫",
-  3270: "彩锦",
-  3271: "白编绫",
-  3278: "绫罗",
-  3279: "水波绫",
-  3288: "珍珠缀放",
-  3295: "轻容纱",
-  3296: "方棋绫",
-  3299: "霓霞线",
-  3302: "千年冰芯",
-  3306: "巨兽毛皮",
-  3308: "天蛛丝",
-  3316: "铜锭",
-  3319: "锡锭",
-  3320: "青铜锭",
-  3323: "紫背铅",
-  3326: "丹砂",
-  3328: "锌锭",
-  3334: "生铁锭",
-  3335: "熟铁锭",
-  3337: "钢锭",
-  3339: "银砂",
-  3340: "银锭",
-  3341: "密银锭",
-  3343: "红铜",
-  3344: "锡砂",
-  3345: "草节铅",
-  3346: "炉甘石",
-  3347: "砂铁",
-  3348: "银礁",
-  3539: "金甲片",
-  3542: "貂皮",
-  3543: "雨花石",
-  5039: "百编皮革",
-  9033: "真龙谱",
-  9445: "赤铁矿石",
-  9447: "月锡矿石",
-  9692: "麦冬",
-  9699: "虫草",
-  55606: "赤铁锭",
-  55607: "精钢锭",
-  55608: "粗锡锭",
-  55609: "月锡锭",
-  55610: "五色石",
-  55614: "药汤",
-  55617: "卤料",
-  55620: "玛瑙",
-  55621: "银鳞",
-  55623: "人参",
-  55624: "猫眼石",
-  55627: "沉香木",
-  55933: "寒凝砂",
-  null: "默认",
-};
-
-
 
 // 获取物品拍卖行交易日志
 async function getItemLog(obj, itemId) {
@@ -325,7 +196,6 @@ async function getItemList(type = "founding") {
 function getAllCraft() {
   Object.keys(craftNameMap).map(async (item) => await getItemList(item));
 }
-
 
 // getItemInfo("medicine", 94)
 
