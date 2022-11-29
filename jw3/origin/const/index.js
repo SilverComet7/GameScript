@@ -1,33 +1,37 @@
- const craftNameMap = {
-  founding: {
-    name: "铸造",
-    minCost: 15,
-    minRequireLevel: 15,
-    BelongID: [110, 120],
-    excludeStr: ["节日", "掉落", "购买"],
-  },
+const craftNameMap = {
+
   cooking: {
     name: "烹饪", // 4
     minCost: 15,
-    minRequireLevel: 15,
-    BelongID: [50, 60],
+    minRequireLevel: 20,
+    BelongID: [],
+    // BelongID: [50, 60],
     excludeStr: ["节日", "掉落", "购买"],
   },
-  medicine: {
+  tailoring: {  // 5
+    name: "缝纫",
+    minCost: undefined,
+    minRequireLevel: undefined,
+    BelongID: [80, 90],
+    excludeStr: ["节日", "掉落", "购买"],
+  },
+  founding: {  // 6
+    name: "铸造",
+    minCost: undefined,
+    minRequireLevel: undefined,
+    BelongID: [110, 120],
+    excludeStr: ["节日", "掉落", "购买"],
+  },
+  medicine: {  // 7
     name: "制药",
     minCost: 15,
-    minRequireLevel: 15,
-    BelongID: [40, 50],
-    excludeStr: ["节日", "掉落", "购买"],
-  },
-  tailoring: {
-    name: "缝纫",
-    minRequireLevel: 15,
-    BelongID: [80],
+    minRequireLevel: 20,
+    BelongID: [],
+    // BelongID: [40, 50],
     excludeStr: ["节日", "掉落", "购买"],
   },
 };
- const itemNameCache = {
+const itemNameCache = {
   973: "谷帘泉",
   974: "趵突泉",
   975: "古井泉",
@@ -126,7 +130,6 @@
   55624: "猫眼石",
   55627: "沉香木",
   55933: "寒凝砂",
-  null: "默认",
 };
 
 module.exports = {

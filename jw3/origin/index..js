@@ -20,14 +20,17 @@ async function insertMongodb(resArr) {
   craft.insertMany(resArr).then(() => console.log("success"));
 }
 
-const priceCache = {};
+
+// 5_xxxx:{unitPric}
+
+const priceCountCache = {};
 
 // 获取物品拍卖行交易日志
 async function getItemLog(obj, itemId) {
   const itemIdLog = await axios.get(
     `https://next2.jx3box.com/api/item-price/${itemId}/logs?server=%E7%BC%98%E8%B5%B7%E7%A8%BB%E9%A6%99`
   );
-  console.log(itemIdLog);
+  // console.log(itemIdLog);
   const logs = itemIdLog.data.data.logs?.slice(-5);
   if (!logs.length) return;
   obj["最低价"] = logs[0].LowestPrice;
@@ -48,15 +51,21 @@ async function getItemLog(obj, itemId) {
   obj["最高价"] = obj["最高价"] / 10000;
 }
 
-// 获取拍卖行最近上架的价格记录
+// 获取拍卖行最近一次上架的价格 / 当时的拍卖行的数量记录
 async function getItemRecentlyPrice(itemId) {
-  if (priceCache[itemId]) return priceCache[itemId];
+  if (priceCountCache[itemId]) {
+    const { unitPrice, n_count } = priceCountCache[itemId]
+    return { unitPrice, n_count };
+  }
   const itemPrice = await axios.get(
     `https://next2.jx3box.com/api/item-price/${itemId}/detail?server=%E7%BC%98%E8%B5%B7%E7%A8%BB%E9%A6%99&limit=15`
   );
   const unitPrice = itemPrice.data.data.prices?.[0]?.unit_price / 10000;
   const n_count = itemPrice.data.data.prices?.[0]?.n_count;
-  priceCache[itemId] = unitPrice;
+  priceCountCache[itemId] = {
+    unitPrice,
+    n_count
+  };
   // console.log(`from拍卖行${itemId}:${unitPrice}`);
   return { unitPrice, n_count };
 }
@@ -78,8 +87,8 @@ async function getItemInfo(type, itemId) {
       `https://node.jx3box.com/manufacture/${type}/${itemId}?client=origin`
     );
     const resJson = res.data;
-    if (craftNameMap[type].excludeStr.some((e) => resJson["szTip"].includes(e)))
-      return;
+    if (craftNameMap[type].excludeStr.length && craftNameMap[type].excludeStr.some((e) => resJson["szTip"].includes(e))) return;
+    if (craftNameMap[type].minCost > resJson["CostStamina"]) return;
     const costNumber = 2600 / resJson["CostStamina"]; // 一管精力可打造该物品次数
 
     const genItemInfo = {
@@ -91,7 +100,7 @@ async function getItemInfo(type, itemId) {
           item.ProfessionID == resJson["ProfessionID"]
       )?.BelongName,
       技艺类别: craftNameMap[resJson["__TabType"]]?.name,
-      所需技艺等级: resJson["RequireLevel"],
+      所需技艺等级: resJson["nLevel"],
       单次所需精力: resJson["CostStamina"],
       提示: resJson["szTip"],
       拍卖行单价: undefined,
@@ -102,17 +111,14 @@ async function getItemInfo(type, itemId) {
       整管精力RMB: undefined,
       整管精力需要成本: undefined,
       整管精力耗时: costNumber * resJson["PrepareFrame"], // 80 PrepareFrame === 5S
-      // 最小出货量: resJson[`CreateItemMin1`],
-      // 最大出货量: resJson[`CreateItemMax1`],
       配方: [],
-      最近5天: {
-        // 5.5天刚好整管精力回满，要在期间内一轮售卖结束
-        // 平均成交量: 0, // 判断市场需求量,  预计本身赚取其中20%
+      最近5天: {  // 5.5天刚好整管精力回满，要在期间内一轮售卖结束
+        平均成交量: 0, // 通过交易样本量判断市场需求量,  预计本身赚取其中20%
         平均价格: 0, // 判断当前价格是否高于均价  有降价可能性
         最低价: 0,
         最高价: 0,
       },
-      // 市场5天百分之20体量可容纳N个满精账号制作该物品: 0,
+      市场5天百分之20体量可容纳N个满精账号制作该物品: 0,
       // 物品使用场景:undefined,
     };
     let getMinPriceAll = 0;
@@ -174,7 +180,7 @@ async function getItemInfo(type, itemId) {
     genItemInfo["整管精力RMB"] = (oneCostMinPrice * 2600) / 190; // 1:190  最小利润计算
     genItemInfo["单次制作所需成本"] = buyPriceAll;
     genItemInfo["整管精力需要成本"] = buyPriceAll * costNumber;
-    console.log(genItemInfo);
+    // console.log(genItemInfo);
     return genItemInfo;
   } catch (error) {
     console.log(error);
@@ -185,14 +191,16 @@ async function getItemList(type = "founding") {
   const res = await axios.get(
     `https://node.jx3box.com/manufactures?client=origin&type=${type}&mode=simple`
   );
-  const filterQueryItem = res.data.filter((e) =>
+  const filterQueryItem = craftNameMap[type].BelongID.length ? res.data.filter((e) =>
     craftNameMap[type].BelongID.includes(e.Belong)
-  );
-  const thisTypeItemMap = filterQueryItem.map(async (element) => {
+  ) : res.data  // Belong 分类过滤
+  const thisTypeItemMap = filterQueryItem.filter(item => {
+    if (craftNameMap[type].minRequireLevel) return item["nLevel"] > craftNameMap[type].minRequireLevel; // 最小制作等级过滤
+    return item
+  }).map(async (element) => {
     return await getItemInfo(type, element.ID);
   });
   Promise.all(thisTypeItemMap).then(async (res) => {
-    console.log(res.filter(Boolean));
     await insertMongodb(res.filter(Boolean));
   });
   return thisTypeItemMap;
@@ -202,8 +210,8 @@ function getAllCraft() {
   Object.keys(craftNameMap).map(async (item) => await getItemList(item));
 }
 
-getItemInfo("medicine", 94)
+// getItemInfo("medicine", 94)
 
-// getItemList("medicine")
+// getItemList("founding")
 
-// getAllCraft();
+getAllCraft();
