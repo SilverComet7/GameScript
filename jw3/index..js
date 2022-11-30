@@ -14,11 +14,7 @@ async function insertMongodb(resArr) {
       strict: false,
     }
   );
-  const craft = mongoose.model(
-    "craft",
-    craftSchema,
-    `craft-origin-${moment().format()}`
-  );
+  const craft = mongoose.model("craft", craftSchema, `craft-origin-${moment().format()}`);
   await mongoose.connect("mongodb://127.0.0.1:27017/jw3");
   craft.insertMany(resArr).then(() => console.log("success"));
 }
@@ -221,6 +217,6 @@ function getAllCraft() {
 
 // getItemInfo("medicine", 94)
 
-getItemList("founding");
+getItemList("founding")
 
 // getAllCraft();

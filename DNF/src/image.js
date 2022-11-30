@@ -1,6 +1,8 @@
 const dm = require("dm.dll");
 
 // console.log(dm.dll.findPicE);
+dm.bindWindow
+
 const image = dm.findPic(0, 0, 1920, 1080, "test.bmp", "", 0.6);
 const imageOriginXY = {
   x: 0,

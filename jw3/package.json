@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.2.0",
-    "mongoose": "^6.7.3"
+    "mongoose": "^6.7.3",
+    "moment": "^2.29.4"
   }
 }
