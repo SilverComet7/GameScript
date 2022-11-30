@@ -75,8 +75,10 @@ async function getItemInfo(type, itemId) {
       单次所需精力: resJson["CostVigor"],
       提示: resJson["szTip"],
       拍卖行单价: undefined,
+      最小上架单价:undefined,
       单精力最小利润: undefined,
       单精力最大利润: undefined,
+      // 评价利润:undefined,
       单次制作所需成本: undefined,
       整管精力RMB: undefined,
       整管精力需要成本: undefined,
@@ -147,8 +149,9 @@ async function getItemInfo(type, itemId) {
       (getMaxPriceAll - buyPriceAll) / resJson["CostVigor"];
     genItemInfo["单精力最小利润"] = oneCostMinPrice;
     genItemInfo["单精力最大利润"] = oneCostMaxPrice;
-    genItemInfo["整管精力RMB"] = (oneCostMinPrice * 2600) / 190; // 1:190  最小利润计算
+    genItemInfo["整管精力RMB"] = (oneCostMinPrice * 2600) / 722; //  最小利润计算
     genItemInfo["单次制作所需成本"] = buyPriceAll;
+    genItemInfo["最小上架单价"] = buyPriceAll / 0.95;
     genItemInfo["整管精力需要成本"] = buyPriceAll * costNumber;
     console.log(genItemInfo);
     return genItemInfo;
@@ -180,6 +183,6 @@ function getAllCraft() {
 
 // getItemInfo("founding", 268);
 
-// getItemList("founding")
+getItemList("founding")
 
-getAllCraft();
+// getAllCraft();

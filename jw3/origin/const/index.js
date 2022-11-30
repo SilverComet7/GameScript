@@ -1,8 +1,7 @@
 const craftNameMap = {
-
   cooking: {
     name: "烹饪", // 4
-    minCost: 15,
+    minCost: 5,
     minRequireLevel: 20,
     BelongID: [],
     // BelongID: [50, 60],
@@ -24,11 +23,12 @@ const craftNameMap = {
   },
   medicine: {  // 7
     name: "制药",
-    minCost: 15,
-    minRequireLevel: 20,
-    BelongID: [],
-    // BelongID: [40, 50],
+    // minCost: 5,
+    // minRequireLevel: 20,
+    // BelongID: [],
+    BelongID: [40, 50],
     excludeStr: ["节日", "掉落", "购买"],
+    specialMaterial: ['']
   },
 };
 const itemNameCache = {

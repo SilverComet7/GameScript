@@ -5,25 +5,25 @@ const mongoose = require("mongoose");
 const { itemNameCache, craftNameMap } = require("./const");
 const moment = require("moment");
 
+const priceCountCache = {};
+const craftSchema = new mongoose.Schema(
+  {},
+  {
+    versionKey: false,
+    timestamps: true,
+    strict: false,
+  }
+);
+const craft = mongoose.model(
+  "craft",
+  craftSchema,
+  `craft-origin-${moment().format()}`
+);
 async function insertMongodb(resArr) {
-  const craftSchema = new mongoose.Schema(
-    {},
-    {
-      versionKey: false,
-      timestamps: true,
-      strict: false,
-    }
-  );
-  const craft = mongoose.model(
-    "craft",
-    craftSchema,
-    `craft-origin-${moment().format()}`
-  );
   await mongoose.connect("mongodb://127.0.0.1:27017/jw3");
   craft.insertMany(resArr).then(() => console.log("success"));
 }
 
-const priceCountCache = {};
 
 // 获取物品拍卖行交易日志
 async function getItemLog(obj, itemId) {
@@ -31,7 +31,7 @@ async function getItemLog(obj, itemId) {
     `https://next2.jx3box.com/api/item-price/${itemId}/logs?server=%E7%BC%98%E8%B5%B7%E7%A8%BB%E9%A6%99`
   );
   const logs = itemIdLog.data.data.logs?.slice(-5);
-  if (!logs.length) return;
+  if (!logs?.length) return;
   obj["最低价"] = logs[0].LowestPrice;
   obj["最高价"] = logs[0].HighestPrice;
   logs.forEach((element) => {
@@ -106,13 +106,14 @@ async function getItemInfo(type, itemId) {
       所需技艺等级: resJson["nLevel"],
       单次所需精力: resJson["CostStamina"],
       提示: resJson["szTip"],
-      拍卖行单价: undefined,
+      拍卖行最近上架单价: undefined,
       拍卖行上架的数量: undefined,
       单精力最小利润: undefined,
       单精力最大利润: undefined,
       单次制作所需成本: undefined,
       整管精力RMB: undefined,
       整管精力需要成本: undefined,
+      最小上架回本单价:undefined,
       整管精力耗时: costNumber * resJson["PrepareFrame"], // 80 PrepareFrame === 5S
       配方: [],
       最近5天: {
@@ -139,9 +140,9 @@ async function getItemInfo(type, itemId) {
         const { unitPrice, n_count } = await getItemRecentlyPrice(
           CreatedItemId
         );
-        genItemInfo["拍卖行单价"] = unitPrice;
+        genItemInfo["拍卖行最近上架单价"] = unitPrice;
         genItemInfo["拍卖行上架的数量"] = n_count;
-        getMinPriceAll = CreateItemMin * unitPrice * 0.95; // 最小价格  拍卖行5%手续费  + 保管费用
+        getMinPriceAll = CreateItemMin * unitPrice * 0.95;   // 最小价格  拍卖行5%手续费  + 保管费用
         getMaxPriceAll = CreateItemMax * unitPrice * 0.95; // 最大价格  拍卖行5%手续费  + 保管费用
         await getItemLog(genItemInfo["最近5天"], CreatedItemId);
         genItemInfo["市场5天百分之20体量可容纳N个满精账号制作该物品"] =
@@ -175,18 +176,20 @@ async function getItemInfo(type, itemId) {
           整管精力需要数量: costNumber * RequireItemCount,
         });
         buyPriceAll += RequireItemCount * craftUnitPrice;
+        
       }
     }
     const oneCostMinPrice =
-      (getMinPriceAll - buyPriceAll) / resJson["CostStamina"];
+    (getMinPriceAll - buyPriceAll) / resJson["CostStamina"];
     const oneCostMaxPrice =
-      (getMaxPriceAll - buyPriceAll) / resJson["CostStamina"];
+    (getMaxPriceAll - buyPriceAll) / resJson["CostStamina"];
     genItemInfo["单精力最小利润"] = oneCostMinPrice;
     genItemInfo["单精力最大利润"] = oneCostMaxPrice;
     genItemInfo["整管精力RMB"] = (oneCostMinPrice * 2600) / 190; // 1:190  最小利润计算
-    genItemInfo["单次制作所需成本"] = buyPriceAll;
+    genItemInfo["单次制作所需成本"] = buyPriceAll;   
     genItemInfo["整管精力需要成本"] = buyPriceAll * costNumber;
-    // console.log(genItemInfo);
+    genItemInfo["最小上架回本单价"] = buyPriceAll / 0.95 / resJson["CreateItemMin1"];
+    console.log(genItemInfo);
     return genItemInfo;
   } catch (error) {
     console.log(error);
@@ -203,7 +206,7 @@ async function getItemList(type = "founding") {
   const thisTypeItemMap = filterQueryItem
     .filter((item) => {
       if (craftNameMap[type].minRequireLevel)
-        return item["nLevel"] > craftNameMap[type].minRequireLevel; // 最小制作等级过滤
+        return item["nLevel"] >= craftNameMap[type].minRequireLevel; // 最小制作等级过滤
       return item;
     })
     .map(async (element) => {
@@ -215,12 +218,12 @@ async function getItemList(type = "founding") {
   return thisTypeItemMap;
 }
 
-function getAllCraft() {
+function getAllCraft(serverType,server) {
   Object.keys(craftNameMap).map(async (item) => await getItemList(item));
 }
 
 // getItemInfo("medicine", 94)
 
-getItemList("founding");
+ getItemList();
 
-// getAllCraft();
+// getAllCraft(serverType,server);
