@@ -222,8 +222,9 @@ function getAllCraft(serverType,server) {
   Object.keys(craftNameMap).map(async (item) => await getItemList(item));
 }
 
-// getItemInfo("medicine", 94)
+getItemInfo("founding", 96)
+// getItemInfo("tailoring", 291)
 
- getItemList();
+//  getItemList();
 
-// getAllCraft(serverType,server);
+// getAllCraft();
