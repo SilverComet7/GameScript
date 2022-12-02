@@ -1,19 +1,13 @@
-const { default: StateMachine } = require('../node_modules/wow-state-machine/dist/state-machine')
 const dm = require("dm.dll");
-// dm.setPath("D:/GameScript/DNF/assert")
-// dm.setDict(0, "宋体9号数字.txt")
-// const img = dm.findPic(1388, 177, 1920, 1080, "11drsn.bmp", "151515", 0.6, 0)
-
-
-
-// 这是一个用于测试的始终返回 state1 的状态机
-const otherStateMachine = new StateMachine(() => "state1").on("state1", () =>
-  console.log("otherStateMachine", "state1")
-);
+const {
+  default: StateMachine,
+} = require("wow-state-machine/dist/state-machine");
+// const weGame = dm.findWindow("TWINCONTROL", "WeGame");
+// const bindWeGame = dm.bindWindow(weGame, "normal", "normal", "normal", 0);
 
 const stateMachine = new StateMachine(() => {
   // 模拟十分之一概率的错误
-  num = Math.ceil(Math.random() * 10)
+  num = Math.ceil(Math.random() * 10);
   if (num === 1) throw Error("发生错误了");
   // 模拟十分之二的概率返回 state1
   else if (num < 4) return "state1";
@@ -35,7 +29,7 @@ const stateMachine = new StateMachine(() => {
   // 当 刷图 发生的时候，启动一个每 200 毫秒（tick 默认 200）输出一次 '刷图' 的定时任务。如果 刷图 持续了超过 10 秒钟，则触发超时
   .on("刷图", () => console.log("刷图"), 10 * 1000)
   // 当 state3 发生的时候启动 otherStateMachine 状态机（如果没发生，该状态机会被自动停止
-  .on("state3", otherStateMachine, 0, 500)
+  .on("state3", () => console.log("state3"), 0, 500)
   // 当 state4 发生的时候，"阻塞"整个状态机（tick 被设置成了 -Infinity），直到 state4 的任务执行完毕后，状态机才会继续工作
   .on(
     "state4",
@@ -56,5 +50,23 @@ const stateMachine = new StateMachine(() => {
   .onError((e) => console.log(e));
 
 // 启动状态机，让其每 500 毫秒检测一次状态（tick 默认 200）
-// stateMachine.start(500);
-// stateMachine.stop() // 终止状态机
+stateMachine.start(500);
+
+/**
+ *  str是用户键盘输入
+ *  key是用户输入key的对象，str === key.name
+ *  key.ctrl和key.shift默认都是false
+ *  只有当key.ctrl为true，才会达到组合效果
+ */
+const readline = require("readline");
+readline.emitKeypressEvents(process.stdin);
+process.stdin.setRawMode(true);
+process.stdin.on("keypress", (str, key) => {
+  console.log(str);
+  console.log(key);
+  //按住ctrl+d退出
+  if (key.ctrl === true && key.name === "d") {
+    process.exit(0);
+    stateMachine.stop(); // 终止状态机
+  }
+});

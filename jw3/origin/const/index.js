@@ -131,8 +131,9 @@ const itemNameCache = {
   55627: "沉香木",
   55933: "寒凝砂",
 };
-
+const priceCountCache = {};
 module.exports = {
   craftNameMap,
   itemNameCache,
+  priceCountCache
 };
