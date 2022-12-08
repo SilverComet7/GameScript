@@ -1,7 +1,4 @@
 const dm = require("dm.dll");
-// const {
-//   default: StateMachine,
-// } = require("wow-state-machine/dist/state-machine");
 const weGame = dm.findWindow("TWINCONTROL", "WeGame");
 const bindWeGame = dm.bindWindow(weGame, "normal", "normal", "normal", 0);
 
@@ -53,6 +50,5 @@ process.stdin.on("keypress", (str, key) => {
   //按住ctrl+d退出
   if (key.ctrl === true && key.name === "d") {
     process.exit(0);
-    stateMachine.stop(); // 终止状态机
   }
 });

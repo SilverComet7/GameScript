@@ -2,7 +2,6 @@ const { default: StateMachine } = require('../node_modules/wow-state-machine/dis
 const dm = require("dm.dll");
 // dm.setPath("D:/GameScript/DNF/assert")
 // dm.setDict(0, "宋体9号数字.txt")
-// const img = dm.findPic(1388, 177, 1920, 1080, "11drsn.bmp", "151515", 0.6, 0)
 
 
 
