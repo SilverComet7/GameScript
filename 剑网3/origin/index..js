@@ -66,12 +66,13 @@ async function getItemRecentlyPrice(itemId) {
     `https://next2.jx3box.com/api/item-price/${itemId}/detail?server=%E7%BC%98%E8%B5%B7%E7%A8%BB%E9%A6%99&limit=15`,
   );
   // 获取最近上架的5条记录最低单价和最高数量
-  const recentUpItemList = itemPrice.data.data.prices?.slice(0, 5)
-  //  itemPrice.data.data.prices?.
-  //   filter((item) => item.created * 1000 > new Date().setHours(0, 0, 0, 0))
-  //   .slice(0, 5);
+  let recentUpItemList = itemPrice.data.data.prices?.
+    filter((item) => item.created * 1000 > new Date().setHours(0, 0, 0, 0))
+    .slice(0, 5);
+  recentUpItemList = recentUpItemList.length ? recentUpItemList : itemPrice.data.data.prices.slice(0, 5) // 今日有数据取今日数据，否则取最近5条
+
   const unitPrice =
-    recentUpItemList?.[0]?.unit_price /
+    recentUpItemList.sort((a, b) => a.unit_price - b.unit_price)?.[0]?.unit_price /
     10000; // 按单价正向排序，找上架的最低单价
   const n_count = recentUpItemList.sort((a, b) => b.n_count - a.n_count)?.[0]
     ?.n_count; // 按数量逆向排序，找拍卖行上架的最大数量
@@ -83,7 +84,7 @@ async function getItemRecentlyPrice(itemId) {
   // console.log(priceCountCache);
   return { unitPrice, n_count };
 }
-// getItemRecentlyPrice("5_55614")
+// getItemRecentlyPrice("5_55612")
 
 // 获取物品名称
 async function getItemName(itemId) {
@@ -111,9 +112,17 @@ async function getItemInfo(type, itemId) {
     const costNumber = 2600 / resJson["CostStamina"]; // 一管精力可打造该物品次数
 
     const genItemInfo = {
+      名称: resJson["Name"],
       单精力最小利润: undefined,
       单精力最大利润: undefined,
-      拍卖行上架的数量: undefined,
+      单次制作所需成本: undefined,
+      配方: [],
+      拍卖行数量: undefined,
+      拍卖行单价: undefined,
+      回本单价: undefined,
+      技艺类别: craftNameMap[resJson["__TabType"]]?.name,
+      所需技艺等级: resJson["nLevel"],
+      提示: resJson["szTip"],
       最近5天上架数据: {
         // 5.5天刚好整管精力回满，要在期间内一轮售卖结束
         平均每日样本量: 0, // 越高，上架竞争越激烈      // 通过交易样本量判断市场需求量,  预计本身赚取其中20%
@@ -123,21 +132,13 @@ async function getItemInfo(type, itemId) {
         最近30日最低价: 0,
         最近30日最高价: 0,
       },
-      名称: resJson["Name"],
-      技艺类别: craftNameMap[resJson["__TabType"]]?.name,
-      所需技艺等级: resJson["nLevel"],
-      提示: resJson["szTip"],
-      拍卖行最近上架单价: undefined,
-      整管精力RMB: undefined,
-      整管精力需要成本: undefined,
-      配方: [],
-      单次制作所需成本: undefined,
-      最小上架回本单价: undefined,
       物品类别: belongList.find(
         (item) =>
           item.BelongID == resJson["Belong"] &&
           item.ProfessionID == resJson["ProfessionID"],
       )?.BelongName,
+      整管精力RMB: undefined,
+      整管精力需要成本: undefined,
       整管精力耗时: costNumber * resJson["PrepareFrame"],
       查询id: itemId,
       // 市场5天百分之20体量可容纳N个满精账号制作该物品: 0,
@@ -156,8 +157,8 @@ async function getItemInfo(type, itemId) {
         const { unitPrice, n_count } = await getItemRecentlyPrice(
           CreatedItemId,
         );
-        genItemInfo["拍卖行最近上架单价"] = unitPrice;
-        genItemInfo["拍卖行上架的数量"] = n_count;
+        genItemInfo["拍卖行单价"] = unitPrice;
+        genItemInfo["拍卖行数量"] = n_count;
         getMinPriceAll = CreateItemMin * unitPrice * 0.95; // 最小价格  拍卖行5%手续费  + 保管费用
         getMaxPriceAll = CreateItemMax * unitPrice * 0.95; // 最大价格  拍卖行5%手续费  + 保管费用
         await getItemLog(genItemInfo["最近5天上架数据"], CreatedItemId);
@@ -203,7 +204,7 @@ async function getItemInfo(type, itemId) {
     genItemInfo["整管精力RMB"] = (oneCostMinPrice * 2600) / 190; // 1:190  最小利润计算
     genItemInfo["单次制作所需成本"] = buyPriceAll;
     genItemInfo["整管精力需要成本"] = buyPriceAll * costNumber;
-    genItemInfo["最小上架回本单价"] =
+    genItemInfo["回本单价"] =
       buyPriceAll / 0.95 / resJson["CreateItemMin1"];
     console.log(genItemInfo);
     return genItemInfo;
