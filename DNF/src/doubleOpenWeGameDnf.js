@@ -15,7 +15,7 @@ function moveAndClick(x, y, clickWay = "L", time = Math.random() * 1000) {
     if (clickWay === "L") {
       dm.leftClick();
     } else {
-      dm.rightClick();
+      dm.rightClick();z
     }
   }, time);
 }
