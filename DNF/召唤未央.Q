@@ -84,7 +84,7 @@ Function dm找单个图(picPath)
     dm找单个图 = pos
 End Function
 Function dm小地图找图(picPath)
-    pos = dm.FindPicE(695,20,795,100,picPath,"000000",0.5,0)
+    pos = dm.FindPicE(680,20,795,100,picPath,"000000",0.5,0)
     pos = split(pos,"|")
     If int(pos(1)) > 0 Then 
         x = pos(1)
@@ -186,7 +186,7 @@ Function 人物往目标移动(人物与目标X距离,人物与目标Y距离,触发距离X,触发距离Y)
     End If
 End Function
 Function 人物保持中线向右移动(人物腰的位置)
-    If 人物腰的位置 > 390 Then // 屏幕中线
+    If 人物腰的位置 > 380 Then // 屏幕中线
         TracePrint "右上移动"
         Call move("rightUp")
     Else 
@@ -230,15 +230,16 @@ End Function
 
 
 Function 图内操作()
- frame = 0
+    frame = 0
     刷图 = 1
     关闭 = 1
     修理 = 1
-    dm_ret = dm.CmpColor(19,439,"ec2400-000000",0.9)
+    
+    While 刷图
+    dm_ret = dm.CmpColor(19,439,"ec2400-000000",0.8)
     If dm_ret <> 0 Then
         修理 = 0
     End If
-    While 刷图
         frame = frame + 1
         If frame >= 17000 Then 
             Call releseMove()
@@ -278,7 +279,8 @@ Function 图内操作()
                 Call releseMove()
             ElseIf heroPos(1) < 0 And 人物X > 0 Then   // 在Boss房间   And防止过图黑屏导致判断错误
                 Call releseMove()
-                Delay 2000  // 部分boss有行为延迟
+                Delay 2000// 部分boss有行为延迟
+                TracePrint 修理
                 是否存在司南选择界面 =   司南界面(修理)
                 If 是否存在司南选择界面 > 0 Then 
                 frame = 0
@@ -380,4 +382,4 @@ Function 图内操作()
         End If
     Wend
 End Function
-Call 图内操作() 
+Call 图内操作()
