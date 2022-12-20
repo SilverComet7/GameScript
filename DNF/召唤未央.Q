@@ -234,11 +234,11 @@ Function 图内操作()
     刷图 = 1
     关闭 = 1
     修理 = 1
-    While 刷图
     dm_ret = dm.CmpColor(19,439,"ec2400-000000",0.8)
     If dm_ret <> 0 Then
         修理 = 0
     End If
+    While 刷图
         frame = frame + 1
         If frame >= 12000 Then 
             Call releseMove()
@@ -262,7 +262,7 @@ Function 图内操作()
             // TODO  找怪打怪
             bossPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
             heroPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
-            If heroPos(1) > 0 And  heroPos(1) < 740 And 关闭 > 0 Then 
+            If  关闭 > 0 Then 
                 relaseSkill("a")
                 Delay 2000
                 dm.KeyPressChar "S"
