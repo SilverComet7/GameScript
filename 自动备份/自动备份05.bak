@@ -212,7 +212,7 @@ Function 司南界面(修理)
     If int(drsn(1)) > 0 Then
         dm.KeyPressChar "~"
         Delay 1000
-        Call relaseSkill("x")
+        Call relaseSkill ("x")
         Call relaseSkill("x")
         If 修理 > 0 Then 
             dm.KeyPressChar "s"
@@ -233,10 +233,10 @@ Function 图内操作()
     frame = 0
     刷图 = 1
     关闭 = 1
-    修理 = 0
-    dm_ret = dm.CmpColor(19,439,"ec2400-000000",0.9)
+    修理 = 1
+    dm_ret = dm.CmpColor(19,439,"ec2400-000000",0.8)
     If dm_ret <> 0 Then
-        修理 = 1
+        修理 = 0
     End If
     While 刷图
         frame = frame + 1
@@ -263,16 +263,17 @@ Function 图内操作()
             bossPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
             heroPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
             If  关闭 > 0 Then 
-                 Call relaseSkill("a")
+                relaseSkill("a")
                 Delay 2000
-                 Call relaseSkill("s")
+                dm.KeyPressChar "S"
+                Delay 500
                 dm.KeyPressChar "g"
                 If 关闭 > 0 Then 
                     Call dm随机点击(755, 130, 5, 5, "L")
                     关闭 = 0
                 End If
             End If
-            dm_ret = dm.FindStr(0, 0, 800, 600, "存在未拾取", "857658-000000|ddc593-353535", 0.8, intX, intY)
+            dm_ret = dm.FindStr(0, 0, 800, 600, "存在未拾取", "857658-000000|ddc593-353535", 0.6, intX, intY)
             If intX > 0 Then 
                 Call releseMove()
             ElseIf heroPos(1) < 0 And 人物X > 0 Then   // 在Boss房间   And防止过图黑屏导致判断错误
@@ -281,7 +282,7 @@ Function 图内操作()
                 TracePrint 修理
                 是否存在司南选择界面 =   司南界面(修理)
                 If 是否存在司南选择界面 > 0 Then 
-                    frame = 0
+                frame = 0
                     刷图 = 0
                 End If
             ElseIf 物品X > 0 Then// 地上存在物品
@@ -355,11 +356,11 @@ Function 图内操作()
                             Call 人物保持中线向右移动(人物腰的位置)
                         End If
                     ElseIf 幻境前殿(0)  > 0 Then
-                        If heroPos(2) < 60 or heroPos(2) > 80 Then
-                            Call 前进And中线移动()
-                        Else
+                       If heroPos(2) < 60 or heroPos(2) > 80 Then
+                           Call 前进And中线移动()
+                         Else
                             Call move("right")
-                        End If
+                       End If
                     Else 
                         Call 前进And中线移动()
                     End If
@@ -370,23 +371,23 @@ Function 图内操作()
 End Function
 
 Function 前进And中线移动()
-    下一个房间pos = dm.FindStrE(350,0,800,600,"前进","f0f0f0-252525",1.0)
-    下一个房间pos = split(下一个房间pos,"|")
-    门X = int(下一个房间pos(1))
-    门Y = int(下一个房间pos(2))
-    If 门Y < 400 Then   // 前进字体上下问题
-        门Y = 门Y - 600  
-    Else 
-        门Y = 门Y + 600
-    End If
-    // 有前进字体  
-    If 门X > 350 Then 
-        人物与门的X距离 = 人物X - 门X 
-        人物与门的Y距离 = 人物腰的位置 - 门Y 
-        Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y)
-    Else    // 未央之脊
-        Call 人物保持中线向右移动(人物腰的位置)
-    End If
+  下一个房间pos = dm.FindStrE(350,0,800,600,"前进","f0f0f0-252525",1.0)
+                             下一个房间pos = split(下一个房间pos,"|")
+                             门X = int(下一个房间pos(1))
+                             门Y = int(下一个房间pos(2))
+                             If 门Y < 400 Then   // 前进字体上下问题
+                                 门Y = 门Y - 600  
+                             Else 
+                                 门Y = 门Y + 600
+                             End If
+                             // 有前进字体  
+                             If 门X > 350 Then 
+                                 人物与门的X距离 = 人物X - 门X 
+                                 人物与门的Y距离 = 人物腰的位置 - 门Y 
+                                 Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y)
+                             Else    // 未央之脊
+                                 Call 人物保持中线向右移动(人物腰的位置)
+                             End If
     
 End Function
 

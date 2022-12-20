@@ -212,7 +212,7 @@ Function 司南界面(修理)
     If int(drsn(1)) > 0 Then
         dm.KeyPressChar "~"
         Delay 1000
-        Call relaseSkill("x")
+        Call relaseSkill ("x")
         Call relaseSkill("x")
         If 修理 > 0 Then 
             dm.KeyPressChar "s"
@@ -233,10 +233,10 @@ Function 图内操作()
     frame = 0
     刷图 = 1
     关闭 = 1
-    修理 = 0
-    dm_ret = dm.CmpColor(19,439,"ec2400-000000",0.9)
+    修理 = 1
+    dm_ret = dm.CmpColor(19,439,"ec2400-000000",0.8)
     If dm_ret <> 0 Then
-        修理 = 1
+        修理 = 0
     End If
     While 刷图
         frame = frame + 1
@@ -248,7 +248,7 @@ Function 图内操作()
             Call dm随机点击(493,440,5,5,"L")
             Call dm随机点击(505,200,5,5,"L")
             Call 司南界面(0)
-        ElseIf frame Mod 30 = 0 Then 
+        ElseIf frame Mod 25 = 0 Then 
             物品 = 按键找字("稀有")
             人物 = 按键找字("[")
             人物X = 人物(0)
@@ -263,9 +263,11 @@ Function 图内操作()
             bossPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
             heroPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
             If  关闭 > 0 Then 
-                 Call relaseSkill("a")
                 Delay 2000
-                 Call relaseSkill("s")
+                dm.KeyPressChar "a"
+                Delay 2000
+                dm.KeyPressChar "s"
+                Call 一秒内随机延迟()
                 dm.KeyPressChar "g"
                 If 关闭 > 0 Then 
                     Call dm随机点击(755, 130, 5, 5, "L")
