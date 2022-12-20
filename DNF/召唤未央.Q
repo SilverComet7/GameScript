@@ -234,14 +234,13 @@ Function 图内操作()
     刷图 = 1
     关闭 = 1
     修理 = 1
-    
-    While 刷图
     dm_ret = dm.CmpColor(19,439,"ec2400-000000",0.8)
     If dm_ret <> 0 Then
         修理 = 0
     End If
+    While 刷图
         frame = frame + 1
-        If frame >= 17000 Then 
+        If frame >= 12000 Then 
             Call releseMove()
             dm.KeyPressChar "esc"
             Call 一秒内随机延迟()
@@ -249,7 +248,7 @@ Function 图内操作()
             刷图 = 0
             Call dm随机点击(505,200,5,5,"L")
             Call 司南界面(0)
-        ElseIf frame Mod 120 = 0 Then 
+        ElseIf frame Mod 30 = 0 Then 
             物品 = 按键找字("稀有")
             人物 = 按键找字("[")
             人物X = 人物(0)
@@ -260,10 +259,9 @@ Function 图内操作()
             接触距离Y = 1
             人物腰的位置 = 人物Y + 60
             人物脚的位置Y = 人物Y + 100
-            // TODO  找怪打怪
             bossPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
             heroPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
-            If heroPos(1) > 0 And  heroPos(1) < 740 And 关闭 > 0 Then 
+            If  关闭 > 0 Then 
                 relaseSkill("a")
                 Delay 2000
                 dm.KeyPressChar "S"
@@ -279,14 +277,14 @@ Function 图内操作()
                 Call releseMove()
             ElseIf heroPos(1) < 0 And 人物X > 0 Then   // 在Boss房间   And防止过图黑屏导致判断错误
                 Call releseMove()
-                Delay 2000// 部分boss有行为延迟
+                Delay 2000   // 部分boss有行为延迟
                 TracePrint 修理
                 是否存在司南选择界面 =   司南界面(修理)
                 If 是否存在司南选择界面 > 0 Then 
                 frame = 0
                     刷图 = 0
                 End If
-            ElseIf 物品X > 0 Then// 地上存在物品
+            ElseIf 物品X > 0 Then
                 TracePrint "捡物品"
                 If 人物X < 0 Then 
                     Call 随机左右()
@@ -295,7 +293,7 @@ Function 图内操作()
                     人物与物品的Y距离 = 人物脚的位置Y - 物品Y
                     Call 人物往目标移动(人物与物品的X距离, 人物与物品的Y距离, 接触距离X, 接触距离Y)  
                 End If
-            Else             // 跑图
+            Else             
                 未央之脊 = 按键找字("未央之脊")                
                 幻境前殿 = 按键找字("幻境前殿")
                 沧池竹林 = 按键找字("沧池竹林")
