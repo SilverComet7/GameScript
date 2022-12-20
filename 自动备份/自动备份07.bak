@@ -229,7 +229,7 @@ End Function
 
 
 
-Dim 修理 = 1  // 一次启动修理一次
+修理 = 1  // 一次启动修理一次
 Function 图内操作()
     frame = 0
     刷图 = 1
@@ -248,7 +248,7 @@ Function 图内操作()
             Call dm随机点击(493,440,5,5,"L")
             Call dm随机点击(505,200,5,5,"L")
             Call 司南界面(0)
-        ElseIf frame Mod 50 = 0 Then 
+        ElseIf frame Mod 30 = 0 Then 
             物品 = 按键找字("稀有")
             人物 = 按键找字("[")
             人物X = 人物(0)
