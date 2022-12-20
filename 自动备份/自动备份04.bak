@@ -234,13 +234,14 @@ Function 图内操作()
     刷图 = 1
     关闭 = 1
     修理 = 1
+    
     While 刷图
     dm_ret = dm.CmpColor(19,439,"ec2400-000000",0.8)
     If dm_ret <> 0 Then
         修理 = 0
     End If
         frame = frame + 1
-        If frame >= 12000 Then 
+        If frame >= 17000 Then 
             Call releseMove()
             dm.KeyPressChar "esc"
             Call 一秒内随机延迟()
@@ -248,7 +249,7 @@ Function 图内操作()
             刷图 = 0
             Call dm随机点击(505,200,5,5,"L")
             Call 司南界面(0)
-        ElseIf frame Mod 30 = 0 Then 
+        ElseIf frame Mod 120 = 0 Then 
             物品 = 按键找字("稀有")
             人物 = 按键找字("[")
             人物X = 人物(0)
@@ -320,28 +321,13 @@ Function 图内操作()
                             下一个房间pos = dm.FindStrE(200,350,750,600,"前进","f0f0f0-252525",1.0)
                             下一个房间pos = split(下一个房间pos,"|")
                             门X = int(下一个房间pos(1))
+                            TracePrint 人物X
+                            TracePrint 门X
+                            
                             人物与门的X距离 = 人物X - 门X
                             TracePrint 人物与门的X距离
                             人物与门的Y距离 = 人物腰的位置 - 580
                             Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
-                        ElseIf  heroPos(1) > 750 And heroPos(2) > 80 Then // 在第5个图
-                             下一个房间pos = dm.FindStrE(350,0,800,600,"前进","f0f0f0-252525",1.0)
-                             下一个房间pos = split(下一个房间pos,"|")
-                             门X = int(下一个房间pos(1))+40
-                             门Y = int(下一个房间pos(2))
-                             If 门Y < 400 Then 
-                                 门Y = 门Y - 50
-                             Else 
-                                 门Y = 门Y + 50
-                             End If
-                             // 有前进字体  
-                             If 门X > 350 Then 
-                                 人物与门的X距离 = 人物X - 门X 
-                                 人物与门的Y距离 = 人物腰的位置 - 门Y 
-                                 Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y)
-                             Else    // 前殿与未央之脊
-                                 Call 人物保持中线向右移动(人物腰的位置)
-                             End If
                         Else
                             Call 人物保持中线向右移动(人物腰的位置)
                         End If
@@ -371,6 +357,7 @@ Function 图内操作()
                         Else
                             Call 人物保持中线向右移动(人物腰的位置)
                         End If
+       
                     Else 
                         下一个房间pos = dm.FindStrE(350,0,800,600,"前进","f0f0f0-252525",1.0)
                         下一个房间pos = split(下一个房间pos,"|")
