@@ -229,7 +229,7 @@ End Function
 
 
 
-修理 = 1  // 一次启动修理一次
+Dim 修理 = 1  // 一次启动修理一次
 Function 图内操作()
     frame = 0
     刷图 = 1
@@ -240,7 +240,7 @@ Function 图内操作()
     // End If
     While 刷图
         frame = frame + 1
-        If frame >= 8000 Then 
+        If frame >= 12000 Then 
             刷图 = 0
             Call releseMove()
             dm.KeyPressChar "esc"
@@ -248,7 +248,7 @@ Function 图内操作()
             Call dm随机点击(493,440,5,5,"L")
             Call dm随机点击(505,200,5,5,"L")
             Call 司南界面(0)
-        ElseIf frame Mod 60 = 0 Then 
+        ElseIf frame Mod 50 = 0 Then 
             物品 = 按键找字("稀有")
             人物 = 按键找字("[")
             人物X = 人物(0)
@@ -328,9 +328,7 @@ Function 图内操作()
                             Call 人物保持中线向右移动(人物腰的位置)
                         End If
                     ElseIf 残月宫阙(0) > 0 Then 
-                        If heroPos(1) < 740 Then 
-                            move("right")
-                        ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then // 在第二个图往上
+                        If heroPos(1) > 730 And heroPos(1) < 750 And heroPos(2) > 60 Then // 在第二个图往上
                             下一个房间pos = dm.FindStrE(150,390,650,600,"前进","f0f0f0-252525",1.0)
                             下一个房间pos = split(下一个房间pos,"|")
                             门X = int(下一个房间pos(1))

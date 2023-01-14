@@ -9,7 +9,7 @@ StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
 MacroID=f86eb0f4-b915-4657-b2fa-b783e7094ad5
-Description=召唤未央
+Description=召唤未央_自动备份
 Enable=1
 AutoRun=0
 [Repeat]
@@ -329,6 +329,7 @@ Function 图内操作()
                         End If
                     ElseIf 残月宫阙(0) > 0 Then 
                         If heroPos(1) < 740 Then 
+                        TracePrint "右移"
                             move("right")
                         ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then // 在第二个图往上
                             下一个房间pos = dm.FindStrE(150,390,650,600,"前进","f0f0f0-252525",1.0)
