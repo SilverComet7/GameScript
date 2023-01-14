@@ -1,6 +1,6 @@
 [General]
 SyntaxVersion=2
-BeginHotkey=120
+BeginHotkey=121
 BeginHotkeyMod=0
 PauseHotkey=0
 PauseHotkeyMod=0
@@ -8,31 +8,26 @@ StopHotkey=123
 StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
-MacroID=dbfaa453-d5eb-4a65-b947-516623db4862
-Description=思南玉荣
+MacroID=f86eb0f4-b915-4657-b2fa-b783e7094ad5
+Description=召唤未央
 Enable=1
 AutoRun=0
 [Repeat]
 Type=0
 Number=1
 [SetupUI]
-Type=1
-QUI=Form1
+Type=2
+QUI=
 [Relative]
 SetupOCXFile=
 [Comment]
 
 [Attachment]
-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
-
-
-[UIPackage]
-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
+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
 
 
 [Script]
 Call 大漠注册()
-
 Function 大漠注册()
     need_ver = "3.1233"
     Set ws = createobject("Wscript.Shell")
@@ -61,12 +56,13 @@ Function 大漠注册()
         TracePrint "注册成功！"
     End If
 End Function
-
+Sub OnScriptExit()
+    dm_ret = dm.UnBindWindow() 
+End Sub
 Function 一秒内随机延迟()
     Randomize
-    Delay Rnd*700+100
+    Delay Rnd*700+400
 End Function
-
 Function dm随机点击(x, y, w,h,way)
     dm.MoveToEx x,y,w,h
     Call 一秒内随机延迟()
@@ -77,108 +73,324 @@ Function dm随机点击(x, y, w,h,way)
     End If
     Call 一秒内随机延迟()
 End Function
-
-
 Function dm找单个图(picPath)
-    pos = dm.FindPicE(0,0,800,600,picPath,"000000",0.9,0)
+    pos = dm.FindPicE(0,0,800,600,picPath,"000000",0.5,0)
     pos = split(pos,"|")
-    If int(pos(1)) > 0 Then
-        TracePrint "辟邪玉" +  pos
+    If int(pos(1)) > 0 Then 
+        x = pos(1)
+        y = pos(2)
+        //        TracePrint  picPath + "位置： x:"+x+"y:"+y
     End If
     dm找单个图 = pos
 End Function
-
+Function dm小地图找图(picPath)
+    pos = dm.FindPicE(680,20,795,100,picPath,"000000",0.5,0)
+    pos = split(pos,"|")
+    If int(pos(1)) > 0 Then 
+        x = pos(1)
+        y = pos(2)
+        //        TracePrint  picPath + "位置： x:"+x+"y:"+y
+    End If
+    dm小地图找图 = pos
+End Function
 Function 按键找字(word)
-    XY = Plugin.Pic.FindWordShape(0, 0, 4000, 1920, word, "宋体", 9, 0, 0.8)
-    iZB = InStr(XY, "|")
-    X = CLng(Left(XY, iZB - 1))
-    Y = CLng(Right(XY, Len(XY) - iZB))
+    iCoord = Plugin.Pic.FindWordShape(0, 0, 800, 600, word, "宋体", 9, 0, 0.5)
+    XY = Split(iCoord, "|")
+    If XY(0) >= 0 Then
+        TracePrint  word+"位置x"+XY(0) +"y:"+XY(1)
+    End If
     按键找字 = XY
 End Function
+dm_soft  = dm.SetDict(0,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm_soft.txt")
+st9 = dm.SetDict(1,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\宋体9号.txt")
+ywsz9 = dm.SetDict(2,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\英文+数字.txt")
+hwnd = dm.FindWindow("地下城与勇士", "地下城与勇士")
+dm.MoveWindow hwnd,0,0
+dm_ret = dm.BindWindow(hwnd, "normal", "normal", "dx", 0)
 
 // 公共函数End
-
-hwnd = dm.FindWindow("地下城与勇士","地下城与勇士") 
-dm_ret = dm.BindWindow(hwnd, "normal", "normal", "normal", 0)
-// 绑定End
-
-Function 是否洗出思南额外词条()
-    has = 0
-    hasSiNanXY =  按键找字("司南额外")
-    XY = Split(hasSiNanXY,"|")
-    If X <> -1 Then
-        has = 1// 
+Function move(action)
+    If action = "up" Then 
+        dm.KeyUpChar "left"
+        dm.KeyUpChar "right"
+        dm.KeyUpChar "down"
+        dm.KeyDownChar "up"
+    ElseIf action = "down" Then
+        dm.KeyUpChar "left"
+        dm.KeyUpChar "right"
+        dm.KeyUpChar "up"
+        dm.KeyDownChar "down"
+    ElseIf action = "left" Then
+        dm.KeyUpChar "up"
+        dm.KeyUpChar "down"
+        dm.KeyUpChar "right"
+        dm.KeyDownChar "left"
+    ElseIf action = "right" Then
+        dm.KeyUpChar "up"
+        dm.KeyUpChar "down"
+        dm.KeyUpChar "left"
+        dm.KeyDownChar "right"
+    ElseIf action = "leftUp" Then
+        dm.KeyUpChar "down"
+        dm.KeyUpChar "right"
+        dm.KeyDownChar "left"
+        dm.KeyDownChar "up"
+    ElseIf action = "leftDown" Then
+        dm.KeyUpChar "right"
+        dm.KeyUpChar "up"
+        dm.KeyDownChar "left"
+        dm.KeyDownChar "down"
+    ElseIf action = "rightUp" Then
+        dm.KeyUpChar "left"
+        dm.KeyUpChar "down"
+        dm.KeyDownChar "right"
+        Delay 500
+        dm.KeyDownChar "up"
+    ElseIf action = "rightDown" Then
+        dm.KeyUpChar "left"
+        dm.KeyUpChar "up"
+        dm.KeyDownChar "right"
+        Delay 500
+        dm.KeyDownChar "down"
     End If
-    是否洗出思南额外词条 = has
+End Function
+Function releseMove()
+    dm.KeyUpChar "left"
+    dm.KeyUpChar "right"
+    dm.KeyUpChar "up"
+    dm.KeyUpChar "down"
+End Function
+Function 人物往目标移动(人物与目标X距离,人物与目标Y距离,触发距离X,触发距离Y)
+    If Abs(人物与目标X距离) > 触发距离X And Abs(人物与目标Y距离) > 触发距离Y  Then 
+        If 人物与目标X距离 > 0 And  人物与目标Y距离 > 0  Then 
+            Call move("leftUp")
+        ElseIf  人物与目标X距离 > 0 And  人物与目标Y距离 < 0 
+            Call move("leftDown")
+        ElseIf  人物与目标X距离 < 0 And  人物与目标Y距离 > 0 
+            Call move("rightUp")
+        ElseIf  人物与目标X距离 < 0 And  人物与目标Y距离 < 0 
+            Call move("rightDown")
+        End If
+    ElseIf Abs(人物与目标X距离) < 触发距离X And Abs(人物与目标Y距离) > 触发距离Y Then 
+        If 人物与目标Y距离 > 0 Then 
+            Call move("up")
+        Else 
+            Call move("down")
+        End If
+    ElseIf Abs(人物与目标X距离) > 触发距离X And Abs(人物与目标Y距离) < 触发距离Y Then 
+        If 人物与目标X距离 > 0 Then 
+            Call move("left")
+        Else 
+            Call move("right")
+        End If   
+    End If
+End Function
+Function 人物保持中线向右移动(人物腰的位置)
+    If 人物腰的位置 > 380 Then // 屏幕中线
+        TracePrint "右上移动"
+        Call move("rightUp")
+    Else 
+        TracePrint "右下移动"
+        Call move("rightDown")    
+    End If
+End Function
+Function relaseSkill(keyChar)
+    dm.KeyPressChar keyChar
+    Call 一秒内随机延迟()
+End Function
+Function 随机左右()
+    Randomize
+    If Rnd > 0.5 Then 
+        Call move("right")
+    Else 
+        Call move("left")	
+    End If
+End Function
+Function 司南界面(修理)
+    drsn = dm找单个图("C:\Users\ChrisWang\Desktop\dnf-img\1drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\2drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\3drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\4drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\5drsn.bmp")
+    司南界面 = int(drsn(1))
+    If int(drsn(1)) > 0 Then
+        dm.KeyPressChar "~"
+        Delay 1000
+        Call relaseSkill("x")
+        Call relaseSkill("x")
+        If 修理 > 0 Then 
+            dm.KeyPressChar "s"
+            Call 一秒内随机延迟()
+            dm.KeyPressChar "space"
+        End If
+        Call dm随机点击(drsn(1),drsn(2),5,5,"R")
+        Call dm随机点击(160, 545, 10, 10, "L")// 进场按钮
+        dm.MoveToEx 50,50,50,50
+        dm.KeyPressChar "space"
+        Call 图内操作()
+    End If
 End Function
 
 
-Function 洗思南()
-    nextSiNan = 是否洗出思南额外词条()
-    While nextSiNan = 0
-        pos = dm找单个图("C:\Users\ChrisWang\Desktop\大漠插件3.1233\A.bmp")
-        If int(pos(1)) > 0 Then
-            Call dm随机点击(pos(1), pos(2), 30, 30, "R")// 找紫色辟邪玉
-            Call dm随机点击(190,580,30,5,"L")     // 点属性融合
-            Delay 2500  // 等待属性出现
-            nextSiNan = 是否洗出思南额外词条()
-        Else 
-          洗思南 = 4// 没有玉了结束循环
-          nextSiNan = 1
+
+修理 = 1  // 一次启动修理一次
+Function 图内操作()
+    frame = 0
+    刷图 = 1
+    关闭 = 1
+    // dm_ret = dm.CmpColor(19,439,"ec2400-101010",0.9)
+    // If dm_ret = 0 Then
+    //     修理 = 1
+    // End If
+    While 刷图
+        frame = frame + 1
+        If frame >= 8000 Then 
+            刷图 = 0
+            Call releseMove()
+            dm.KeyPressChar "esc"
+            Call 一秒内随机延迟()
+            Call dm随机点击(493,440,5,5,"L")
+            Call dm随机点击(505,200,5,5,"L")
+            Call 司南界面(0)
+        ElseIf frame Mod 50 = 0 Then 
+            物品 = 按键找字("稀有")
+            人物 = 按键找字("[")
+            人物X = 人物(0)
+            人物Y = 人物(1)+20
+            物品X = 物品(0)
+            物品Y = 物品(1)
+            接触距离X = 1
+            接触距离Y = 1
+            人物腰的位置 = 人物Y + 60
+            人物脚的位置Y = 人物Y + 100
+            // TODO  找怪打怪
+            bossPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
+            heroPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
+            If heroPos(1) > 0 And  heroPos(1) < 740 And 关闭 > 0 Then 
+                Call relaseSkill("a")
+                Delay 2000
+                Call relaseSkill("s")
+                dm.KeyPressChar "g"
+                Call dm随机点击(755, 130, 5, 5, "L")
+                关闭 = 0
+            End If
+            dm_ret = dm.FindStr(0, 0, 800, 600, "存在未拾取", "857658-000000|ddc593-353535", 0.8, intX, intY)
+            If intX > 0 Then 
+                Call releseMove()
+            ElseIf heroPos(1) < 0 And 人物X > 0 Then   // 在Boss房间And防止过图黑屏导致判断错误
+                Call releseMove()
+                Delay 3000// 部分boss有行为延迟
+                TracePrint 修理
+                是否存在司南选择界面 =  司南界面(修理)
+                If 是否存在司南选择界面 > 0 Then 
+                    frame = 0
+                    刷图 = 0
+                    修理 = 0
+                End If
+            ElseIf 物品X > 0 Then// 地上存在物品
+                TracePrint "捡物品"
+                If 人物X < 0 Then 
+                    Call 随机左右()
+                Else 
+                    人物与物品的X距离 = 人物X - 物品X
+                    人物与物品的Y距离 = 人物脚的位置Y - 物品Y
+                    Call 人物往目标移动(人物与物品的X距离, 人物与物品的Y距离, 接触距离X, 接触距离Y)  
+                End If
+            Else             // 跑图
+                未央之脊 = 按键找字("未央之脊")                
+                幻境前殿 = 按键找字("幻境前殿")
+                沧池竹林 = 按键找字("沧池竹林")
+                残月宫阙 = 按键找字("残月宫阙")
+                工会 = 按键找字("无双")
+                If 工会(0) < 0 And heroPos(1) < 775 Then // 人物靠地图边缘太近导致找不到人
+                    TracePrint "边缘检测"
+                    Randomize
+                    If Rnd > 0.5 Then 
+                        Call move("rightDown")
+                    Else 
+                        Call move("rightUp")	
+                    End If
+                Else
+                    If 沧池竹林(0) > 0 Then 
+                        If heroPos(1) > 730 And heroPos(1) < 750 And heroPos(2) > 60 Then   // 在第二个图往上
+                            TracePrint "竹林第二个图"
+                            人物与门的X距离 = 人物X - 670
+                            人物与门的Y距离 = 人物腰的位置 - 150
+                            Call 人物往目标移动(人物与门的X距离, 30, 接触距离X, 接触距离Y) 
+                        ElseIf heroPos(1) > 750 And heroPos(2) < 60 Then // 在第4个图往中下
+                            TracePrint "竹林第四个图"
+                            下一个房间pos = dm.FindStrE(200,350,750,600,"前进","f0f0f0-252525",1.0)
+                            下一个房间pos = split(下一个房间pos,"|")
+                            门X = int(下一个房间pos(1))
+                            人物与门的X距离 = 人物X - 门X
+                            TracePrint 人物与门的X距离
+                            人物与门的Y距离 = 人物腰的位置 - 580
+                            Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
+                        ElseIf  heroPos(1) > 750 And heroPos(2) > 80 Then // 在第5个图
+                            Call 前进And中线移动()
+                        Else
+                            Call 人物保持中线向右移动(人物腰的位置)
+                        End If
+                    ElseIf 残月宫阙(0) > 0 Then 
+                        If heroPos(1) < 740 Then 
+                        TracePrint "右移"
+                            move("right")
+                        ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then // 在第二个图往上
+                            下一个房间pos = dm.FindStrE(150,390,650,600,"前进","f0f0f0-252525",1.0)
+                            下一个房间pos = split(下一个房间pos,"|")
+                            门X = int(下一个房间pos(1))
+                            TracePrint "宫阙第二个图"
+                            人物与门的X距离 = 人物X - 门X - 20
+                            人物与门的Y距离 = 人物腰的位置 - 150
+                            Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
+                        ElseIf heroPos(1) > 775 And heroPos(2) < 60 Then // 在第5个图往中下
+                            TracePrint "宫阙第5个图"
+                            If 人物X < 0 Then 
+                                Call 随机左右()
+                            Else 
+                                menX = 570
+                                If 人物X > 350 Or 人物X < 0 Then 
+                                    menX = 250
+                                End If
+                                人物与门的X距离 = 人物X - menX
+                                TracePrint 人物与门的X距离
+                                人物与门的Y距离 = 人物腰的位置 - 580
+                                Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
+                            End If
+                        Else
+                            Call 人物保持中线向右移动(人物腰的位置)
+                        End If
+                    ElseIf 幻境前殿(0)  > 0 Then
+                        If heroPos(2) < 60 or heroPos(2) > 80 Then
+                            Call 前进And中线移动()
+                        Else
+                            Call move("right")
+                        End If
+                    Else 
+                        Call 前进And中线移动()
+                    End If
+                End If
+            End If
         End If
     Wend
-    If nextSiNan = 1 Then 
-        Call dm随机点击(600, 35, 30, 15, "L")// 思南界面，去选下一个思南
+End Function
+
+Function 前进And中线移动()
+    下一个房间pos = dm.FindStrE(350,0,800,600,"前进","f0f0f0-252525",1.0)
+    下一个房间pos = split(下一个房间pos,"|")
+    门X = int(下一个房间pos(1))
+    门Y = int(下一个房间pos(2))
+    If 门Y < 400 Then   // 前进字体上下问题
+        门Y = 门Y - 600  
+    Else 
+        门Y = 门Y + 600
     End If
+    // 有前进字体  
+    If 门X > 350 Then 
+        人物与门的X距离 = 人物X - 门X 
+        人物与门的Y距离 = 人物腰的位置 - 门Y 
+        Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y)
+    Else    // 未央之脊
+        Call 人物保持中线向右移动(人物腰的位置)
+    End If
+    
 End Function
 
 
-Function 循环洗思南(sx, sy)
-    Call dm随机点击(133, 202, 3, 3, "L")// 怀隐
-    Call dm随机点击(175,320, 3, 3, "L") //  开启思南界面
-    For i = 0 To 4  
-        Call dm随机点击(sx + 30 * i, sy, 30, 30, "R")// 选择思南
-        当前辟邪玉是否存在额外概率 = 是否洗出思南额外词条()
-        If 当前辟邪玉是否存在额外概率 = 0 Then 
-            Call dm随机点击(480, 35, 30, 10, "L") // 辟邪玉界面
-            i= 洗思南()
-        End If
-    Next
-    dm.KeyPressChar "esc"
-End Function
-
-
-Function 循环删除玉荣(sx, sy)
-    Const eachEdge = 30
-    For i = 0 to 9
-        For j = 0 to 1
-            X = sx+eachEdge * i
-            Y = sy+eachEdge*j
-            Call dm随机点击(X, Y,4,4,"L")
-        Next
-    Next
-    Call dm随机点击(325, 400,5,5,"L") 
-    Delay 2000
-End Function
-
-Function 清理玉荣()
-    Call dm随机点击(133, 202, 3, 3, "L")// 怀隐
-    Call dm随机点击(170,255, 3, 3, "L") //  开启分解界面
-    Call 循环删除玉荣(490,395) // 前20个
-    Call 循环删除玉荣(490, 455)// 后20个
-     dm.KeyPressChar "esc"
-    清理玉荣 = "清理玉荣结束"
-End Function
-
-
-If Form1.CheckBox1.Value <> 0 Then 
-    Call 循环洗思南(480, 105)// 直接洗第一排前5个
-End If
-
-
-If Form1.CheckBox2.Value <> 0 Then
-    Call 清理玉荣()
-End If
-
-
-
+Call 图内操作()
