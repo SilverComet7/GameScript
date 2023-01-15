@@ -10,7 +10,7 @@ RunOnce=1
 EnableWindow=
 MacroID=f86eb0f4-b915-4657-b2fa-b783e7094ad5
 Description=召唤未央_自动备份
-Enable=1
+Enable=0
 AutoRun=0
 [Repeat]
 Type=0
