@@ -8,9 +8,9 @@ StopHotkey=123
 StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
-MacroID=62e14af4-d8e8-4c65-bb76-086374240b72
+MacroID=f86eb0f4-b915-4657-b2fa-b783e7094ad5
 Description=召唤未央_自动备份
-Enable=1
+Enable=0
 AutoRun=0
 [Repeat]
 Type=0
@@ -33,15 +33,15 @@ Function 大漠注册()
     Set ws = createobject("Wscript.Shell")
     ws.run "regsvr32 atl.dll /s"
     Set ws = nothing
-    PutAttachment "C:\Users\chris\Desktop\大漠插件3.1233", "*.*"
+    PutAttachment "C:\Users\ChrisWang\Desktop\大漠插件3.1233", "*.*"
     PutAttachment ".\Plugin", "RegDll.dll"
-    Call Plugin.RegDll.Reg("C:\Users\chris\Desktop\大漠插件3.1233\dm.dll")
+    Call Plugin.RegDll.Reg("C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm.dll")
     Set dm = createobject("dm.dmsoft")
     ver = dm.Ver()
     If ver <> need_ver Then
         Set dm = nothing
         Set ws = createobject("Wscript.Shell")
-        ws.run "regsvr32 C:\Users\chris\Desktop\大漠插件3.1233\dm.dll /s"
+        ws.run "regsvr32 C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm.dll /s"
         Set ws = nothing
         Delay 1200
         Set dm = createobject("dm.dmsoft")
@@ -101,9 +101,9 @@ Function 按键找字(word)
     End If
     按键找字 = XY
 End Function
-dm_soft  = dm.SetDict(0,"C:\Users\chris\Desktop\大漠插件3.1233\dm_soft.txt")
-st9 = dm.SetDict(1,"C:\Users\chris\Desktop\大漠插件3.1233\宋体9号.txt")
-ywsz9 = dm.SetDict(2,"C:\Users\chris\Desktop\大漠插件3.1233\英文+数字.txt")
+dm_soft  = dm.SetDict(0,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm_soft.txt")
+st9 = dm.SetDict(1,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\宋体9号.txt")
+ywsz9 = dm.SetDict(2,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\英文+数字.txt")
 hwnd = dm.FindWindow("地下城与勇士", "地下城与勇士")
 dm.MoveWindow hwnd,0,0
 dm_ret = dm.BindWindow(hwnd, "normal", "normal", "dx", 0)
@@ -207,7 +207,7 @@ Function 随机左右()
     End If
 End Function
 Function 司南界面(修理)
-    drsn = dm找单个图("C:\Users\chris\Desktop\dnf-img\1drsn.bmp|C:\Users\chris\Desktop\dnf-img\2drsn.bmp|C:\Users\chris\Desktop\dnf-img\3drsn.bmp|C:\Users\chris\Desktop\dnf-img\4drsn.bmp|C:\Users\chris\Desktop\dnf-img\5drsn.bmp")
+    drsn = dm找单个图("C:\Users\ChrisWang\Desktop\dnf-img\1drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\2drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\3drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\4drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\5drsn.bmp")
     司南界面 = int(drsn(1))
     If int(drsn(1)) > 0 Then
         dm.KeyPressChar "~"
@@ -260,8 +260,8 @@ Function 图内操作()
             人物腰的位置 = 人物Y + 60
             人物脚的位置Y = 人物Y + 100
             // TODO  找怪打怪
-            bossPos = dm小地图找图("C:\Users\chris\Desktop\dnf-img\bossD.bmp")
-            heroPos = dm小地图找图("C:\Users\chris\Desktop\dnf-img\heroD.bmp")
+            bossPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
+            heroPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
             If heroPos(1) > 0 And  heroPos(1) < 740 And 关闭 > 0 Then 
                 Call relaseSkill("a")
                 Delay 2000
@@ -329,6 +329,7 @@ Function 图内操作()
                         End If
                     ElseIf 残月宫阙(0) > 0 Then 
                         If heroPos(1) < 740 Then 
+                        TracePrint "右移"
                             move("right")
                         ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then // 在第二个图往上
                             下一个房间pos = dm.FindStrE(150,390,650,600,"前进","f0f0f0-252525",1.0)
