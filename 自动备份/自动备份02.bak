@@ -8,7 +8,7 @@ StopHotkey=123
 StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
-MacroID=f86eb0f4-b915-4657-b2fa-b783e7094ad5
+MacroID=cc958f16-5f95-4363-ba88-49abe9cdea4d
 Description=召唤未央
 Enable=1
 AutoRun=0
@@ -229,18 +229,23 @@ End Function
 
 
 
-修理 = 1  // 一次启动修理一次
+修理 = 1  // 一次启动实例只修理一次
 Function 图内操作()
     frame = 0
     刷图 = 1
-    关闭 = 1
-    // dm_ret = dm.CmpColor(19,439,"ec2400-101010",0.9)
-    // If dm_ret = 0 Then
-    //     修理 = 1
-    // End If
+    关闭关卡提示 = 1
     While 刷图
         frame = frame + 1
-        If frame >= 8000 Then 
+ 无法入场 = 按键找字("无法入场") // 疲劳不足
+If 无法入场(0) > 0 Then    
+刷图 = 0
+Call releseMove()
+Call relaseSkill("f3")
+  Call dm随机点击(460,330,5,5,"L")
+ dm.LeftClick
+  Call dm随机点击(390,330,5,5,"L")
+  Call 循环删除玉荣()
+        ElseIf frame >= 8000 Then 
             刷图 = 0
             Call releseMove()
             dm.KeyPressChar "esc"
@@ -248,7 +253,7 @@ Function 图内操作()
             Call dm随机点击(493,440,5,5,"L")
             Call dm随机点击(505,200,5,5,"L")
             Call 司南界面(0)
-        ElseIf frame Mod 50 = 0 Then 
+        ElseIf frame Mod 60 = 0 Then 
             物品 = 按键找字("稀有")
             人物 = 按键找字("[")
             人物X = 人物(0)
@@ -259,16 +264,16 @@ Function 图内操作()
             接触距离Y = 1
             人物腰的位置 = 人物Y + 60
             人物脚的位置Y = 人物Y + 100
-            // TODO  找怪打怪
+            // TODO  帕拉丁找怪打怪?
             bossPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
             heroPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
-            If heroPos(1) > 0 And  heroPos(1) < 740 And 关闭 > 0 Then 
+            If heroPos(1) > 0 And  heroPos(1) < 740 And 关闭关卡提示 > 0 Then 
                 Call relaseSkill("a")
                 Delay 2000
                 Call relaseSkill("s")
                 dm.KeyPressChar "g"
                 Call dm随机点击(755, 130, 5, 5, "L")
-                关闭 = 0
+                关闭关卡提示 = 0
             End If
             dm_ret = dm.FindStr(0, 0, 800, 600, "存在未拾取", "857658-000000|ddc593-353535", 0.8, intX, intY)
             If intX > 0 Then 
@@ -329,7 +334,6 @@ Function 图内操作()
                         End If
                     ElseIf 残月宫阙(0) > 0 Then 
                         If heroPos(1) < 740 Then 
-                        TracePrint "右移"
                             move("right")
                         ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then // 在第二个图往上
                             下一个房间pos = dm.FindStrE(150,390,650,600,"前进","f0f0f0-252525",1.0)
@@ -389,7 +393,22 @@ Function 前进And中线移动()
     Else    // 未央之脊
         Call 人物保持中线向右移动(人物腰的位置)
     End If
-    
+End Function
+
+
+
+
+Function 循环删除玉荣(sx, sy)
+    Const eachEdge = 30
+    For i = 0 to 9
+        For j = 0 to 1
+            X = sx+eachEdge * i
+            Y = sy+eachEdge*j
+            Call dm随机点击(X, Y,4,4,"L")
+        Next
+    Next
+    Call dm随机点击(325, 400,5,5,"L") 
+    Delay 2000
 End Function
 
 
