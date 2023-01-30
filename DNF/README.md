@@ -2,7 +2,17 @@
 
 安装步骤
 
-1. 管理员权限powershell npm install --global --production windows-build-tools --add-python-to-path
-1. nvm install 10.8.0 32      网络问题可以切换环境,准确下载npm包
+1. 管理员权限 powershell npm install --global --production windows-build-tools --add-python-to-path
+1. nvm install 10.8.0 32 网络问题可以切换环境,准确下载 npm 包
 1. npm install dm.dll
 1. npm install wow-state-machine
+
+# js 操作大漠插件
+
+如何封装大漠 API  
+如何使用原始的大漠 API
+
+# 常见功能
+
+1. 自动切换账号
+2. 自动刷图-拾取材料-补药
