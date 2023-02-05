@@ -10,7 +10,7 @@ RunOnce=1
 EnableWindow=
 MacroID=df90ca27-6a2f-48fb-acd1-916e0e4356b6
 Description=召唤未央
-Enable=0
+Enable=1
 AutoRun=0
 [Repeat]
 Type=0
@@ -61,17 +61,21 @@ Sub OnScriptExit()
 End Sub
 Function 一秒内随机延迟()
     Randomize
-    Delay Rnd*500+200
+    Delay Rnd*500+700
+End Function
+Function 七百毫秒内随机延迟()
+    Randomize
+    Delay Rnd*500+400
 End Function
 Function dm随机点击(x, y, w,h,way)
     dm.MoveToEx x,y,w,h
-    Call 一秒内随机延迟()
+    Call 七百毫秒内随机延迟()
     If way = "L" Then
         dm.LeftClick
     Else
         dm.RightClick 
     End If
-    Call 一秒内随机延迟()
+    Call 七百毫秒内随机延迟()
 End Function
 Function dm找单个图(picPath)
     pos = dm.FindPicE(0,0,800,600,picPath,"000000",0.5,0)
@@ -97,7 +101,7 @@ Function 按键找字(word)
     iCoord = Plugin.Pic.FindWordShape(0, 0, 800, 600, word, "宋体", 9, 0, 0.5)
     XY = Split(iCoord, "|")
     If XY(0) >= 0 Then
-        TracePrint  word+"位置x"+XY(0) +"y:"+XY(1)
+        //        TracePrint  word+"位置x"+XY(0) +"y:"+XY(1)
     End If
     按键找字 = XY
 End Function
@@ -105,8 +109,9 @@ dm_soft  = dm.SetDict(0,"C:\Users\chris\Desktop\大漠插件3.1233\dm_soft.txt")
 st9 = dm.SetDict(1,"C:\Users\chris\Desktop\大漠插件3.1233\宋体9号.txt")
 ywsz9 = dm.SetDict(2,"C:\Users\chris\Desktop\大漠插件3.1233\英文+数字.txt")
 hwnd = dm.FindWindow("地下城与勇士", "地下城与勇士")
-dm.MoveWindow hwnd,0,0
 dm_ret = dm.BindWindow(hwnd, "normal", "normal", "dx", 0)
+dm.MoveWindow hwnd, 0, 0
+dm_ret = dm.SetWindowState(hwnd,1) // 激活
 // 公共函数End
 Function move(action)
     If action = "up" Then 
@@ -208,35 +213,59 @@ End Function
 Function 司南界面(修理)
     drsn = dm找单个图("C:\Users\chris\Desktop\dnf-img\1drsn.bmp|C:\Users\chris\Desktop\dnf-img\2drsn.bmp|C:\Users\chris\Desktop\dnf-img\3drsn.bmp|C:\Users\chris\Desktop\dnf-img\4drsn.bmp|C:\Users\chris\Desktop\dnf-img\5drsn.bmp")
     司南界面 = int(drsn(1))
-    TracePrint 司南界面
     If 司南界面 > 0 Then
-        dm.KeyPressChar "~"
-        Delay 1000
+        Call releaseKeyChar("~")
+        Call releaseKeyChar("x")
         Call releaseKeyChar("x")
         Call releaseKeyChar("x")
         If 修理 > 0 Then 
             dm.KeyPressChar "s"
             Call 一秒内随机延迟()
-            dm.KeyPressChar "space"
+            Call releaseKeyChar("space")
         End If
         Call dm随机点击(drsn(1),drsn(2),5,5,"R")
         Call dm随机点击(160, 545, 10, 10, "L")// 进场按钮
         dm.MoveToEx 50,50,50,50
-        dm.KeyPressChar "space"
+        Call releaseKeyChar("space")
         Call 图内操作()
-        Else 
-         Call releaseKeyChar("`")
-          Call releaseKeyChar("esc")
+        // Else 
+        // Call releaseKeyChar("`")
+        // Call releaseKeyChar("esc")
     End If
 End Function
-修理 = 1  // 一次启动实例只修理一次
+Function 选择人物(N)
+    TracePrint "选择第" + N
+    第几个 = N- 1
+    Call dm随机点击(第几个 * 130, 335, 50, 50, "L") // 选人物
+    Call releaseKeyChar("space")
+    x = 1
+    While x
+        宽屏模式 = 按键找字("宽屏模式")
+        TracePrint 宽屏模式(0)
+        If 宽屏模式(0) > 0 Then 
+            Call move("down")
+        Else 
+            云珂 = 按键找字("云珂")
+            If 云珂(0) > 0 Then 
+                Call releseMove()
+                x = 0
+                Call dm随机点击(505,200,5,5,"L")
+                Call 司南界面(0)
+            Else 
+                Call move("rightDown")
+            End If
+        End If
+    Wend
+End Function
+ Call 选择人物(1)
 Function 图内操作()
     frame = 0
     刷图 = 1
     关闭关卡提示 = 1
+    修理 = 1  // 一次启动实例只修理一次
     While 刷图
         frame = frame + 1
-        If frame >= 8000 Then 
+        If frame >= 5000 Then   // 1分30秒
             刷图 = 0
             Call releseMove()
             dm.KeyPressChar "esc"
@@ -248,17 +277,21 @@ Function 图内操作()
             无法入场 = 按键找字("无法入场") 
             If 无法入场(0) > 0 Then
                 TracePrint "疲劳不足"
-                dm.KeyPressChar "esc"  // 关闭疲劳不足提示界面
                 刷图 = 0
                 Call releseMove()
+                Call releaseKeyChar("esc") // 关闭疲劳不足提示界面 
                 Call releaseKeyChar("f3")
-                Call dm随机点击(460,330,5,5,"L")
+                Call dm随机点击(460,330,5,5,"L")  // 修理分解机
                 dm.LeftClick
                 Call dm随机点击(390, 330, 5, 5, "L")
                 Call dm随机点击(390,330,5,5,"L")
-                Call 循环删除玉荣(490,395) // 前20个
-                Call 循环删除玉荣(490, 455)// 后20个
-                dm.KeyPressChar "esc"
+                Call 循环删除玉荣(490,395)   // 前20个
+                Call 循环删除玉荣(490, 455)   // 后20个
+                Call releaseKeyChar("esc")  // 关闭分解界面
+                Call releaseKeyChar("esc")
+                Call dm随机点击(365, 440, 5, 5, "L")// 点击选择人物按钮
+                Delay 3000
+                Call 选择人物(2) // 目前固定2个 放在下方 1 2位置
             End If
             物品 = 按键找字("稀有")
             人物 = 按键找字("[")
@@ -287,9 +320,7 @@ Function 图内操作()
             ElseIf heroPos(1) < 0 And 人物X > 0 Then   // 在Boss房间And防止过图黑屏导致判断错误
                 Call releseMove()
                 Delay 3000// 部分boss有行为延迟
-                TracePrint 修理
                 是否存在司南选择界面 = 司南界面(修理)
-                TracePrint 是否存在司南选择界面
                 If 是否存在司南选择界面 > 0 Then 
                     frame = 0
                     刷图 = 0
@@ -304,7 +335,7 @@ Function 图内操作()
                     人物与物品的Y距离 = 人物脚的位置Y - 物品Y
                     Call 人物往目标移动(人物与物品的X距离, 人物与物品的Y距离, 接触距离X, 接触距离Y)  
                 End If
-            Else             // 跑图
+            Else         
                 未央之脊 = 按键找字("未央之脊")                
                 幻境前殿 = 按键找字("幻境前殿")
                 沧池竹林 = 按键找字("沧池竹林")
@@ -342,7 +373,7 @@ Function 图内操作()
                     ElseIf 残月宫阙(0) > 0 Then 
                         If heroPos(1) < 740 Then 
                             move("right")
-                        ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then // 在第二个图往上
+                        ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then// 在第二个图往上
                             下一个房间pos = dm.FindStrE(150,390,650,600,"前进","f0f0f0-252525",1.0)
                             下一个房间pos = split(下一个房间pos,"|")
                             门X = int(下一个房间pos(1))
@@ -350,6 +381,12 @@ Function 图内操作()
                             人物与门的X距离 = 人物X - 门X - 20
                             人物与门的Y距离 = 人物腰的位置 - 150
                             Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
+                        ElseIf heroPos(1) > 755 And  heroPos(2) > 65 Then // 错误边界
+                            If 人物X < 0 Then 
+                                Call 随机左右()
+                            Else 
+                                Call move("left")
+                            End If
                         ElseIf heroPos(1) > 775 And heroPos(2) < 60 Then // 在第5个图往中下
                             TracePrint "宫阙第5个图"
                             If 人物X < 0 Then 
@@ -409,8 +446,7 @@ Function 循环删除玉荣(sx, sy)
             Call dm随机点击(X, Y,4,4,"L")
         Next
     Next
-    //    Call dm随机点击(325, 400,5,5,"L") 
     Call releaseKeyChar("space")
     Delay 2000
 End Function
-Call 图内操作()
+// Call 图内操作()

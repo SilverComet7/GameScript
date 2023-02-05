@@ -8,9 +8,9 @@ StopHotkey=123
 StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
-MacroID=2520a2a1-a874-40b1-87c6-2b877e415edb
-Description=召唤未央_自动备份
-Enable=1
+MacroID=9ac105aa-3296-4af8-ac8f-5b9fd6cce523
+Description=召唤未央
+Enable=0
 AutoRun=0
 [Repeat]
 Type=0
