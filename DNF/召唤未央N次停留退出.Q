@@ -429,4 +429,6 @@ Function 循环删除玉荣(sx, sy)
     Call releaseKeyChar("space")
     Delay 2000
 End Function
-Call 图内操作()
+//Call 图内操作()
+
+TracePrint "测试" + string(1)

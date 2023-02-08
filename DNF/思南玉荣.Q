@@ -8,7 +8,7 @@ StopHotkey=123
 StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
-MacroID=dbfaa453-d5eb-4a65-b947-516623db4862
+MacroID=37229ca8-48bf-4456-afb7-6efac4b3ba07
 Description=思南玉荣
 Enable=0
 AutoRun=0
@@ -27,7 +27,7 @@ UEsDBBQAAgAIAMCrVlWUohOWnwUAAIYKAAAJABEAMWRyc24uYm1wVVQNAAfoYFRjmqxWY1PSVGOtlk+I
 
 
 [UIPackage]
-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
+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
 
 
 [Script]
@@ -38,15 +38,15 @@ Function 大漠注册()
     Set ws = createobject("Wscript.Shell")
     ws.run "regsvr32 atl.dll /s"
     Set ws = nothing
-    PutAttachment "C:\Users\ChrisWang\Desktop\大漠插件3.1233", "*.*"
+    PutAttachment "C:\Users\chris\Desktop\大漠插件3.1233", "*.*"
     PutAttachment ".\Plugin", "RegDll.dll"
-    Call Plugin.RegDll.Reg("C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm.dll")
+    Call Plugin.RegDll.Reg("C:\Users\chris\Desktop\大漠插件3.1233\dm.dll")
     Set dm = createobject("dm.dmsoft")
     ver = dm.Ver()
     If ver <> need_ver Then
         Set dm = nothing
         Set ws = createobject("Wscript.Shell")
-        ws.run "regsvr32 C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm.dll /s"
+        ws.run "regsvr32 C:\Users\chris\Desktop\大漠插件3.1233\dm.dll /s"
         Set ws = nothing
         Delay 1200
         Set dm = createobject("dm.dmsoft")
@@ -117,7 +117,7 @@ End Function
 Function 洗思南()
     nextSiNan = 是否洗出思南额外词条()
     While nextSiNan = 0
-        pos = dm找单个图("C:\Users\ChrisWang\Desktop\大漠插件3.1233\A.bmp")
+        pos = dm找单个图("C:\Users\chris\Desktop\大漠插件3.1233\A.bmp")
         If int(pos(1)) > 0 Then
             Call dm随机点击(pos(1), pos(2), 30, 30, "R")// 找紫色辟邪玉
             Call dm随机点击(190,580,30,5,"L")     // 点属性融合
