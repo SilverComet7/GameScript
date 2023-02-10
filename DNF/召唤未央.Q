@@ -231,30 +231,33 @@ Function 司南界面(修理)
         // Call releaseKeyChar("`")
         // Call releaseKeyChar("esc")
     End If
-   
 End Function
 Function 选择人物(N)
-    TracePrint "选择第" + N
     第几个 = N- 1
     Call dm随机点击(第几个 * 130, 335, 50, 50, "L") // 选人物
     Call releaseKeyChar("space")
-    x = 1
-    While x
-        宽屏模式 = 按键找字("宽屏模式")
-        TracePrint 宽屏模式(0)
-        If 宽屏模式(0) > 0 Then 
-            Call move("down")
-        Else 
-            云珂 = 按键找字("云珂")
-            If 云珂(0) > 0 Then 
-                Call releseMove()
-                x = 0
-                Call dm随机点击(505,200,5,5,"L")
-                Call 司南界面(0)
+    frameS = 1
+    选择 = 1
+    While 选择
+        frameS  = frameS +1
+        If frame Mod 50 = 0 Then
+            宽屏模式 = 按键找字("宽屏模式")
+            赛丽亚 = 按键找字("赛丽亚")
+            If 宽屏模式(0) > 0 or 赛丽亚(0) > 0 Then 
+                Call move("down")
             Else 
-                Call move("rightDown")
+                云珂 = 按键找字("云珂")
+                If 云珂(0) > 0 Then 
+                    Call releseMove()
+                    Call dm随机点击(505,200,5,5,"L")
+                    选择 = 0
+                    Call 司南界面(0)
+                Else  
+                    Call move("rightDown")
+                End If
             End If
-        End If
+        End If 
+      
     Wend
 End Function
 // Call 选择人物(1)
