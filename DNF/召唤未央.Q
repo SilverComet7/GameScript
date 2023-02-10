@@ -8,7 +8,7 @@ StopHotkey=123
 StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
-MacroID=42c35b78-7f4b-444e-a5c9-00a3000234b8
+MacroID=c3a8e001-9d67-410d-a061-45655e6a2584
 Description=召唤未央
 Enable=1
 AutoRun=0
@@ -268,15 +268,16 @@ Function 图内操作()
     修理 = 1  // 一次启动实例只修理一次
     While 刷图
         frame = frame + 1
-        If frame >= 4000 Then   // 1分30秒
+        If frame >= 6000 Then   // 1分30秒
             刷图 = 0
             Call releseMove()
             dm.KeyPressChar "esc"
             Call 一秒内随机延迟()
             Call dm随机点击(493,440,5,5,"L")
-            Call dm随机点击(505,200,5,5,"L")
+            Call dm随机点击(505, 200, 5, 5, "L")
+            dm.MoveToEx 50,50,50,50 // 防止遮挡
             Call 司南界面(0)
-        ElseIf frame Mod 50 = 0 Then
+        ElseIf frame Mod 60 = 0 Then
             无法入场 = 按键找字("无法入场") 
             If 无法入场(0) > 0 Then
                 TracePrint "疲劳不足"
@@ -311,7 +312,6 @@ Function 图内操作()
             If heroPos(1) > 0 And  heroPos(1) < 740 And 关闭关卡提示 > 0 Then 
                 Call releaseKeyChar("a")
                 Delay 2000
-                Call releaseKeyChar("s")
                 dm.KeyPressChar "g"
                 Call dm随机点击(755, 130, 5, 5, "L")
                 关闭关卡提示 = 0
@@ -322,8 +322,7 @@ Function 图内操作()
             ElseIf heroPos(1) < 0 And 人物X > 0 Then   // 在Boss房间And防止过图黑屏导致判断错误
                 Call releseMove()
                 Delay 3000
-                
-                是否存在司南选择界面 = 司南界面(修理)
+                司南界面(修理)
                 If 是否存在司南选择界面 > 0 Then 
                     frame = 0
                     刷图 = 0
@@ -344,6 +343,9 @@ Function 图内操作()
                 沧池竹林 = 按键找字("沧池竹林")
                 残月宫阙 = 按键找字("残月宫阙")
                 工会 = 按键找字("无双")
+                If 工会(0) > 0 Then 
+                	人物X = 工会(0) - 20
+                End If
                 If 工会(0) < 0 And heroPos(1) < 775  Then // 人物靠地图边缘太近导致找不到人
                     TracePrint "边缘检测"
                     Randomize
@@ -376,16 +378,17 @@ Function 图内操作()
                         End If
                     ElseIf 残月宫阙(0) > 0 Then 
                         If heroPos(1) < 740  Then
-                           Call 前进And中线移动(人物腰的位置)
-                        ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then// 在第二个图往上
-                          TracePrint "宫阙第二个图"
+                            Call 前进And中线移动(人物腰的位置)
+                        ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then// 在第二个和下方图往上
+                            TracePrint "宫阙第二个图"
+                            Call move("down")
                             下一个房间pos = dm.FindStrE(150,390,650,600,"前进","f0f0f0-252525",1.0)
                             下一个房间pos = split(下一个房间pos,"|")
                             门X = int(下一个房间pos(1))
                             人物与门的X距离 = 人物X - 门X - 20
                             人物与门的Y距离 = 人物腰的位置 - 150
                             Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
-                        ElseIf heroPos(1) > 755 And  heroPos(2) > 65 Then // 错误边界
+                        ElseIf heroPos(1) > 755 And  heroPos(2) > 65 Then //  最右方的图
                             If 人物X < 0 Then 
                                 Call 随机左右()
                             Else 
@@ -401,11 +404,10 @@ Function 图内操作()
                                     menX = 250
                                 End If
                                 人物与门的X距离 = 人物X - menX
-                                TracePrint 人物与门的X距离
                                 人物与门的Y距离 = 人物腰的位置 - 580
                                 Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
                             End If
-                        Else
+                        Else               
                             Call 人物保持中线向右移动(人物腰的位置)
                         End If
                     ElseIf 幻境前殿(0)  > 0 Then
@@ -415,8 +417,10 @@ Function 图内操作()
                             Call move("right")
                         End If
                     ElseIf  未央之脊(0) > 0 Then
-                        If heroPos(1) > 755 or heroPos(1) < 775 Then // 前殿在上方和下方
+                        If heroPos(1) > 755 And heroPos(1) < 775  And heroPos(2) > 65   Then // 在第4个图不找前进往中间走
                             Call 人物保持中线向右移动(人物腰的位置)
+                         Else 
+                             Call 前进And中线移动(人物腰的位置)
                         End If
                     Else 
                         Call 前进And中线移动(人物腰的位置)
@@ -436,12 +440,11 @@ Function 前进And中线移动(人物腰的位置)
     Else 
         门Y = 门Y + 600
     End If
-    // 有前进字体  
     If 门X > 350 Then 
         人物与门的X距离 = 人物X - 门X 
-        人物与门的Y距离 = 人物腰的位置 - 门Y 
+        人物与门的Y距离 = 人物腰的位置 - 门Y
         Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y)
-    Else    // 未央之脊
+    Else   
         Call 人物保持中线向右移动(人物腰的位置)
     End If
 End Function
