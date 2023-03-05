@@ -8,9 +8,9 @@ StopHotkey=123
 StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
-MacroID=c3a8e001-9d67-410d-a061-45655e6a2584
-Description=召唤未央
-Enable=1
+MacroID=42c35b78-7f4b-444e-a5c9-00a3000234b8
+Description=召唤未央_自动备份
+Enable=0
 AutoRun=0
 [Repeat]
 Type=0
@@ -27,22 +27,21 @@ UEsDBBQAAgAIAEw5TD+cfTI/KxMAAABgAAAKABEAUmVnRGxsLmRsbFVUDQAHbj2VTmsSemPwAHlj7VwP
 
 
 [Script]
- 
 Call 大漠注册()
 Function 大漠注册()
     need_ver = "3.1233"
     Set ws = createobject("Wscript.Shell")
     ws.run "regsvr32 atl.dll /s"
     Set ws = nothing
-    PutAttachment "C:\Users\ChrisWang\Desktop\大漠插件3.1233", "*.*"
+    PutAttachment "C:\Users\chris\Desktop\大漠插件3.1233", "*.*"
     PutAttachment ".\Plugin", "RegDll.dll"
-    Call Plugin.RegDll.Reg("C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm.dll")
+    Call Plugin.RegDll.Reg("C:\Users\chris\Desktop\大漠插件3.1233\dm.dll")
     Set dm = createobject("dm.dmsoft")
     ver = dm.Ver()
     If ver <> need_ver Then
         Set dm = nothing
         Set ws = createobject("Wscript.Shell")
-        ws.run "regsvr32 C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm.dll /s"
+        ws.run "regsvr32 C:\Users\chris\Desktop\大漠插件3.1233\dm.dll /s"
         Set ws = nothing
         Delay 1200
         Set dm = createobject("dm.dmsoft")
@@ -62,11 +61,11 @@ Sub OnScriptExit()
 End Sub
 Function 一秒内随机延迟()
     Randomize
-    Delay Rnd*500+500
+    Delay Rnd*500+700
 End Function
 Function 七百毫秒内随机延迟()
     Randomize
-    Delay Rnd*500+200
+    Delay Rnd*500+400
 End Function
 Function dm随机点击(x, y, w,h,way)
     dm.MoveToEx x,y,w,h
@@ -106,9 +105,9 @@ Function 按键找字(word)
     End If
     按键找字 = XY
 End Function
-dm_soft  = dm.SetDict(0,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm_soft.txt")
-st9 = dm.SetDict(1,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\宋体9号.txt")
-ywsz9 = dm.SetDict(2,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\英文+数字.txt")
+dm_soft  = dm.SetDict(0,"C:\Users\chris\Desktop\大漠插件3.1233\dm_soft.txt")
+st9 = dm.SetDict(1,"C:\Users\chris\Desktop\大漠插件3.1233\宋体9号.txt")
+ywsz9 = dm.SetDict(2,"C:\Users\chris\Desktop\大漠插件3.1233\英文+数字.txt")
 hwnd = dm.FindWindow("地下城与勇士", "地下城与勇士")
 dm_ret = dm.BindWindow(hwnd, "normal", "normal", "dx", 0)
 dm.MoveWindow hwnd, 0, 0
@@ -210,20 +209,17 @@ Function 随机左右()
         Call move("left")	
     End If
 End Function
-Function 捡东西
-    Call releaseKeyChar("~")
-    Call releaseKeyChar("x")
-    Call releaseKeyChar("x")
-    Call releaseKeyChar("x")
-End Function
 Function 司南界面(修理)
-    drsn = dm找单个图("C:\Users\ChrisWang\Desktop\dnf-img\1drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\2drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\3drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\4drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\5drsn.bmp")
+    drsn = dm找单个图("C:\Users\chris\Desktop\dnf-img\1drsn.bmp|C:\Users\chris\Desktop\dnf-img\2drsn.bmp|C:\Users\chris\Desktop\dnf-img\3drsn.bmp|C:\Users\chris\Desktop\dnf-img\4drsn.bmp|C:\Users\chris\Desktop\dnf-img\5drsn.bmp")
     司南界面 = int(drsn(1))
-    // 找到单人司南
     If 司南界面 > 0 Then
-        Call 捡东西()
+        Call releaseKeyChar("~")
+        Call releaseKeyChar("x")
+        Call releaseKeyChar("x")
+        Call releaseKeyChar("x")
         If 修理 > 0 Then 
-            Call releaseKeyChar("s")
+            dm.KeyPressChar "s"
+            Call 一秒内随机延迟()
             Call releaseKeyChar("space")
         End If
         Call dm随机点击(drsn(1),drsn(2),5,5,"R")
@@ -231,74 +227,36 @@ Function 司南界面(修理)
         dm.MoveToEx 50,50,50,50
         Call releaseKeyChar("space")
         Call 图内操作()
-    Else 
-        入场 = 按键找字("未央幻境入场")
-        If 入场(0) > 0 Then 
-            Call 捡东西()
-           Call 疲劳不足处理后去下一个()
-        End If
+        // Else 
+        // Call releaseKeyChar("`")
+        // Call releaseKeyChar("esc")
     End If
 End Function
 Function 选择人物(N)
+    TracePrint "选择第" + N
     第几个 = N- 1
     Call dm随机点击(第几个 * 130, 335, 50, 50, "L") // 选人物
     Call releaseKeyChar("space")
-    Delay 13000
-    Call move("down")
-    Delay 3000
-    frameS = 1
-    选择 = 1
-    While 选择
-        frameS  = frameS +1
-        If frameS Mod 50 = 0 Then
-            宽屏模式 = 按键找字("宽屏模式")
-            赛丽亚 = 按键找字("赛丽亚")
-            If 宽屏模式(0) > 0 or 赛丽亚(0) > 0 Then 
-                Call move("down")
+    x = 1
+    While x
+        宽屏模式 = 按键找字("宽屏模式")
+        TracePrint 宽屏模式(0)
+        If 宽屏模式(0) > 0 Then 
+            Call move("down")
+        Else 
+            云珂 = 按键找字("云珂")
+            If 云珂(0) > 0 Then 
+                Call releseMove()
+                x = 0
+                Call dm随机点击(505,200,5,5,"L")
+                Call 司南界面(0)
             Else 
-                TracePrint "找云客"
-                云珂 = 按键找字("云珂")
-                If 云珂(0) > 0 Then 
-                    选择 = 0
-                    Call releseMove()
-                    Call dm随机点击(505, 200, 5, 5, "L")
-                    dm.MoveToEx 50,50,50,50 // 防止遮挡
-                    Call 司南界面(0)
-                Else 
-                
-                    Call move("rightDown")
-                End If
+                Call move("rightDown")
             End If
-        End If 
+        End If
     Wend
 End Function
 // Call 选择人物(1)
-Function 疲劳不足处理后去下一个()
-    Call releaseKeyChar("f3")
-    // 修理分解机
-    Call dm随机点击(460, 330, 5, 5, "L")
-    Delay 500
-    dm.LeftClick 
-    Delay 500
-    // 确认后启动分解机
-    Call dm随机点击(390, 330, 2, 2, "L")
-    Call dm随机点击(390, 330, 2, 2, "L")
-    // 清理装备
-    Call releaseKeyChar("a")
-    Call releaseKeyChar("space")
-    Delay 2000
-    // 清理玉荣
-    Call 循环删除玉荣(490,395)   // 前20个
-    Call 循环删除玉荣(490, 455)// 后20个
-    // 关闭分解界面去选择人物
-    Call releaseKeyChar("esc")  
-    Call releaseKeyChar("esc")
-    Call dm随机点击(365, 440, 5, 5, "L")// 点击选择人物按钮
-    Delay 3000
-    // 目前固定2个 放在下方 1 2位置
-    Call 选择人物(2)
-End Function
-//Call 疲劳不足处理后去下一个()
 Function 图内操作()
     frame = 0
     刷图 = 1
@@ -309,19 +267,31 @@ Function 图内操作()
         If frame >= 6000 Then   // 1分30秒
             刷图 = 0
             Call releseMove()
-            Call releaseKeyChar("esc")
+            dm.KeyPressChar "esc"
+            Call 一秒内随机延迟()
             Call dm随机点击(493,440,5,5,"L")
             Call dm随机点击(505, 200, 5, 5, "L")
             dm.MoveToEx 50,50,50,50 // 防止遮挡
             Call 司南界面(0)
         ElseIf frame Mod 60 = 0 Then
-            无法入场 = 按键找字("疲劳值") 
+            无法入场 = 按键找字("无法入场") 
             If 无法入场(0) > 0 Then
                 TracePrint "疲劳不足"
                 刷图 = 0
                 Call releseMove()
                 Call releaseKeyChar("esc") // 关闭疲劳不足提示界面 
-                Call 疲劳不足处理后去下一个()
+                Call releaseKeyChar("f3")
+                Call dm随机点击(460,330,5,5,"L")  // 修理分解机
+                dm.LeftClick
+                Call dm随机点击(390, 330, 5, 5, "L")
+                Call dm随机点击(390,330,5,5,"L")
+                Call 循环删除玉荣(490,395)   // 前20个
+                Call 循环删除玉荣(490, 455)   // 后20个
+                Call releaseKeyChar("esc")  // 关闭分解界面
+                Call releaseKeyChar("esc")
+                Call dm随机点击(365, 440, 5, 5, "L")// 点击选择人物按钮
+                Delay 3000
+                Call 选择人物(2) // 目前固定2个 放在下方 1 2位置
             End If
             物品 = 按键找字("稀有")
             人物 = 按键找字("[")
@@ -333,12 +303,12 @@ Function 图内操作()
             接触距离Y = 1
             人物腰的位置 = 人物Y + 60
             人物脚的位置Y = 人物Y + 100
-            bossPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
-            heroPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
-            If heroPos(1) > 0 And 关闭关卡提示 > 0 Then 
+            bossPos = dm小地图找图("C:\Users\chris\Desktop\dnf-img\bossD.bmp")
+            heroPos = dm小地图找图("C:\Users\chris\Desktop\dnf-img\heroD.bmp")
+            If heroPos(1) > 0 And  heroPos(1) < 740 And 关闭关卡提示 > 0 Then 
                 Call releaseKeyChar("a")
                 Delay 2000
-                Call releaseKeyChar("g")
+                dm.KeyPressChar "g"
                 Call dm随机点击(755, 130, 5, 5, "L")
                 关闭关卡提示 = 0
             End If
@@ -353,7 +323,6 @@ Function 图内操作()
                     frame = 0
                     刷图 = 0
                     修理 = 0
-                    TracePrint "修理" +CStr(修理)
                 End If
             ElseIf 物品X > 0 Then// 地上存在物品
                 TracePrint "捡物品"
@@ -371,14 +340,12 @@ Function 图内操作()
                 残月宫阙 = 按键找字("残月宫阙")
                 工会 = 按键找字("无双")
                 If 工会(0) > 0 Then 
-                    人物X = 工会(0) - 20
+                	人物X = 工会(0) - 20
                 End If
-                If   工会(0) < 0 And heroPos(1) < 775  Then // 人物靠地图边缘太近导致找不到人
+                If 工会(0) < 0 And heroPos(1) < 775  Then // 人物靠地图边缘太近导致找不到人
                     TracePrint "边缘检测"
-                    Call move("left")
-                    Delay 300
                     Randomize
-                    If 残月宫阙(0) > 0 And 人物X > 500  Then
+                    If 残月宫阙(0) > 0 And heroPos(1) < 740 And 人物X > 500 Then
                         Call move("leftDown")
                     ElseIf Rnd > 0.5 Then 
                         Call move("rightDown")
@@ -397,13 +364,9 @@ Function 图内操作()
                             下一个房间pos = dm.FindStrE(200,350,750,600,"前进","f0f0f0-252525",1.0)
                             下一个房间pos = split(下一个房间pos,"|")
                             门X = int(下一个房间pos(1))
-                            If 门X > 0 Then 
-                                人物与门的X距离 = 人物X - 门X
-                                人物与门的Y距离 = 人物腰的位置 - 580
-                                Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y)
-                            Else 
-                                Call 人物往目标移动(-5, -5, 接触距离X, 接触距离Y)
-                            End If
+                            人物与门的X距离 = 人物X - 门X
+                            人物与门的Y距离 = 人物腰的位置 - 580
+                            Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
                         ElseIf  heroPos(1) > 750 And heroPos(2) > 80 Then // 在第5个图
                             Call 前进And中线移动(人物腰的位置)
                         Else
@@ -414,18 +377,13 @@ Function 图内操作()
                             Call 前进And中线移动(人物腰的位置)
                         ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then// 在第二个和下方图往上
                             TracePrint "宫阙第二个图"
-                            If 人物X > 650 Then 
-                                Call move("left")
-                            Else 
-                                下一个房间pos = dm.FindStrE(150,390,650,600,"前进","f0f0f0-252525",1.0)
-                                下一个房间pos = split(下一个房间pos,"|")
-                                门X = int(下一个房间pos(1))
-                                人物与门的X距离 = 人物X - 门X - 20
-                                人物与门的Y距离 = 人物腰的位置 - 150
-                                Call move("down")
-                                Delay 100
-                                Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
-                            End If
+                            Call move("down")
+                            下一个房间pos = dm.FindStrE(150,390,650,600,"前进","f0f0f0-252525",1.0)
+                            下一个房间pos = split(下一个房间pos,"|")
+                            门X = int(下一个房间pos(1))
+                            人物与门的X距离 = 人物X - 门X - 20
+                            人物与门的Y距离 = 人物腰的位置 - 150
+                            Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
                         ElseIf heroPos(1) > 755 And  heroPos(2) > 65 Then //  最右方的图
                             If 人物X < 0 Then 
                                 Call 随机左右()
@@ -455,11 +413,10 @@ Function 图内操作()
                             Call move("right")
                         End If
                     ElseIf  未央之脊(0) > 0 Then
-                        If  heroPos(2) < 65   Then // 在第4个图不找前进往中间走
-                            Call 前进And中线移动(人物腰的位置)
-                        Else 
+                        If heroPos(1) > 755 And heroPos(1) < 775  And heroPos(2) > 65   Then // 在第4个图不找前进往中间走
                             Call 人物保持中线向右移动(人物腰的位置)
-                   
+                         Else 
+                             Call 前进And中线移动(人物腰的位置)
                         End If
                     Else 
                         Call 前进And中线移动(人物腰的位置)
@@ -482,6 +439,8 @@ Function 前进And中线移动(人物腰的位置)
     If 门X > 350 Then 
         人物与门的X距离 = 人物X - 门X 
         人物与门的Y距离 = 人物腰的位置 - 门Y
+        TracePrint 人物与门的X距离
+        TracePrint 人物与门的Y距离
         Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y)
     Else   
         Call 人物保持中线向右移动(人物腰的位置)
