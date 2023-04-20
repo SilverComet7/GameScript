@@ -9,7 +9,7 @@ StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
 MacroID=c3a8e001-9d67-410d-a061-45655e6a2584
-Description=ï¿½Ù»ï¿½Î´ï¿½ï¿½
+Description=ÕÙ»½Î´Ñë
 Enable=1
 AutoRun=0
 [Repeat]
@@ -27,92 +27,93 @@ UEsDBBQAAgAIAEw5TD+cfTI/KxMAAABgAAAKABEAUmVnRGxsLmRsbFVUDQAHbj2VTmsSemPwAHlj7VwP
 
 
 [Script]
-Call ï¿½ï¿½Ä®×¢ï¿½ï¿½()
-Function ï¿½ï¿½Ä®×¢ï¿½ï¿½()
+ 
+Call ´óÄ®×¢²á()
+Function ´óÄ®×¢²á()
     need_ver = "3.1233"
     Set ws = createobject("Wscript.Shell")
     ws.run "regsvr32 atl.dll /s"
     Set ws = nothing
-    PutAttachment "C:\Users\ChrisWang\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233", "*.*"
+    PutAttachment "C:\Users\ChrisWang\Desktop\´óÄ®²å¼ş3.1233", "*.*"
     PutAttachment ".\Plugin", "RegDll.dll"
-    Call Plugin.RegDll.Reg("C:\Users\ChrisWang\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233\dm.dll")
+    Call Plugin.RegDll.Reg("C:\Users\ChrisWang\Desktop\´óÄ®²å¼ş3.1233\dm.dll")
     Set dm = createobject("dm.dmsoft")
     ver = dm.Ver()
     If ver <> need_ver Then
         Set dm = nothing
         Set ws = createobject("Wscript.Shell")
-        ws.run "regsvr32 C:\Users\ChrisWang\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233\dm.dll /s"
+        ws.run "regsvr32 C:\Users\ChrisWang\Desktop\´óÄ®²å¼ş3.1233\dm.dll /s"
         Set ws = nothing
         Delay 1200
         Set dm = createobject("dm.dmsoft")
         ver = dm.Ver()
         If ver <> need_ver Then
-            MessageBox "ï¿½ï¿½ï¿½ï¿½æ±¾ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ç°Ê¹ï¿½ÃµÄ°æ±¾ï¿½ï¿½:" & ver & ",ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½:" & dm.GetBasePath()
-            MessageBox "ï¿½ï¿½Ø±Õ³ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Â´ò¿ª±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù³ï¿½ï¿½ï¿½"
+            MessageBox "²å¼ş°æ±¾´íÎó,µ±Ç°Ê¹ÓÃµÄ°æ±¾ÊÇ:" & ver & ",²å¼şËùÔÚÄ¿Â¼ÊÇ:" & dm.GetBasePath()
+            MessageBox "Çë¹Ø±Õ³ÌĞò,ÖØĞÂ´ò¿ª±¾³ÌĞòÔÙ³¢ÊÔ"
             EndScript
         End If
     Else
         TracePrint ver
-        TracePrint "×¢ï¿½ï¿½É¹ï¿½ï¿½ï¿½"
+        TracePrint "×¢²á³É¹¦£¡"
     End If
 End Function
 Sub OnScriptExit()
     dm_ret = dm.UnBindWindow() 
 End Sub
-Function Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½()
+Function Ò»ÃëÄÚËæ»úÑÓ³Ù()
     Randomize
     Delay Rnd*500+500
 End Function
-Function ï¿½ß°Ùºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½()
+Function Æß°ÙºÁÃëÄÚËæ»úÑÓ³Ù()
     Randomize
     Delay Rnd*500+200
 End Function
-Function dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(x, y, w,h,way)
+Function dmËæ»úµã»÷(x, y, w,h,way)
     dm.MoveToEx x,y,w,h
-    Call ï¿½ß°Ùºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½()
+    Call Æß°ÙºÁÃëÄÚËæ»úÑÓ³Ù()
     If way = "L" Then
         dm.LeftClick
     Else
         dm.RightClick 
     End If
-    Call ï¿½ß°Ùºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½()
+    Call Æß°ÙºÁÃëÄÚËæ»úÑÓ³Ù()
 End Function
-Function dmï¿½Òµï¿½ï¿½ï¿½Í¼(picPath)
+Function dmÕÒµ¥¸öÍ¼(picPath)
     pos = dm.FindPicE(0,0,800,600,picPath,"000000",0.5,0)
     pos = split(pos,"|")
     If int(pos(1)) > 0 Then 
         x = pos(1)
         y = pos(2)
-        //        TracePrint  picPath + "Î»ï¿½Ã£ï¿½ x:"+x+"y:"+y
+        //        TracePrint  picPath + "Î»ÖÃ£º x:"+x+"y:"+y
     End If
-    dmï¿½Òµï¿½ï¿½ï¿½Í¼ = pos
+    dmÕÒµ¥¸öÍ¼ = pos
 End Function
-Function dmĞ¡ï¿½ï¿½Í¼ï¿½ï¿½Í¼(picPath)
+Function dmĞ¡µØÍ¼ÕÒÍ¼(picPath)
     pos = dm.FindPicE(680,20,795,100,picPath,"000000",0.5,0)
     pos = split(pos,"|")
     If int(pos(1)) > 0 Then 
         x = pos(1)
         y = pos(2)
-        //        TracePrint  picPath + "Î»ï¿½Ã£ï¿½ x:"+x+"y:"+y
+        //        TracePrint  picPath + "Î»ÖÃ£º x:"+x+"y:"+y
     End If
-    dmĞ¡ï¿½ï¿½Í¼ï¿½ï¿½Í¼ = pos
+    dmĞ¡µØÍ¼ÕÒÍ¼ = pos
 End Function
-Function ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(word)
-    iCoord = Plugin.Pic.FindWordShape(0, 0, 800, 600, word, "ï¿½ï¿½ï¿½ï¿½", 9, 0, 0.5)
+Function °´¼üÕÒ×Ö(word)
+    iCoord = Plugin.Pic.FindWordShape(0, 0, 800, 600, word, "ËÎÌå", 9, 0, 0.5)
     XY = Split(iCoord, "|")
     If XY(0) >= 0 Then
-        TracePrint  word+"Î»ï¿½ï¿½x"+XY(0) +"y:"+XY(1)
+        TracePrint  word+"Î»ÖÃx"+XY(0) +"y:"+XY(1)
     End If
-    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ = XY
+    °´¼üÕÒ×Ö = XY
 End Function
-dm_soft  = dm.SetDict(0,"C:\Users\ChrisWang\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233\dm_soft.txt")
-st9 = dm.SetDict(1,"C:\Users\ChrisWang\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233\ï¿½ï¿½ï¿½ï¿½9ï¿½ï¿½.txt")
-ywsz9 = dm.SetDict(2,"C:\Users\ChrisWang\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233\Ó¢ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½.txt")
-hwnd = dm.FindWindow("ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿", "ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿")
+dm_soft  = dm.SetDict(0,"C:\Users\ChrisWang\Desktop\´óÄ®²å¼ş3.1233\dm_soft.txt")
+st9 = dm.SetDict(1,"C:\Users\ChrisWang\Desktop\´óÄ®²å¼ş3.1233\ËÎÌå9ºÅ.txt")
+ywsz9 = dm.SetDict(2,"C:\Users\ChrisWang\Desktop\´óÄ®²å¼ş3.1233\Ó¢ÎÄ+Êı×Ö.txt")
+hwnd = dm.FindWindow("µØÏÂ³ÇÓëÓÂÊ¿", "µØÏÂ³ÇÓëÓÂÊ¿")
 dm_ret = dm.BindWindow(hwnd, "normal", "normal", "dx", 0)
 dm.MoveWindow hwnd, 0, 0
-dm_ret = dm.SetWindowState(hwnd,1) // ï¿½ï¿½ï¿½ï¿½
-// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½End
+dm_ret = dm.SetWindowState(hwnd,1) // ¼¤»î
+// ¹«¹²º¯ÊıEnd
 Function move(action)
     If action = "up" Then 
         dm.KeyUpChar "left"
@@ -164,34 +165,34 @@ Function releseMove()
     dm.KeyUpChar "up"
     dm.KeyUpChar "down"
 End Function
-Function ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½X,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Y)
-    If Abs(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½) > ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½X And Abs(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½) > ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Y  Then 
-        If ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ > 0 And  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½ > 0  Then 
+Function ÈËÎïÍùÄ¿±êÒÆ¶¯(ÈËÎïÓëÄ¿±êX¾àÀë,ÈËÎïÓëÄ¿±êY¾àÀë,´¥·¢¾àÀëX,´¥·¢¾àÀëY)
+    If Abs(ÈËÎïÓëÄ¿±êX¾àÀë) > ´¥·¢¾àÀëX And Abs(ÈËÎïÓëÄ¿±êY¾àÀë) > ´¥·¢¾àÀëY  Then 
+        If ÈËÎïÓëÄ¿±êX¾àÀë > 0 And  ÈËÎïÓëÄ¿±êY¾àÀë > 0  Then 
             Call move("leftUp")
-        ElseIf  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ > 0 And  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½ < 0 
+        ElseIf  ÈËÎïÓëÄ¿±êX¾àÀë > 0 And  ÈËÎïÓëÄ¿±êY¾àÀë < 0 
             Call move("leftDown")
-        ElseIf  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ < 0 And  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½ > 0 
+        ElseIf  ÈËÎïÓëÄ¿±êX¾àÀë < 0 And  ÈËÎïÓëÄ¿±êY¾àÀë > 0 
             Call move("rightUp")
-        ElseIf  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ < 0 And  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½ < 0 
+        ElseIf  ÈËÎïÓëÄ¿±êX¾àÀë < 0 And  ÈËÎïÓëÄ¿±êY¾àÀë < 0 
             Call move("rightDown")
         End If
-    ElseIf Abs(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½) < ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½X And Abs(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½) > ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Y Then 
-        If ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½ > 0 Then 
+    ElseIf Abs(ÈËÎïÓëÄ¿±êX¾àÀë) < ´¥·¢¾àÀëX And Abs(ÈËÎïÓëÄ¿±êY¾àÀë) > ´¥·¢¾àÀëY Then 
+        If ÈËÎïÓëÄ¿±êY¾àÀë > 0 Then 
             Call move("up")
         Else 
             Call move("down")
         End If
-    ElseIf Abs(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½) > ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½X And Abs(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½) < ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Y Then 
-        If ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ > 0 Then 
+    ElseIf Abs(ÈËÎïÓëÄ¿±êX¾àÀë) > ´¥·¢¾àÀëX And Abs(ÈËÎïÓëÄ¿±êY¾àÀë) < ´¥·¢¾àÀëY Then 
+        If ÈËÎïÓëÄ¿±êX¾àÀë > 0 Then 
             Call move("left")
         Else 
             Call move("right")
         End If   
     End If
 End Function
-Function ï¿½ï¿½ï¿½ï±£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
-    TracePrint "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½" + CStr(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
-    If ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ > 380 Then // ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½
+Function ÈËÎï±£³ÖÖĞÏßÏòÓÒÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
+    TracePrint "ÈËÎïÑüµÄÎ»ÖÃ" + CStr(ÈËÎïÑüµÄÎ»ÖÃ)
+    If ÈËÎïÑüµÄÎ»ÖÃ > 380 Then // ÆÁÄ»ÖĞÏß
         Call move("rightUp")
     Else 
         Call move("rightDown")    
@@ -199,9 +200,9 @@ Function ï¿½ï¿½ï¿½ï±£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
 End Function
 Function releaseKeyChar(keyChar)
     dm.KeyPressChar keyChar
-    Call Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½()
+    Call Ò»ÃëÄÚËæ»úÑÓ³Ù()
 End Function
-Function ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
+Function Ëæ»ú×óÓÒ()
     Randomize
     If Rnd > 0.5 Then 
         Call move("right")
@@ -209,164 +210,185 @@ Function ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
         Call move("left")	
     End If
 End Function
-Function ï¿½ï¿½ï¿½ï¿½
+Function ¼ñ¶«Î÷
     Call releaseKeyChar("~")
     Call releaseKeyChar("x")
     Call releaseKeyChar("x")
     Call releaseKeyChar("x")
 End Function
-Function Ë¾ï¿½Ï½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)
-    drsn = dmï¿½Òµï¿½ï¿½ï¿½Í¼("C:\Users\ChrisWang\Desktop\dnf-img\1drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\2drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\3drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\4drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\5drsn.bmp")
-    Ë¾ï¿½Ï½ï¿½ï¿½ï¿½ = int(drsn(1))
-    If Ë¾ï¿½Ï½ï¿½ï¿½ï¿½ > 0 Then
-        Call ï¿½ï¿½ï¿½ï¿½()
-        If ï¿½ï¿½ï¿½ï¿½ > 0 Then 
-         Call releaseKeyChar("s")
-            Call releaseKeyChar("space")
-        End If
-        Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(drsn(1),drsn(2),5,5,"R")
-        Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(160, 545, 10, 10, "L")// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥
+Function Ë¾ÄÏ½çÃæ(ĞŞÀí)
+    drsn = dmÕÒµ¥¸öÍ¼("C:\Users\ChrisWang\Desktop\dnf-img\1drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\2drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\3drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\4drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\5drsn.bmp")
+    Ë¾ÄÏ½çÃæ = int(drsn(1))
+    // ÕÒµ½µ¥ÈËË¾ÄÏ
+    If Ë¾ÄÏ½çÃæ > 0 Then
+        Call ¼ñ¶«Î÷()
+//        If ĞŞÀí > 0 Then 
+//            Call releaseKeyChar("s")
+//            Call releaseKeyChar("space")
+//        End If
+        Call dmËæ»úµã»÷(drsn(1),drsn(2),5,5,"R")
+        Call dmËæ»úµã»÷(160, 545, 10, 10, "L")// ½ø³¡°´Å¥
         dm.MoveToEx 50,50,50,50
         Call releaseKeyChar("space")
-        Call Í¼ï¿½Ú²ï¿½ï¿½ï¿½()
-    Else 
-        ï¿½ë³¡ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("ï¿½ë³¡")
-        If ï¿½ë³¡(0) > 0 Then 
-            Call ï¿½ï¿½ï¿½ï¿½()
-            Call Ë¾ï¿½Ï½ï¿½ï¿½ï¿½(0)
-        End If
+        Call Í¼ÄÚ²Ù×÷()
+//    Else 
+//        Èë³¡ = °´¼üÕÒ×Ö("Î´Ñë»Ã¾³Èë³¡")
+//        If Èë³¡(0) > 0 Then 
+//            Call ¼ñ¶«Î÷()
+//           Call Æ£ÀÍ²»×ã´¦ÀíºóÈ¥ÏÂÒ»¸ö()
+//        End If
     End If
 End Function
-Function Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(N)
-    ï¿½Ú¼ï¿½ï¿½ï¿½ = N- 1
-    Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ú¼ï¿½ï¿½ï¿½ * 130, 335, 50, 50, "L") // Ñ¡ï¿½ï¿½ï¿½ï¿½
+Function Ñ¡ÔñÈËÎï(N)
+    µÚ¼¸¸ö = N- 1
+    Call dmËæ»úµã»÷(µÚ¼¸¸ö * 130, 335, 50, 50, "L") // Ñ¡ÈËÎï
     Call releaseKeyChar("space")
-     Delay 3000
+    Delay 13000
     Call move("down")
     Delay 3000
     frameS = 1
-    Ñ¡ï¿½ï¿½ = 1
-    While Ñ¡ï¿½ï¿½
+    Ñ¡Ôñ = 1
+    While Ñ¡Ôñ
         frameS  = frameS +1
         If frameS Mod 50 = 0 Then
-            ï¿½ï¿½ï¿½ï¿½Ä£Ê½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("ï¿½ï¿½ï¿½ï¿½Ä£Ê½")
-            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
-            If ï¿½ï¿½ï¿½ï¿½Ä£Ê½(0) > 0 or ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(0) > 0 Then 
+            ¿íÆÁÄ£Ê½ = °´¼üÕÒ×Ö("¿íÆÁÄ£Ê½")
+            ÈüÀöÑÇ = °´¼üÕÒ×Ö("ÈüÀöÑÇ")
+            If ¿íÆÁÄ£Ê½(0) > 0 or ÈüÀöÑÇ(0) > 0 Then 
                 Call move("down")
             Else 
-                ï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("ï¿½ï¿½ï¿½ï¿½")
-                If ï¿½ï¿½ï¿½ï¿½(0) > 0 Then 
+                TracePrint "ÕÒÔÆ¿Í"
+                ÔÆçæ = °´¼üÕÒ×Ö("ÔÆçæ")
+                If ÔÆçæ(0) > 0 Then 
+                    Ñ¡Ôñ = 0
                     Call releseMove()
-                    Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(505,200,5,5,"L")
-                    Ñ¡ï¿½ï¿½ = 0
-                    Call Ë¾ï¿½Ï½ï¿½ï¿½ï¿½(0)
-                Else  
+                    Call dmËæ»úµã»÷(505, 200, 5, 5, "L")
+                    dm.MoveToEx 50,50,50,50 // ·ÀÖ¹ÕÚµ²
+                    Call Ë¾ÄÏ½çÃæ(0)
+                Else 
                     Call move("rightDown")
                 End If
             End If
         End If 
     Wend
 End Function
-// Call Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(1)
-
-
-
-Function Æ£ï¿½Í²ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½()
- Call releseMove()
-                Call releaseKeyChar("esc") // ï¿½Ø±ï¿½Æ£ï¿½Í²ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ 
-                Call releaseKeyChar("f3")
-                Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(460,330,5,5,"L")  // ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½
-                dm.LeftClick
-                Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(390, 330, 5, 5, "L")
-                Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(390,330,5,5,"L")
-                Call Ñ­ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(490,395)   // Ç°20ï¿½ï¿½
-                Call Ñ­ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(490, 455)   // ï¿½ï¿½20ï¿½ï¿½
-                Call releaseKeyChar("esc")  // ï¿½Ø±Õ·Ö½ï¿½ï¿½ï¿½ï¿½
-                Call releaseKeyChar("esc")
-                Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(365, 440, 5, 5, "L")// ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï°´Å¥
-                Delay 3000
-                Call Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(2) // Ä¿Ç°ï¿½Ì¶ï¿½2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ 1 2Î»ï¿½ï¿½
+// Call Ñ¡ÔñÈËÎï(1)
+Function Æ£ÀÍ²»×ã´¦ÀíºóÈ¥ÏÂÒ»¸ö()
+    Call releaseKeyChar("f3")
+    // ĞŞÀí·Ö½â»ú
+    Call dmËæ»úµã»÷(460, 330, 5, 5, "L")
+    Delay 500
+    dm.LeftClick 
+    Delay 500
+    // È·ÈÏºóÆô¶¯·Ö½â»ú
+    Call dmËæ»úµã»÷(390, 330, 2, 2, "L")
+    Call dmËæ»úµã»÷(390, 330, 2, 2, "L")
+    // ÇåÀí×°±¸
+    Call releaseKeyChar("a")
+    Call releaseKeyChar("space")
+    Delay 2000
+    // ÇåÀíÓñÈÙ
+    Call Ñ­»·É¾³ıÓñÈÙ(490,395)   // Ç°20¸ö
+    Call Ñ­»·É¾³ıÓñÈÙ(490, 455)// ºó20¸ö
+    // ¹Ø±Õ·Ö½â½çÃæÈ¥Ñ¡ÔñÈËÎï
+    Call releaseKeyChar("esc")  
+    Call releaseKeyChar("esc")
+    Call dmËæ»úµã»÷(365, 440, 5, 5, "L")// µã»÷Ñ¡ÔñÈËÎï°´Å¥
+    Delay 3000
+    // Ä¿Ç°¹Ì¶¨2¸ö ·ÅÔÚÏÂ·½ 1 2Î»ÖÃ
+    Call Ñ¡ÔñÈËÎï(2)
 End Function
 
-
-Function Í¼ï¿½Ú²ï¿½ï¿½ï¿½()
+Function Í¼ÄÚ²Ù×÷()
     frame = 0
     Ë¢Í¼ = 1
-    ï¿½Ø±Õ¹Ø¿ï¿½ï¿½ï¿½Ê¾ = 1
-    ï¿½ï¿½ï¿½ï¿½ = 1  // Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
+    ¹Ø±Õ¹Ø¿¨ÌáÊ¾ = 1
+    ĞŞÀí = 1  // Ò»´ÎÆô¶¯ÊµÀıÖ»ĞŞÀíÒ»´Î
     While Ë¢Í¼
         frame = frame + 1
-        If frame >= 6000 Then   // 1ï¿½ï¿½30ï¿½ï¿½
+        If frame >= 6000 Then   // 1·Ö30Ãë
             Ë¢Í¼ = 0
             Call releseMove()
             Call releaseKeyChar("esc")
-            Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(493,440,5,5,"L")
-            Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(505, 200, 5, 5, "L")
-            dm.MoveToEx 50,50,50,50 // ï¿½ï¿½Ö¹ï¿½Úµï¿½
-            Call Ë¾ï¿½Ï½ï¿½ï¿½ï¿½(0)
+            Call dmËæ»úµã»÷(493, 440, 5, 5, "L")
+            Delay 2000
+//            ÔÆçæ = °´¼üÕÒ×Ö("ÔÆçæ")
+//                If ÔÆçæ(0) > 0 Then 
+//              
+//                End If
+              Call dmËæ»úµã»÷(500, 245, 5, 5, "L")
+                Call dmËæ»úµã»÷(530,315, 5, 5, "L")
+            dm.MoveToEx 50,50,50,50 // ·ÀÖ¹ÕÚµ²
+            Call Ë¾ÄÏ½çÃæ(0)
         ElseIf frame Mod 60 = 0 Then
-            ï¿½Ş·ï¿½ï¿½ë³¡ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("Æ£ï¿½ï¿½Öµ") 
-            If ï¿½Ş·ï¿½ï¿½ë³¡(0) > 0 Then
-                TracePrint "Æ£ï¿½Í²ï¿½ï¿½ï¿½"
+            ÎŞ·¨Èë³¡ = °´¼üÕÒ×Ö("Æ£ÀÍÖµ") 
+            If ÎŞ·¨Èë³¡(0) > 0 Then
+                TracePrint "Æ£ÀÍ²»×ã"
                 Ë¢Í¼ = 0
-               Call Æ£ï¿½Í²ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½()
+                Call releseMove()
+                Call releaseKeyChar("esc")// ¹Ø±ÕÆ£ÀÍ²»×ãÌáÊ¾½çÃæ 
+                Delay 2000
+                Call Æ£ÀÍ²»×ã´¦ÀíºóÈ¥ÏÂÒ»¸ö()
             End If
-            ï¿½ï¿½Æ· = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("Ï¡ï¿½ï¿½")
-            ï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("[")
-            ï¿½ï¿½ï¿½ï¿½X = ï¿½ï¿½ï¿½ï¿½(0)
-            ï¿½ï¿½ï¿½ï¿½Y = ï¿½ï¿½ï¿½ï¿½(1)+20
-            ï¿½ï¿½Æ·X = ï¿½ï¿½Æ·(0)
-            ï¿½ï¿½Æ·Y = ï¿½ï¿½Æ·(1)
-            ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½X = 1
-            ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½Y = 1
-            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½Y + 60
-            ï¿½ï¿½ï¿½ï¿½Åµï¿½Î»ï¿½ï¿½Y = ï¿½ï¿½ï¿½ï¿½Y + 100
-            bossPos = dmĞ¡ï¿½ï¿½Í¼ï¿½ï¿½Í¼("C:\Users\chris\Desktop\dnf-img\bossD.bmp")
-            heroPos = dmĞ¡ï¿½ï¿½Í¼ï¿½ï¿½Í¼("C:\Users\chris\Desktop\dnf-img\heroD.bmp")
-            If heroPos(1) > 0 And  heroPos(1) < 740 And ï¿½Ø±Õ¹Ø¿ï¿½ï¿½ï¿½Ê¾ > 0 Then 
+            ÎïÆ· = °´¼üÕÒ×Ö("Ï¡ÓĞ")
+            ÈËÎï = °´¼üÕÒ×Ö("[")
+            ÈËÎïX = ÈËÎï(0)
+            ÈËÎïY = ÈËÎï(1)+20
+            ÎïÆ·X = ÎïÆ·(0)
+            ÎïÆ·Y = ÎïÆ·(1)
+            ½Ó´¥¾àÀëX = 1
+            ½Ó´¥¾àÀëY = 1
+            ÈËÎïÑüµÄÎ»ÖÃ = ÈËÎïY + 60
+            ÈËÎï½ÅµÄÎ»ÖÃY = ÈËÎïY + 100
+            bossPos = dmĞ¡µØÍ¼ÕÒÍ¼("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
+            heroPos = dmĞ¡µØÍ¼ÕÒÍ¼("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
+            If heroPos(1) > 0 And ¹Ø±Õ¹Ø¿¨ÌáÊ¾ > 0 Then 
                 Call releaseKeyChar("a")
                 Delay 2000
-                 Call releaseKeyChar("g")
-                Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(755, 130, 5, 5, "L")
-                ï¿½Ø±Õ¹Ø¿ï¿½ï¿½ï¿½Ê¾ = 0
+                Call releaseKeyChar("g")
+                Call dmËæ»úµã»÷(755, 130, 5, 5, "L")
+                ¹Ø±Õ¹Ø¿¨ÌáÊ¾ = 0
             End If
-            dm_ret = dm.FindStr(0, 0, 800, 600, "ï¿½ï¿½ï¿½ï¿½Î´Ê°È¡", "857658-000000|ddc593-353535", 0.8, intX, intY)
+            dm_ret = dm.FindStr(0, 0, 800, 600, "´æÔÚÎ´Ê°È¡", "857658-000000|ddc593-353535", 0.8, intX, intY)
             If intX > 0 Then 
                 Call releseMove()
-            ElseIf heroPos(1) < 0 And ï¿½ï¿½ï¿½ï¿½X > 0 Then   // ï¿½ï¿½Bossï¿½ï¿½ï¿½ï¿½Andï¿½ï¿½Ö¹ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶Ï´ï¿½ï¿½ï¿½
+            ElseIf heroPos(1) < 0 And ÈËÎïX > 0 Then   // ÔÚBoss·¿¼äAnd·ÀÖ¹¹ıÍ¼ºÚÆÁµ¼ÖÂÅĞ¶Ï´íÎó
                 Call releseMove()
                 Delay 3000
-                Ë¾ï¿½Ï½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)
-                If ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ > 0 Then 
+                Ë¾ÄÏ½çÃæ(ĞŞÀí)
+                If ÊÇ·ñ´æÔÚË¾ÄÏÑ¡Ôñ½çÃæ > 0 Then 
                     frame = 0
                     Ë¢Í¼ = 0
-                    ï¿½ï¿½ï¿½ï¿½ = 0
-                    TracePrint "ï¿½ï¿½ï¿½ï¿½" +CStr(ï¿½ï¿½ï¿½ï¿½)
+                    ĞŞÀí = 0
+                    TracePrint "ĞŞÀí" +CStr(ĞŞÀí)
                 End If
-            ElseIf ï¿½ï¿½Æ·X > 0 Then// ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
-                TracePrint "ï¿½ï¿½ï¿½ï¿½Æ·"
-                If ï¿½ï¿½ï¿½ï¿½X < 0 Then 
-                    Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
+            ElseIf ÎïÆ·X > 0 Then// µØÉÏ´æÔÚÎïÆ·
+                TracePrint "¼ñÎïÆ·"
+                If ÈËÎïX < 0 Then 
+                    Call Ëæ»ú×óÓÒ()
                 Else 
-                    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½X - ï¿½ï¿½Æ·X
-                    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½Åµï¿½Î»ï¿½ï¿½Y - ï¿½ï¿½Æ·Y
-                    Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Yï¿½ï¿½ï¿½ï¿½, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½X, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½Y)  
+                    ÈËÎïÓëÎïÆ·µÄX¾àÀë = ÈËÎïX - ÎïÆ·X
+                    ÈËÎïÓëÎïÆ·µÄY¾àÀë = ÈËÎï½ÅµÄÎ»ÖÃY - ÎïÆ·Y
+                    Call ÈËÎïÍùÄ¿±êÒÆ¶¯(ÈËÎïÓëÎïÆ·µÄX¾àÀë, ÈËÎïÓëÎïÆ·µÄY¾àÀë, ½Ó´¥¾àÀëX, ½Ó´¥¾àÀëY)  
                 End If
             Else         
-                Î´ï¿½ï¿½Ö®ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("Î´ï¿½ï¿½Ö®ï¿½ï¿½")                
-                ï¿½Ã¾ï¿½Ç°ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("ï¿½Ã¾ï¿½Ç°ï¿½ï¿½")
-                ï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("ï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½")
-                ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½")
-                ï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("ï¿½ï¿½Ë«")
-                If ï¿½ï¿½ï¿½ï¿½(0) > 0 Then 
-                    ï¿½ï¿½ï¿½ï¿½X = ï¿½ï¿½ï¿½ï¿½(0) - 20
+                Î´ÑëÖ®¼¹ = °´¼üÕÒ×Ö("Î´ÑëÖ®¼¹")                
+                »Ã¾³Ç°µî = °´¼üÕÒ×Ö("»Ã¾³Ç°µî")
+                ²×³ØÖñÁÖ = °´¼üÕÒ×Ö("²×³ØÖñÁÖ")
+                ²ĞÔÂ¹¬ãÚ = °´¼üÕÒ×Ö("²ĞÔÂ¹¬ãÚ")
+                ¹¤»á = °´¼üÕÒ×Ö("ÎŞË«")
+                If ¹¤»á(0) > 0 Then 
+                    ÈËÎïX = ¹¤»á(0) - 20
                 End If
-                If ï¿½ï¿½ï¿½ï¿½(0) < 0 And heroPos(1) < 775  Then // ï¿½ï¿½ï¿½ï¿¿ï¿½ï¿½Í¼ï¿½ï¿½ÔµÌ«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½
-                    TracePrint "ï¿½ï¿½Ôµï¿½ï¿½ï¿½"
+                If   ¹¤»á(0) < 0 And heroPos(1) < 775  Then // ÈËÎï¿¿µØÍ¼±ßÔµÌ«½üµ¼ÖÂÕÒ²»µ½ÈË
+                    TracePrint "±ßÔµ¼ì²â"
                     Call move("left")
-                   Delay 300
+                    Delay 300
                     Randomize
-                    If ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½(0) > 0 And heroPos(1) < 740 And ï¿½ï¿½ï¿½ï¿½X > 500 Then
+                    //  ÌØÊâ³¡¾°
+                    
+                    If ²ĞÔÂ¹¬ãÚ(0) > 0 And ÈËÎïX > 500  Then  //   ¹¬µîÏÂ·½Í¼×îÓÒ±ß
+                        Call move("leftDown")
+                    ElseIf »Ã¾³Ç°µî(0) > 0 And heroPos(2) > 80   Then  // »Ã¾³ÏÂ·½Í¼
                         Call move("leftDown")
                     ElseIf Rnd > 0.5 Then 
                         Call move("rightDown")
@@ -374,107 +396,120 @@ Function Í¼ï¿½Ú²ï¿½ï¿½ï¿½()
                         Call move("rightUp")	
                     End If
                 Else
-                    If ï¿½×³ï¿½ï¿½ï¿½ï¿½ï¿½(0) > 0 Then 
-                        If heroPos(1) > 730 And heroPos(1) < 750 And heroPos(2) > 60 Then   // ï¿½ÚµÚ¶ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½
-                            TracePrint "ï¿½ï¿½ï¿½ÖµÚ¶ï¿½ï¿½ï¿½Í¼"
-                            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½X - 670
-                            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Yï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ - 150
-                            Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½, 30, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½X, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½Y) 
-                        ElseIf heroPos(1) > 750 And heroPos(2) < 60 Then // ï¿½Úµï¿½4ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-                            TracePrint "ï¿½ï¿½ï¿½Öµï¿½ï¿½Ä¸ï¿½Í¼"
-                            ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos = dm.FindStrE(200,350,750,600,"Ç°ï¿½ï¿½","f0f0f0-252525",1.0)
-                            ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos = split(ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos,"|")
-                            ï¿½ï¿½X = int(ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos(1))
-                            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½X - ï¿½ï¿½X
-                            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Yï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ - 580
-                            Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Yï¿½ï¿½ï¿½ï¿½, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½X, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½Y) 
-                        ElseIf  heroPos(1) > 750 And heroPos(2) > 80 Then // ï¿½Úµï¿½5ï¿½ï¿½Í¼
-                            Call Ç°ï¿½ï¿½Andï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
+                    If ²×³ØÖñÁÖ(0) > 0 Then 
+                        If heroPos(1) > 730 And heroPos(1) < 750 And heroPos(2) > 60 Then   // ÔÚµÚ¶ş¸öÍ¼ÍùÉÏ
+                            TracePrint "ÖñÁÖµÚ¶ş¸öÍ¼"
+                            ÈËÎïÓëÃÅµÄX¾àÀë = ÈËÎïX - 670
+                            ÈËÎïÓëÃÅµÄY¾àÀë = ÈËÎïÑüµÄÎ»ÖÃ - 150
+                            Call ÈËÎïÍùÄ¿±êÒÆ¶¯(ÈËÎïÓëÃÅµÄX¾àÀë, 30, ½Ó´¥¾àÀëX, ½Ó´¥¾àÀëY) 
+                        ElseIf heroPos(1) > 750 And heroPos(2) < 60 Then // ÔÚµÚ4¸öÍ¼ÍùÖĞÏÂ
+                            TracePrint "ÖñÁÖµÚËÄ¸öÍ¼"
+                            ÏÂÒ»¸ö·¿¼äpos = dm.FindStrE(200,350,750,600,"Ç°½ø","f0f0f0-252525",1.0)
+                            ÏÂÒ»¸ö·¿¼äpos = split(ÏÂÒ»¸ö·¿¼äpos,"|")
+                            ÃÅX = int(ÏÂÒ»¸ö·¿¼äpos(1))
+                            If ÃÅX > 0 Then 
+                                ÈËÎïÓëÃÅµÄX¾àÀë = ÈËÎïX - ÃÅX
+                                ÈËÎïÓëÃÅµÄY¾àÀë = ÈËÎïÑüµÄÎ»ÖÃ - 580
+                                Call ÈËÎïÍùÄ¿±êÒÆ¶¯(ÈËÎïÓëÃÅµÄX¾àÀë, ÈËÎïÓëÃÅµÄY¾àÀë, ½Ó´¥¾àÀëX, ½Ó´¥¾àÀëY)
+                            Else 
+                                Call ÈËÎïÍùÄ¿±êÒÆ¶¯(-5, -5, ½Ó´¥¾àÀëX, ½Ó´¥¾àÀëY)
+                            End If
+                        ElseIf  heroPos(1) > 750 And heroPos(2) > 80 Then // ÔÚµÚ5¸öÍ¼
+                            Call Ç°½øAndÖĞÏßÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
                         Else
-                            Call ï¿½ï¿½ï¿½ï±£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
+                            Call ÈËÎï±£³ÖÖĞÏßÏòÓÒÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
                         End If
-                    ElseIf ï¿½ï¿½ï¿½Â¹ï¿½ï¿½ï¿½(0) > 0 Then 
+                    ElseIf ²ĞÔÂ¹¬ãÚ(0) > 0 Then 
                         If heroPos(1) < 740  Then
-                            Call Ç°ï¿½ï¿½Andï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
-                        ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then// ï¿½ÚµÚ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½Í¼ï¿½ï¿½ï¿½ï¿½
-                            TracePrint "ï¿½ï¿½ï¿½ÚµÚ¶ï¿½ï¿½ï¿½Í¼"
-                            Call move("down")
-                            ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos = dm.FindStrE(150,390,650,600,"Ç°ï¿½ï¿½","f0f0f0-252525",1.0)
-                            ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos = split(ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos,"|")
-                            ï¿½ï¿½X = int(ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos(1))
-                            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½X - ï¿½ï¿½X - 20
-                            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Yï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ - 150
-                            Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Yï¿½ï¿½ï¿½ï¿½, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½X, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½Y) 
-                        ElseIf heroPos(1) > 755 And  heroPos(2) > 65 Then //  ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿½Í¼
-                            If ï¿½ï¿½ï¿½ï¿½X < 0 Then 
-                                Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
+                            Call Ç°½øAndÖĞÏßÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
+                        ElseIf heroPos(1) > 740 And heroPos(1) < 750 And heroPos(2) > 60 Then// ÔÚµÚ¶ş¸öºÍÏÂ·½Í¼ÍùÉÏ
+                            TracePrint "¹¬ãÚµÚ¶ş¸öÍ¼"
+                            If ÈËÎïX > 650 Then 
+                                Call move("left")
+                            Else 
+                                ÏÂÒ»¸ö·¿¼äpos = dm.FindStrE(150,390,650,600,"Ç°½ø","f0f0f0-252525",1.0)
+                                ÏÂÒ»¸ö·¿¼äpos = split(ÏÂÒ»¸ö·¿¼äpos,"|")
+                                ÃÅX = int(ÏÂÒ»¸ö·¿¼äpos(1))
+                                ÈËÎïÓëÃÅµÄX¾àÀë = ÈËÎïX - ÃÅX - 20
+                                ÈËÎïÓëÃÅµÄY¾àÀë = ÈËÎïÑüµÄÎ»ÖÃ - 150
+                                Call move("down")
+                                Delay 100
+                                Call ÈËÎïÍùÄ¿±êÒÆ¶¯(ÈËÎïÓëÃÅµÄX¾àÀë, ÈËÎïÓëÃÅµÄY¾àÀë, ½Ó´¥¾àÀëX, ½Ó´¥¾àÀëY) 
+                            End If
+                        ElseIf heroPos(1) > 755 And  heroPos(2) > 65 Then //  ×îÓÒ·½µÄÍ¼
+                            If ÈËÎïX < 0 Then 
+                                Call Ëæ»ú×óÓÒ()
                             Else 
                                 Call move("left")
                             End If
-                        ElseIf heroPos(1) > 775 And heroPos(2) < 60 Then // ï¿½Úµï¿½5ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-                            TracePrint "ï¿½ï¿½ï¿½Úµï¿½5ï¿½ï¿½Í¼"
-                            If ï¿½ï¿½ï¿½ï¿½X < 0 Then 
-                                Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
+                        ElseIf heroPos(1) > 775 And heroPos(2) < 60 Then // ÔÚµÚ5¸öÍ¼ÍùÖĞÏÂ
+                            TracePrint "¹¬ãÚµÚ5¸öÍ¼"
+                            If ÈËÎïX < 0 Then 
+                                Call Ëæ»ú×óÓÒ()
                             Else 
                                 menX = 570
-                                If ï¿½ï¿½ï¿½ï¿½X > 350 Or ï¿½ï¿½ï¿½ï¿½X < 0 Then 
+                                If ÈËÎïX > 350 Or ÈËÎïX < 0 Then 
                                     menX = 250
                                 End If
-                                ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½X - menX
-                                ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Yï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ - 580
-                                Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Yï¿½ï¿½ï¿½ï¿½, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½X, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½Y) 
+                                ÈËÎïÓëÃÅµÄX¾àÀë = ÈËÎïX - menX
+                                ÈËÎïÓëÃÅµÄY¾àÀë = ÈËÎïÑüµÄÎ»ÖÃ - 580
+                                Call ÈËÎïÍùÄ¿±êÒÆ¶¯(ÈËÎïÓëÃÅµÄX¾àÀë, ÈËÎïÓëÃÅµÄY¾àÀë, ½Ó´¥¾àÀëX, ½Ó´¥¾àÀëY) 
                             End If
                         Else               
-                            Call ï¿½ï¿½ï¿½ï±£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
+                            Call ÈËÎï±£³ÖÖĞÏßÏòÓÒÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
                         End If
-                    ElseIf ï¿½Ã¾ï¿½Ç°ï¿½ï¿½(0)  > 0 Then
-                        If heroPos(2) < 60 or heroPos(2) > 80 Then // Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½Â·ï¿½
-                            Call Ç°ï¿½ï¿½Andï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
+                    ElseIf »Ã¾³Ç°µî(0)  > 0 Then
+                        If heroPos(2) < 60 or heroPos(2) > 80 Then // Ç°µîÔÚÉÏ·½ºÍÏÂ·½
+                            Call Ç°½øAndÖĞÏßÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
                         Else
                             Call move("right")
                         End If
-                    ElseIf  Î´ï¿½ï¿½Ö®ï¿½ï¿½(0) > 0 Then
-                        If heroPos(1) > 755 And heroPos(1) < 775  And heroPos(2) > 65   Then // ï¿½Úµï¿½4ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¼ï¿½ï¿½ï¿½
-                            Call ï¿½ï¿½ï¿½ï±£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
+                    ElseIf  Î´ÑëÖ®¼¹(0) > 0 Then
+                        If  heroPos(2) < 65   Then // ÔÚµÚ4¸öÍ¼²»ÕÒÇ°½øÍùÖĞ¼ä×ß
+                            Call Ç°½øAndÖĞÏßÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
                         Else 
-                            Call Ç°ï¿½ï¿½Andï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
+                            Call ÈËÎï±£³ÖÖĞÏßÏòÓÒÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
+                   
                         End If
                     Else 
-                        Call Ç°ï¿½ï¿½Andï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
+                        Call Ç°½øAndÖĞÏßÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
                     End If
                 End If
             End If
         End If
     Wend
 End Function
-Function Ç°ï¿½ï¿½Andï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
-    ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos = dm.FindStrE(350,0,800,600,"Ç°ï¿½ï¿½","f0f0f0-252525",1.0)
-    ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos = split(ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos,"|")
-    ï¿½ï¿½X = int(ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos(1))
-    ï¿½ï¿½Y = int(ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pos(2))
-    If ï¿½ï¿½Y < 400 Then   // Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-        ï¿½ï¿½Y = ï¿½ï¿½Y - 600  
+Function Ç°½øAndÖĞÏßÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
+    ÏÂÒ»¸ö·¿¼äpos = dm.FindStrE(350,0,800,600,"Ç°½ø","f0f0f0-252525",1.0)
+    ÏÂÒ»¸ö·¿¼äpos = split(ÏÂÒ»¸ö·¿¼äpos,"|")
+    ÃÅX = int(ÏÂÒ»¸ö·¿¼äpos(1))
+    ÃÅY = int(ÏÂÒ»¸ö·¿¼äpos(2))
+    If ÃÅY < 400 Then   // Ç°½ø×ÖÌåÉÏÏÂÎÊÌâ
+        ÃÅY = ÃÅY - 600  
     Else 
-        ï¿½ï¿½Y = ï¿½ï¿½Y + 600
+        ÃÅY = ÃÅY + 600
     End If
-    If ï¿½ï¿½X > 350 Then 
-        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½X - ï¿½ï¿½X 
-        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Yï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ - ï¿½ï¿½Y
-        Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Xï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Åµï¿½Yï¿½ï¿½ï¿½ï¿½, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½X, ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½Y)
+    If ÃÅX > 350 Then 
+        ÈËÎïÓëÃÅµÄX¾àÀë = ÈËÎïX - ÃÅX 
+        ÈËÎïÓëÃÅµÄY¾àÀë = ÈËÎïÑüµÄÎ»ÖÃ - ÃÅY
+        Call ÈËÎïÍùÄ¿±êÒÆ¶¯(ÈËÎïÓëÃÅµÄX¾àÀë, ÈËÎïÓëÃÅµÄY¾àÀë, ½Ó´¥¾àÀëX, ½Ó´¥¾àÀëY)
     Else   
-        Call ï¿½ï¿½ï¿½ï±£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½)
+        Call ÈËÎï±£³ÖÖĞÏßÏòÓÒÒÆ¶¯(ÈËÎïÑüµÄÎ»ÖÃ)
     End If
 End Function
-Function Ñ­ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(sx, sy)
+Function Ñ­»·É¾³ıÓñÈÙ(sx, sy)
     Const eachEdge = 30
     For i = 0 to 9
         For j = 0 to 1
             X = sx+eachEdge * i
             Y = sy+eachEdge*j
-            Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(X, Y,4,4,"L")
+            Call dmËæ»úµã»÷(X, Y,4,4,"L")
         Next
     Next
     Call releaseKeyChar("space")
     Delay 2000
 End Function
-Call Í¼ï¿½Ú²ï¿½ï¿½ï¿½()
+
+
+//Call Æ£ÀÍ²»×ã´¦ÀíºóÈ¥ÏÂÒ»¸ö()
+Call Í¼ÄÚ²Ù×÷()
