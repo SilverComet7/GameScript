@@ -9,7 +9,7 @@ StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
 MacroID=9b46d387-cddf-4116-a21f-6437fbbd098f
-Description=Ë¼ÄÏÓñÈÙ
+Description=Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 Enable=1
 AutoRun=0
 [Repeat]
@@ -31,154 +31,154 @@ UEsDBBQAAgAIACanWFYaGGgs3wQAAAg4AAAJABEAVUlQYWNrYWdlVVQNAAe/JPljvyT5Y78k+WPtWklv
 
 
 [Script]
-Call ´óÄ®×¢²á()
+Call ï¿½ï¿½Ä®×¢ï¿½ï¿½()
 
-Function ´óÄ®×¢²á()
+Function ï¿½ï¿½Ä®×¢ï¿½ï¿½()
     need_ver = "3.1233"
     Set ws = createobject("Wscript.Shell")
     ws.run "regsvr32 atl.dll /s"
     Set ws = nothing
-    PutAttachment "C:\Users\chris\Desktop\´óÄ®²å¼þ3.1233", "*.*"
+    PutAttachment "C:\Users\chris\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233", "*.*"
     PutAttachment ".\Plugin", "RegDll.dll"
-    Call Plugin.RegDll.Reg("C:\Users\chris\Desktop\´óÄ®²å¼þ3.1233\dm.dll")
+    Call Plugin.RegDll.Reg("C:\Users\chris\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233\dm.dll")
     Set dm = createobject("dm.dmsoft")
     ver = dm.Ver()
     If ver <> need_ver Then
         Set dm = nothing
         Set ws = createobject("Wscript.Shell")
-        ws.run "regsvr32 C:\Users\chris\Desktop\´óÄ®²å¼þ3.1233\dm.dll /s"
+        ws.run "regsvr32 C:\Users\chris\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233\dm.dll /s"
         Set ws = nothing
         Delay 1200
         Set dm = createobject("dm.dmsoft")
         ver = dm.Ver()
         If ver <> need_ver Then
-            MessageBox "²å¼þ°æ±¾´íÎó,µ±Ç°Ê¹ÓÃµÄ°æ±¾ÊÇ:" & ver & ",²å¼þËùÔÚÄ¿Â¼ÊÇ:" & dm.GetBasePath()
-            MessageBox "Çë¹Ø±Õ³ÌÐò,ÖØÐÂ´ò¿ª±¾³ÌÐòÔÙ³¢ÊÔ"
+            MessageBox "ï¿½ï¿½ï¿½ï¿½æ±¾ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ç°Ê¹ï¿½ÃµÄ°æ±¾ï¿½ï¿½:" & ver & ",ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½:" & dm.GetBasePath()
+            MessageBox "ï¿½ï¿½Ø±Õ³ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Â´ò¿ª±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù³ï¿½ï¿½ï¿½"
             EndScript
         End If
     Else
         TracePrint ver
-        TracePrint "×¢²á³É¹¦£¡"
+        TracePrint "×¢ï¿½ï¿½É¹ï¿½ï¿½ï¿½"
     End If
 End Function
 
-Function Ò»ÃëÄÚËæ»úÑÓ³Ù()
+Function Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½()
     Randomize
     Delay Rnd*700+100
 End Function
 
-Function dmËæ»úµã»÷(x, y, w,h,way)
+Function dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(x, y, w,h,way)
     dm.MoveToEx x,y,w,h
-    Call Ò»ÃëÄÚËæ»úÑÓ³Ù()
+    Call Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½()
     If way = "L" Then
         dm.LeftClick
     Else
         dm.RightClick 
     End If
-    Call Ò»ÃëÄÚËæ»úÑÓ³Ù()
+    Call Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½()
 End Function
 
 
-Function dmÕÒµ¥¸öÍ¼(picPath)
+Function dmï¿½Òµï¿½ï¿½ï¿½Í¼(picPath)
     pos = dm.FindPicE(0,0,800,600,picPath,"000000",0.9,0)
     pos = split(pos,"|")
     If int(pos(1)) > 0 Then
-        TracePrint "±ÙÐ°Óñ" +  pos
+        TracePrint "ï¿½ï¿½Ð°ï¿½ï¿½" +  pos
     End If
-    dmÕÒµ¥¸öÍ¼ = pos
+    dmï¿½Òµï¿½ï¿½ï¿½Í¼ = pos
 End Function
 
-Function °´¼üÕÒ×Ö(word)
-    XY = Plugin.Pic.FindWordShape(0, 0, 4000, 1920, word, "ËÎÌå", 9, 0, 0.8)
+Function ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(word)
+    XY = Plugin.Pic.FindWordShape(0, 0, 4000, 1920, word, "ï¿½ï¿½ï¿½ï¿½", 9, 0, 0.8)
     iZB = InStr(XY, "|")
     X = CLng(Left(XY, iZB - 1))
     Y = CLng(Right(XY, Len(XY) - iZB))
-    °´¼üÕÒ×Ö = XY
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ = XY
 End Function
 
-// ¹«¹²º¯ÊýEnd
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½End
 
-hwnd = dm.FindWindow("µØÏÂ³ÇÓëÓÂÊ¿","µØÏÂ³ÇÓëÓÂÊ¿") 
+hwnd = dm.FindWindow("ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿","ï¿½ï¿½ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿") 
 dm.MoveWindow hwnd,0,0
 dm_ret = dm.BindWindow(hwnd, "normal", "normal", "normal", 0)
-// °ó¶¨End
+// ï¿½ï¿½End
 
-Function ÊÇ·ñÏ´³öË¼ÄÏ¶îÍâ´ÊÌõ()
+Function ï¿½Ç·ï¿½Ï´ï¿½ï¿½Ë¼ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
     has = 0
-    hasSiNanXY =  °´¼üÕÒ×Ö("Ë¾ÄÏ¶îÍâ")
+    hasSiNanXY =  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½("Ë¾ï¿½Ï¶ï¿½ï¿½ï¿½")
     XY = Split(hasSiNanXY,"|")
     If X <> -1 Then
         has = 1// 
     End If
-    ÊÇ·ñÏ´³öË¼ÄÏ¶îÍâ´ÊÌõ = has
+    ï¿½Ç·ï¿½Ï´ï¿½ï¿½Ë¼ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ = has
 End Function
 
 
-Function Ï´Ë¼ÄÏ()
-    nextSiNan = ÊÇ·ñÏ´³öË¼ÄÏ¶îÍâ´ÊÌõ()
+Function Ï´Ë¼ï¿½ï¿½()
+    nextSiNan = ï¿½Ç·ï¿½Ï´ï¿½ï¿½Ë¼ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
     While nextSiNan = 0
-        pos = dmÕÒµ¥¸öÍ¼("C:\Users\chris\Desktop\´óÄ®²å¼þ3.1233\A.bmp")
+        pos = dmï¿½Òµï¿½ï¿½ï¿½Í¼("C:\Users\chris\Desktop\ï¿½ï¿½Ä®ï¿½ï¿½ï¿½3.1233\A.bmp")
         If int(pos(1)) > 0 Then
-            Call dmËæ»úµã»÷(pos(1), pos(2), 30, 30, "R")// ÕÒ×ÏÉ«±ÙÐ°Óñ
-            Call dmËæ»úµã»÷(190,580,30,5,"L")     // µãÊôÐÔÈÚºÏ
-            Delay 2500  // µÈ´ýÊôÐÔ³öÏÖ
-            nextSiNan = ÊÇ·ñÏ´³öË¼ÄÏ¶îÍâ´ÊÌõ()
+            Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(pos(1), pos(2), 30, 30, "R")// ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½Ð°ï¿½ï¿½
+            Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(190,580,30,5,"L")     // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úºï¿½
+            Delay 2500  // ï¿½È´ï¿½ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½
+            nextSiNan = ï¿½Ç·ï¿½Ï´ï¿½ï¿½Ë¼ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
         Else 
-          Ï´Ë¼ÄÏ = 4// Ã»ÓÐÓñÁË½áÊøÑ­»·
+          Ï´Ë¼ï¿½ï¿½ = 4// Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½
           nextSiNan = 1
         End If
     Wend
     If nextSiNan = 1 Then 
-        Call dmËæ»úµã»÷(600, 35, 30, 15, "L")// Ë¼ÄÏ½çÃæ£¬È¥Ñ¡ÏÂÒ»¸öË¼ÄÏ
+        Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(600, 35, 30, 15, "L")// Ë¼ï¿½Ï½ï¿½ï¿½æ£¬È¥Ñ¡ï¿½ï¿½Ò»ï¿½ï¿½Ë¼ï¿½ï¿½
     End If
 End Function
 
 
-Function Ñ­»·Ï´Ë¼ÄÏ(sx, sy)
-    Call dmËæ»úµã»÷(133, 202, 3, 3, "L")// »³Òþ
-    Call dmËæ»úµã»÷(175,320, 3, 3, "L") //  ¿ªÆôË¼ÄÏ½çÃæ
+Function Ñ­ï¿½ï¿½Ï´Ë¼ï¿½ï¿½(sx, sy)
+    Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(133, 202, 3, 3, "L")// ï¿½ï¿½ï¿½ï¿½
+    Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(175,320, 3, 3, "L") //  ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½Ï½ï¿½ï¿½ï¿½
     For i = 0 To 4  
-        Call dmËæ»úµã»÷(sx + 30 * i, sy, 30, 30, "R")// Ñ¡ÔñË¼ÄÏ
-        µ±Ç°±ÙÐ°ÓñÊÇ·ñ´æÔÚ¶îÍâ¸ÅÂÊ = ÊÇ·ñÏ´³öË¼ÄÏ¶îÍâ´ÊÌõ()
-        If µ±Ç°±ÙÐ°ÓñÊÇ·ñ´æÔÚ¶îÍâ¸ÅÂÊ = 0 Then 
-            Call dmËæ»úµã»÷(480, 35, 30, 10, "L") // ±ÙÐ°Óñ½çÃæ
-            i= Ï´Ë¼ÄÏ()
+        Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(sx + 30 * i, sy, 30, 30, "R")// Ñ¡ï¿½ï¿½Ë¼ï¿½ï¿½
+        ï¿½ï¿½Ç°ï¿½ï¿½Ð°ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ = ï¿½Ç·ï¿½Ï´ï¿½ï¿½Ë¼ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
+        If ï¿½ï¿½Ç°ï¿½ï¿½Ð°ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ = 0 Then 
+            Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(480, 35, 30, 10, "L") // ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½
+            i= Ï´Ë¼ï¿½ï¿½()
         End If
     Next
     dm.KeyPressChar "esc"
 End Function
 
 
-Function Ñ­»·É¾³ýÓñÈÙ(sx, sy)
+Function Ñ­ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(sx, sy)
     Const eachEdge = 30
     For i = 0 to 9
         For j = 0 to 1
             X = sx+eachEdge * i
             Y = sy+eachEdge*j
-            Call dmËæ»úµã»÷(X, Y,4,4,"L")
+            Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(X, Y,4,4,"L")
         Next
     Next
-    Call dmËæ»úµã»÷(325, 400,5,5,"L") 
+    Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(325, 400,5,5,"L") 
     Delay 2000
 End Function
 
-Function ÇåÀíÓñÈÙ()
-    Call dmËæ»úµã»÷(133, 202, 3, 3, "L")// »³Òþ
-    Call dmËæ»úµã»÷(170,255, 3, 3, "L") //  ¿ªÆô·Ö½â½çÃæ
-    Call Ñ­»·É¾³ýÓñÈÙ(490,395) // Ç°20¸ö
-    Call Ñ­»·É¾³ýÓñÈÙ(490, 455)// ºó20¸ö
+Function ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
+    Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(133, 202, 3, 3, "L")// ï¿½ï¿½ï¿½ï¿½
+    Call dmï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(170,255, 3, 3, "L") //  ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½
+    Call Ñ­ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(490,395) // Ç°20ï¿½ï¿½
+    Call Ñ­ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(490, 455)// ï¿½ï¿½20ï¿½ï¿½
      dm.KeyPressChar "esc"
-    ÇåÀíÓñÈÙ = "ÇåÀíÓñÈÙ½áÊø"
+    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù½ï¿½ï¿½ï¿½"
 End Function
 
 
 If Form1.CheckBox1.Value <> 0 Then 
-    Call Ñ­»·Ï´Ë¼ÄÏ(480, 105)// Ö±½ÓÏ´µÚÒ»ÅÅÇ°5¸ö
+    Call Ñ­ï¿½ï¿½Ï´Ë¼ï¿½ï¿½(480, 105)// Ö±ï¿½ï¿½Ï´ï¿½ï¿½Ò»ï¿½ï¿½Ç°5ï¿½ï¿½
 End If
 
 
 If Form1.CheckBox2.Value <> 0 Then
-    Call ÇåÀíÓñÈÙ()
+    Call ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½()
 End If
 
 
