@@ -216,6 +216,9 @@ Function 捡东西
     Call releaseKeyChar("x")
     Call releaseKeyChar("x")
 End Function
+
+
+
 Function 司南界面(修理)
     drsn = dm找单个图("C:\Users\ChrisWang\Desktop\dnf-img\1drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\2drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\3drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\4drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\5drsn.bmp")
     司南界面 = int(drsn(1))
@@ -231,16 +234,21 @@ Function 司南界面(修理)
         dm.MoveToEx 50,50,50,50
         Call releaseKeyChar("space")
         Call 图内操作()
-    Else 
-        入场 = 按键找字("未央幻境入场")
-        If 入场(0) > 0 Then 
-            Call 捡东西()
-           Call 疲劳不足处理后去下一个()
-        End If
+//    Else 
+//        入场 = 按键找字("未央幻境入场")
+//        If 入场(0) > 0 Then 
+//            Call 捡东西()
+//           Call 疲劳不足处理后去下一个()
+//        End If
     End If
 End Function
+
+
+
+角色N = 0
+
 Function 选择人物(N)
-    第几个 = N- 1
+    第几个 = N-1
     Call dm随机点击(第几个 * 130, 335, 50, 50, "L") // 选人物
     Call releaseKeyChar("space")
     Delay 13000
@@ -257,7 +265,7 @@ Function 选择人物(N)
                 Call move("down")
             Else 
                 TracePrint "找云客"
-                云珂 = 按键找字("云珂")
+                云珂 = 按键找字("珂")
                 If 云珂(0) > 0 Then 
                     选择 = 0
                     Call releseMove()
@@ -265,7 +273,6 @@ Function 选择人物(N)
                     dm.MoveToEx 50,50,50,50 // 防止遮挡
                     Call 司南界面(0)
                 Else 
-                
                     Call move("rightDown")
                 End If
             End If
@@ -293,12 +300,12 @@ Function 疲劳不足处理后去下一个()
     // 关闭分解界面去选择人物
     Call releaseKeyChar("esc")  
     Call releaseKeyChar("esc")
-    Call dm随机点击(365, 440, 5, 5, "L")// 点击选择人物按钮
+    Call dm随机点击(385, 490, 5, 5, "L")// 点击选择人物按钮
     Delay 3000
     // 目前固定2个 放在下方 1 2位置
     Call 选择人物(2)
 End Function
-//Call 疲劳不足处理后去下一个()
+
 Function 图内操作()
     frame = 0
     刷图 = 1
@@ -310,8 +317,14 @@ Function 图内操作()
             刷图 = 0
             Call releseMove()
             Call releaseKeyChar("esc")
-            Call dm随机点击(493,440,5,5,"L")
-            Call dm随机点击(505, 200, 5, 5, "L")
+            Call dm随机点击(495, 500, 5, 5, "L")  // 返回城镇
+            Delay 2000
+//            云珂 = 按键找字("云珂")
+//                If 云珂(0) > 0 Then 
+//              
+//                End If
+            Call dm随机点击(500, 245, 5, 5, "L")
+            Call dm随机点击(530,315, 5, 5, "L")
             dm.MoveToEx 50,50,50,50 // 防止遮挡
             Call 司南界面(0)
         ElseIf frame Mod 60 = 0 Then
@@ -320,7 +333,8 @@ Function 图内操作()
                 TracePrint "疲劳不足"
                 刷图 = 0
                 Call releseMove()
-                Call releaseKeyChar("esc") // 关闭疲劳不足提示界面 
+                Call releaseKeyChar("esc")// 关闭疲劳不足提示界面 
+                Delay 2000
                 Call 疲劳不足处理后去下一个()
             End If
             物品 = 按键找字("稀有")
@@ -378,7 +392,10 @@ Function 图内操作()
                     Call move("left")
                     Delay 300
                     Randomize
-                    If 残月宫阙(0) > 0 And 人物X > 500  Then
+                    //  特殊场景
+                    If 残月宫阙(0) > 0 And 人物X > 500  Then  //   宫殿下方图最右边
+                        Call move("leftDown")
+                    ElseIf 幻境前殿(0) > 0 And heroPos(2) > 80   Then  // 幻境下方图
                         Call move("leftDown")
                     ElseIf Rnd > 0.5 Then 
                         Call move("rightDown")
@@ -499,4 +516,8 @@ Function 循环删除玉荣(sx, sy)
     Call releaseKeyChar("space")
     Delay 2000
 End Function
+
+
+//Call 疲劳不足处理后去下一个()
+//Call 选择人物(角色N + 2)
 Call 图内操作()
