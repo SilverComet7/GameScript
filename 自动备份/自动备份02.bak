@@ -27,6 +27,7 @@ UEsDBBQAAgAIAEw5TD+cfTI/KxMAAABgAAAKABEAUmVnRGxsLmRsbFVUDQAHbj2VTmsSemPwAHlj7VwP
 
 
 [Script]
+ 
 Call 大漠注册()
 Function 大漠注册()
     need_ver = "3.1233"
@@ -218,6 +219,7 @@ End Function
 Function 司南界面(修理)
     drsn = dm找单个图("C:\Users\chris\Desktop\dnf-img\1drsn.bmp|C:\Users\chris\Desktop\dnf-img\2drsn.bmp|C:\Users\chris\Desktop\dnf-img\3drsn.bmp|C:\Users\chris\Desktop\dnf-img\4drsn.bmp|C:\Users\chris\Desktop\dnf-img\5drsn.bmp")
     司南界面 = int(drsn(1))
+    // 找到单人司南
     If 司南界面 > 0 Then
         Call 捡东西()
         If 修理 > 0 Then 
@@ -229,12 +231,12 @@ Function 司南界面(修理)
         dm.MoveToEx 50,50,50,50
         Call releaseKeyChar("space")
         Call 图内操作()
-        //    Else 
-        //        入场 = 按键找字("入场")
-        //        If 入场(0) > 0 Then 
-        //            Call 捡东西()
-        //            Call 司南界面(0)
-        //        End If
+//    Else 
+//        入场 = 按键找字("未央幻境入场")
+//        If 入场(0) > 0 Then 
+//            Call 捡东西()
+//           Call 疲劳不足处理后去下一个()
+//        End If
     End If
 End Function
 Function 选择人物(N)
@@ -268,22 +270,32 @@ Function 选择人物(N)
     Wend
 End Function
 // Call 选择人物(1)
-Function 疲劳不足选择下一个()
-    Call releseMove()
-    Call releaseKeyChar("esc") // 关闭疲劳不足提示界面 
+Function 疲劳不足处理后去下一个()
     Call releaseKeyChar("f3")
-    Call dm随机点击(460,330,5,5,"L")  // 修理分解机
-    dm.LeftClick
-    Call dm随机点击(390, 330, 5, 5, "L")
-    Call dm随机点击(390,330,5,5,"L")
+    // 修理分解机
+    Call dm随机点击(460, 330, 5, 5, "L")
+    Delay 500
+    dm.LeftClick 
+    Delay 500
+    // 确认后启动分解机
+    Call dm随机点击(390, 330, 2, 2, "L")
+    Call dm随机点击(390, 330, 2, 2, "L")
+    // 清理装备
+    Call releaseKeyChar("a")
+    Call releaseKeyChar("space")
+    Delay 2000
+    // 清理玉荣
     Call 循环删除玉荣(490,395)   // 前20个
-    Call 循环删除玉荣(490, 455)   // 后20个
-    Call releaseKeyChar("esc")  // 关闭分解界面
+    Call 循环删除玉荣(490, 455)// 后20个
+    // 关闭分解界面去选择人物
+    Call releaseKeyChar("esc")  
     Call releaseKeyChar("esc")
     Call dm随机点击(365, 440, 5, 5, "L")// 点击选择人物按钮
     Delay 3000
-    Call 选择人物(2) // 目前固定2个 放在下方 1 2位置
+    // 目前固定2个 放在下方 1 2位置
+    Call 选择人物(2)
 End Function
+//Call 疲劳不足处理后去下一个()
 Function 图内操作()
     frame = 0
     刷图 = 1
@@ -304,7 +316,9 @@ Function 图内操作()
             If 无法入场(0) > 0 Then
                 TracePrint "疲劳不足"
                 刷图 = 0
-                Call 疲劳不足选择下一个()
+                Call releseMove()
+                Call releaseKeyChar("esc") // 关闭疲劳不足提示界面 
+                Call 疲劳不足处理后去下一个()
             End If
             物品 = 按键找字("稀有")
             人物 = 按键找字("[")
@@ -379,9 +393,13 @@ Function 图内操作()
                             下一个房间pos = dm.FindStrE(200,350,750,600,"前进","f0f0f0-252525",1.0)
                             下一个房间pos = split(下一个房间pos,"|")
                             门X = int(下一个房间pos(1))
-                            人物与门的X距离 = 人物X - 门X
-                            人物与门的Y距离 = 人物腰的位置 - 580
-                            Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y) 
+                            If 门X > 0 Then 
+                                人物与门的X距离 = 人物X - 门X
+                                人物与门的Y距离 = 人物腰的位置 - 580
+                                Call 人物往目标移动(人物与门的X距离, 人物与门的Y距离, 接触距离X, 接触距离Y)
+                            Else 
+                                Call 人物往目标移动(-5, -5, 接触距离X, 接触距离Y)
+                            End If
                         ElseIf  heroPos(1) > 750 And heroPos(2) > 80 Then // 在第5个图
                             Call 前进And中线移动(人物腰的位置)
                         Else
