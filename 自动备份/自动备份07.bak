@@ -33,7 +33,6 @@ UEsDBBQAAgAIALytclYaGGgs3wQAAAg4AAAJABEAVUlQYWNrYWdlVVQNAAf6MBZk+jAWZPowFmTtWklv
 [Script]
  
 Call ��Įע��()
-
 Function ��Įע��()
     need_ver = "3.1233"
     Set ws = createobject("Wscript.Shell")

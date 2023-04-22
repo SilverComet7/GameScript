@@ -305,6 +305,7 @@ Function ƣ�Ͳ��㴦����ȥ��һ��()
     // Ŀǰ�̶�2�� �����·� 1 2λ��
     Call ѡ������(2)
 End Function
+
 Function ͼ�ڲ���()
     frame = 0
     ˢͼ = 1
