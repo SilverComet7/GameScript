@@ -27,12 +27,11 @@ UEsDBBQAAgAIAMCrVlWUohOWnwUAAIYKAAAJABEAMWRyc24uYm1wVVQNAAfoYFRjmqxWY1PSVGOtlk+I
 
 
 [UIPackage]
-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
+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
 
 
 [Script]
 Call 大漠注册()
-
 Function 大漠注册()
     need_ver = "3.1233"
     Set ws = createobject("Wscript.Shell")
@@ -61,12 +60,10 @@ Function 大漠注册()
         TracePrint "注册成功！"
     End If
 End Function
-
 Function 一秒内随机延迟()
     Randomize
     Delay Rnd*700+100
 End Function
-
 Function dm随机点击(x, y, w,h,way)
     dm.MoveToEx x,y,w,h
     Call 一秒内随机延迟()
@@ -77,8 +74,6 @@ Function dm随机点击(x, y, w,h,way)
     End If
     Call 一秒内随机延迟()
 End Function
-
-
 Function dm找单个图(picPath)
     pos = dm.FindPicE(0,0,800,600,picPath,"000000",0.9,0)
     pos = split(pos,"|")
@@ -87,22 +82,18 @@ Function dm找单个图(picPath)
     End If
     dm找单个图 = pos
 End Function
-
 Function 按键找字(word)
-    XY = Plugin.Pic.FindWordShape(0, 0, 4000, 1920, word, "宋体", 9, 0, 0.8)
+    XY = Plugin.Pic.FindWordShape(0, 0, 1920, 1080, word, "宋体", 9, 0, 0.5)
     iZB = InStr(XY, "|")
     X = CLng(Left(XY, iZB - 1))
     Y = CLng(Right(XY, Len(XY) - iZB))
     按键找字 = XY
 End Function
-
 // 公共函数End
-
 hwnd = dm.FindWindow("地下城与勇士","地下城与勇士") 
 dm.MoveWindow hwnd,0,0
 dm_ret = dm.BindWindow(hwnd, "normal", "normal", "normal", 0)
 // 绑定End
-
 Function 是否洗出思南额外词条()
     has = 0
     hasSiNanXY =  按键找字("司南额外")
@@ -112,8 +103,6 @@ Function 是否洗出思南额外词条()
     End If
     是否洗出思南额外词条 = has
 End Function
-
-
 Function 洗思南()
     nextSiNan = 是否洗出思南额外词条()
     While nextSiNan = 0
@@ -124,21 +113,20 @@ Function 洗思南()
             Delay 2500  // 等待属性出现
             nextSiNan = 是否洗出思南额外词条()
         Else 
-          洗思南 = 4// 没有玉了结束循环
-          nextSiNan = 1
+            洗思南 = 4// 没有玉了结束循环
+            nextSiNan = 1
         End If
     Wend
     If nextSiNan = 1 Then 
         Call dm随机点击(600, 35, 30, 15, "L")// 思南界面，去选下一个思南
     End If
 End Function
-
-
 Function 循环洗思南(sx, sy)
     Call dm随机点击(133, 202, 3, 3, "L")// 怀隐
     Call dm随机点击(175,320, 3, 3, "L") //  开启思南界面
     For i = 0 To 4  
         Call dm随机点击(sx + 30 * i, sy, 30, 30, "R")// 选择思南
+        Delay 1000
         当前辟邪玉是否存在额外概率 = 是否洗出思南额外词条()
         If 当前辟邪玉是否存在额外概率 = 0 Then 
             Call dm随机点击(480, 35, 30, 10, "L") // 辟邪玉界面
@@ -147,8 +135,6 @@ Function 循环洗思南(sx, sy)
     Next
     dm.KeyPressChar "esc"
 End Function
-
-
 Function 循环删除玉荣(sx, sy)
     Const eachEdge = 30
     For i = 0 to 9
@@ -161,25 +147,17 @@ Function 循环删除玉荣(sx, sy)
     Call dm随机点击(325, 400,5,5,"L") 
     Delay 2000
 End Function
-
 Function 清理玉荣()
     Call dm随机点击(133, 202, 3, 3, "L")// 怀隐
     Call dm随机点击(170,255, 3, 3, "L") //  开启分解界面
     Call 循环删除玉荣(490,395) // 前20个
     Call 循环删除玉荣(490, 455)// 后20个
-     dm.KeyPressChar "esc"
+    dm.KeyPressChar "esc"
     清理玉荣 = "清理玉荣结束"
 End Function
-
-
 If Form1.CheckBox1.Value <> 0 Then 
     Call 循环洗思南(480, 105)// 直接洗第一排前5个
 End If
-
-
 If Form1.CheckBox2.Value <> 0 Then
     Call 清理玉荣()
 End If
-
-
-
