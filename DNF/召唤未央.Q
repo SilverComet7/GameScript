@@ -222,26 +222,26 @@ Function 司南界面(修理)
     // 找到单人司南
     If 司南界面 > 0 Then
         Call 捡东西()
-        If 修理 > 0 Then 
-            Call releaseKeyChar("s")
-            Call releaseKeyChar("space")
-        End If
+//        If 修理 > 0 Then 
+//            Call releaseKeyChar("s")
+//            Call releaseKeyChar("space")
+//        End If
         Call dm随机点击(drsn(1),drsn(2),5,5,"R")
         Call dm随机点击(160, 545, 10, 10, "L")// 进场按钮
         dm.MoveToEx 50,50,50,50
         Call releaseKeyChar("space")
         Call 图内操作()
-    Else 
-        入场 = 按键找字("未央幻境入场")
-        If 入场(0) > 0 Then 
-            Call 捡东西()
-           Call 疲劳不足处理后去下一个()
-        End If
+//    Else 
+//        入场 = 按键找字("未央幻境入场")
+//        If 入场(0) > 0 Then 
+//            Call 捡东西()
+//           Call 疲劳不足处理后去下一个()
+//        End If
     End If
 End Function
 Function 选择人物(N)
     第几个 = N- 1
-    Call dm随机点击(第几个 * 130, 335, 50, 50, "L") // 选人物
+    Call dm随机点击(第几个 * 145, 335, 50, 50, "L") // 选人物
     Call releaseKeyChar("space")
     Delay 13000
     Call move("down")
@@ -256,7 +256,7 @@ Function 选择人物(N)
             If 宽屏模式(0) > 0 or 赛丽亚(0) > 0 Then 
                 Call move("down")
             Else 
-                云珂 = 按键找字("云珂")
+                云珂 = 按键找字("珂")
                 If 云珂(0) > 0 Then 
                     Call releseMove()
                     Call dm随机点击(505,200,5,5,"L")
@@ -272,6 +272,7 @@ End Function
 // Call 选择人物(1)
 Function 疲劳不足处理后去下一个()
     Call releaseKeyChar("f3")
+    Delay 1000
     // 修理分解机
     Call dm随机点击(460, 330, 5, 5, "L")
     Delay 500
@@ -290,8 +291,8 @@ Function 疲劳不足处理后去下一个()
     // 关闭分解界面去选择人物
     Call releaseKeyChar("esc")  
     Call releaseKeyChar("esc")
-    Call dm随机点击(365, 440, 5, 5, "L")// 点击选择人物按钮
-    Delay 3000
+    Call dm随机点击(385, 490, 5, 5, "L")// 点击选择人物按钮
+    Delay 4000
     // 目前固定2个 放在下方 1 2位置
     Call 选择人物(2)
 End Function
@@ -307,8 +308,10 @@ Function 图内操作()
             刷图 = 0
             Call releseMove()
             Call releaseKeyChar("esc")
-            Call dm随机点击(493,440,5,5,"L")
-            Call dm随机点击(505, 200, 5, 5, "L")
+            Call dm随机点击(493, 440, 5, 5, "L")
+            Delay 2000
+            Call dm随机点击(500, 245, 5, 5, "L")
+             Call dm随机点击(530, 315, 5, 5, "L")
             dm.MoveToEx 50,50,50,50 // 防止遮挡
             Call 司南界面(0)
         ElseIf frame Mod 60 = 0 Then
@@ -374,7 +377,7 @@ Function 图内操作()
                     Randomize
                     Call move("left")
                     Delay 200
-                    If 残月宫阙(0) > 0 And heroPos(1) < 740 And 人物X > 500 Then
+                    If 残月宫阙(0) > 0 And 人物X > 500 Then
                         Call move("leftDown")
                     ElseIf Rnd > 0.5 Then 
                         Call move("rightDown")
