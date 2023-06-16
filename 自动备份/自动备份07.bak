@@ -1,7 +1,7 @@
 [General]
 MacroID=b9bafb4c-4f25-43fa-803a-7c4cba2215fd
 SyntaxVersion=2
-BeginHotkey=121
+BeginHotkey=120
 BeginHotkeyMod=0
 PauseHotkey=0
 PauseHotkeyMod=0
@@ -9,15 +9,15 @@ StopHotkey=123
 StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
-Description=我的脚本1
+Description=锟揭的脚憋拷1
 Enable=1
 AutoRun=0
 [Repeat]
 Type=0
 Number=1
 [SetupUI]
-Type=2
-QUI=
+Type=1
+QUI=Form1
 [Relative]
 SetupOCXFile=
 [Comment]

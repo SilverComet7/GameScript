@@ -34,15 +34,15 @@ Function 大漠注册()
     Set ws = createobject("Wscript.Shell")
     ws.run "regsvr32 atl.dll /s"
     Set ws = nothing
-    PutAttachment "C:\Users\chris\Desktop\大漠插件3.1233", "*.*"
+    PutAttachment "C:\Users\ChrisWang\Desktop\大漠插件3.1233", "*.*"
     PutAttachment ".\Plugin", "RegDll.dll"
-    Call Plugin.RegDll.Reg("C:\Users\chris\Desktop\大漠插件3.1233\dm.dll")
+    Call Plugin.RegDll.Reg("C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm.dll")
     Set dm = createobject("dm.dmsoft")
     ver = dm.Ver()
     If ver <> need_ver Then
         Set dm = nothing
         Set ws = createobject("Wscript.Shell")
-        ws.run "regsvr32 C:\Users\chris\Desktop\大漠插件3.1233\dm.dll /s"
+        ws.run "regsvr32 C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm.dll /s"
         Set ws = nothing
         Delay 1200
         Set dm = createobject("dm.dmsoft")
@@ -106,9 +106,9 @@ Function 按键找字(word)
     End If
     按键找字 = XY
 End Function
-dm_soft  = dm.SetDict(0,"C:\Users\chris\Desktop\大漠插件3.1233\dm_soft.txt")
-st9 = dm.SetDict(1,"C:\Users\chris\Desktop\大漠插件3.1233\宋体9号.txt")
-ywsz9 = dm.SetDict(2,"C:\Users\chris\Desktop\大漠插件3.1233\英文+数字.txt")
+dm_soft  = dm.SetDict(0,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\dm_soft.txt")
+st9 = dm.SetDict(1,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\宋体9号.txt")
+ywsz9 = dm.SetDict(2,"C:\Users\ChrisWang\Desktop\大漠插件3.1233\英文+数字.txt")
 hwnd = dm.FindWindow("地下城与勇士", "地下城与勇士")
 dm_ret = dm.BindWindow(hwnd, "normal", "normal", "dx", 0)
 dm.MoveWindow hwnd, 0, 0
@@ -216,31 +216,39 @@ Function 捡东西
     Call releaseKeyChar("x")
     Call releaseKeyChar("x")
 End Function
+
+
+
 Function 司南界面(修理)
-    drsn = dm找单个图("C:\Users\chris\Desktop\dnf-img\1drsn.bmp|C:\Users\chris\Desktop\dnf-img\2drsn.bmp|C:\Users\chris\Desktop\dnf-img\3drsn.bmp|C:\Users\chris\Desktop\dnf-img\4drsn.bmp|C:\Users\chris\Desktop\dnf-img\5drsn.bmp")
+    drsn = dm找单个图("C:\Users\ChrisWang\Desktop\dnf-img\1drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\2drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\3drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\4drsn.bmp|C:\Users\ChrisWang\Desktop\dnf-img\5drsn.bmp")
     司南界面 = int(drsn(1))
     // 找到单人司南
     If 司南界面 > 0 Then
         Call 捡东西()
-        If 修理 > 0 Then 
-            Call releaseKeyChar("s")
-            Call releaseKeyChar("space")
-        End If
+//        If 修理 > 0 Then 
+//            Call releaseKeyChar("s")
+//            Call releaseKeyChar("space")
+//        End If
         Call dm随机点击(drsn(1),drsn(2),5,5,"R")
         Call dm随机点击(160, 545, 10, 10, "L")// 进场按钮
         dm.MoveToEx 50,50,50,50
         Call releaseKeyChar("space")
         Call 图内操作()
-    Else 
-        入场 = 按键找字("未央幻境入场")
-        If 入场(0) > 0 Then 
-            Call 捡东西()
-           Call 疲劳不足处理后去下一个()
-        End If
+//    Else 
+//        入场 = 按键找字("未央幻境入场")
+//        If 入场(0) > 0 Then 
+//            Call 捡东西()
+//           Call 疲劳不足处理后去下一个()
+//        End If
     End If
 End Function
+
+
+
+角色N = 0
+
 Function 选择人物(N)
-    第几个 = N- 1
+    第几个 = N-1
     Call dm随机点击(第几个 * 130, 335, 50, 50, "L") // 选人物
     Call releaseKeyChar("space")
     Delay 13000
@@ -256,13 +264,15 @@ Function 选择人物(N)
             If 宽屏模式(0) > 0 or 赛丽亚(0) > 0 Then 
                 Call move("down")
             Else 
-                云珂 = 按键找字("云珂")
+                TracePrint "找云客"
+                云珂 = 按键找字("珂")
                 If 云珂(0) > 0 Then 
-                    Call releseMove()
-                    Call dm随机点击(505,200,5,5,"L")
                     选择 = 0
+                    Call releseMove()
+                    Call dm随机点击(505, 200, 5, 5, "L")
+                    dm.MoveToEx 50,50,50,50 // 防止遮挡
                     Call 司南界面(0)
-                Else  
+                Else 
                     Call move("rightDown")
                 End If
             End If
@@ -272,6 +282,7 @@ End Function
 // Call 选择人物(1)
 Function 疲劳不足处理后去下一个()
     Call releaseKeyChar("f3")
+    Delay 1000
     // 修理分解机
     Call dm随机点击(460, 330, 5, 5, "L")
     Delay 500
@@ -290,12 +301,12 @@ Function 疲劳不足处理后去下一个()
     // 关闭分解界面去选择人物
     Call releaseKeyChar("esc")  
     Call releaseKeyChar("esc")
-    Call dm随机点击(365, 440, 5, 5, "L")// 点击选择人物按钮
-    Delay 3000
+    Call dm随机点击(385, 490, 5, 5, "L")// 点击选择人物按钮
+    Delay 4000
     // 目前固定2个 放在下方 1 2位置
     Call 选择人物(2)
 End Function
-//Call 疲劳不足处理后去下一个()
+
 Function 图内操作()
     frame = 0
     刷图 = 1
@@ -307,8 +318,10 @@ Function 图内操作()
             刷图 = 0
             Call releseMove()
             Call releaseKeyChar("esc")
-            Call dm随机点击(493,440,5,5,"L")
-            Call dm随机点击(505, 200, 5, 5, "L")
+            Call dm随机点击(495, 500, 5, 5, "L")  // 返回城镇
+            Delay 2000
+            Call dm随机点击(500, 245, 5, 5, "L")
+            Call dm随机点击(530,315, 5, 5, "L")
             dm.MoveToEx 50,50,50,50 // 防止遮挡
             Call 司南界面(0)
         ElseIf frame Mod 60 = 0 Then
@@ -317,7 +330,8 @@ Function 图内操作()
                 TracePrint "疲劳不足"
                 刷图 = 0
                 Call releseMove()
-                Call releaseKeyChar("esc") // 关闭疲劳不足提示界面 
+                Call releaseKeyChar("esc")// 关闭疲劳不足提示界面 
+                Delay 2000
                 Call 疲劳不足处理后去下一个()
             End If
             物品 = 按键找字("稀有")
@@ -330,9 +344,9 @@ Function 图内操作()
             接触距离Y = 1
             人物腰的位置 = 人物Y + 60
             人物脚的位置Y = 人物Y + 100
-            bossPos = dm小地图找图("C:\Users\chris\Desktop\dnf-img\bossD.bmp")
-            heroPos = dm小地图找图("C:\Users\chris\Desktop\dnf-img\heroD.bmp")
-            If heroPos(1) > 0 And  heroPos(1) < 740 And 关闭关卡提示 > 0 Then 
+            bossPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\bossD.bmp")
+            heroPos = dm小地图找图("C:\Users\ChrisWang\Desktop\dnf-img\heroD.bmp")
+            If heroPos(1) > 0 And 关闭关卡提示 > 0 Then 
                 Call releaseKeyChar("a")
                 Delay 2000
                 Call releaseKeyChar("g")
@@ -350,6 +364,7 @@ Function 图内操作()
                     frame = 0
                     刷图 = 0
                     修理 = 0
+                    TracePrint "修理" +CStr(修理)
                 End If
             ElseIf 物品X > 0 Then// 地上存在物品
                 TracePrint "捡物品"
@@ -369,12 +384,15 @@ Function 图内操作()
                 If 工会(0) > 0 Then 
                     人物X = 工会(0) - 20
                 End If
-                If 工会(0) < 0 And heroPos(1) < 775  Then // 人物靠地图边缘太近导致找不到人
+                If   工会(0) < 0 And heroPos(1) < 775  Then // 人物靠地图边缘太近导致找不到人
                     TracePrint "边缘检测"
-                    Randomize
                     Call move("left")
-                    Delay 200
-                    If 残月宫阙(0) > 0 And heroPos(1) < 740 And 人物X > 500 Then
+                    Delay 300
+                    Randomize
+                    //  特殊场景
+                    If 残月宫阙(0) > 0 And 人物X > 500  Then  //   宫殿下方图最右边
+                        Call move("leftDown")
+                    ElseIf 幻境前殿(0) > 0 And heroPos(2) > 80   Then  // 幻境下方图
                         Call move("leftDown")
                     ElseIf Rnd > 0.5 Then 
                         Call move("rightDown")
@@ -450,11 +468,12 @@ Function 图内操作()
                         Else
                             Call move("right")
                         End If
-                    ElseIf 未央之脊(0) > 0 Then
-                        If  heroPos(2) < 65   Then // 不找前进往中间走
-                            Call 前进And中线移动(人物腰的位置)  
+                    ElseIf  未央之脊(0) > 0 Then
+                        If  heroPos(2) < 65   Then // 在第4个图不找前进往中间走
+                            Call 前进And中线移动(人物腰的位置)
                         Else 
                             Call 人物保持中线向右移动(人物腰的位置)
+                   
                         End If
                     Else 
                         Call 前进And中线移动(人物腰的位置)
@@ -494,4 +513,8 @@ Function 循环删除玉荣(sx, sy)
     Call releaseKeyChar("space")
     Delay 2000
 End Function
+
+
+//Call 疲劳不足处理后去下一个()
+//Call 选择人物(角色N + 2)
 Call 图内操作()
